@@ -54,6 +54,20 @@ Licence URI: https://www.os-templates.com/template-terms
     </div>
   </div>
 </div>
+
+
+<?php
+$cookie_name = 'user';
+if(!isset($_COOKIE[$cookie_name])) {
+    echo "Cookie is not set! <br/>";
+    echo '<a href="login.html"><span>Login</span></a></li>';
+} else {
+    echo "Cookie '" . $cookie_name . "' is set!<br>";
+    echo "Value is: " . $_COOKIE[$cookie_name] . '<br/>';
+    echo '<a href="logout.php"><span>Logout</span></a></li>';
+}
+?>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
