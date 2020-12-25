@@ -7,16 +7,17 @@
 <!--CHANGE HERE-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script type="text/javascript" src='login_check.js'></script>
 </head>
 <body id="top">
-
-<form action="login_action.php" method="post">
+<form name="login_form" action="login_action.php" onsubmit="return validateForm()" method="post">
   <label for="uname">Username:</label><br>
-  <input type="text" id="uname" name="uname" ><br>
+  <input type="text" id="uname" name="uname" onchange="return validateName()" ><br>
+  <p id='demo'></p>
   <label for="pwd">Password:</label><br>
-  <input type="password" id="pwd" name="pwd" ><br><br>
+  <input type="password" id="pwd" name="pwd" onchange="return validatePswd()"><br>
+  <p id='demo2'></p>
   <input type="submit" value="Submit">
 </form> 
-
 </body>
 </html>
