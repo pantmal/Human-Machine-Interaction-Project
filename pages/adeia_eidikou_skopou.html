@@ -202,7 +202,7 @@ Licence URI: https://www.os-templates.com/template-terms
 			
 			<p>Αριθμός Παιδιών:</p>
 			<form action="/action_page.php">
-			<select name="cars" id="cars">
+			<select name="cars" id="cars" onchange="change_func()">
 			<option value="one">Ένα(1)</option>
 			<option value="two">Δύο(2)</option>
 			<option value="three">Τρία(3)</option>
@@ -213,11 +213,11 @@ Licence URI: https://www.os-templates.com/template-terms
 			
 
 		<!-- dont let the user insert less than 4 kids CSS master race-->
-		
-		
+    <!-- JS GOD DAMNIT-->
+
+    
 		<label for="number">Αριθμός Παιδιών(4+): <span>*</span></label>
-        <input type="text" name="number_of_kids" pattern="\d*" maxlength="2" required>
-		
+    <input type="text" name="number_of_kids" pattern="\d*" maxlength="2" required>
 		<br><br>
 		
 		<h6>Εισάγετε την βαθμίδα των παιδιών σας</h6>

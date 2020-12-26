@@ -2,7 +2,7 @@
 function validateName(){
     var x = document.getElementById('uname').value;
     var regex=/^[a-zA-ZΆ-ωΑ-ώ ]+$/ ///^[0-9]+$/;
-
+    var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
     result = true;
 
     if (x == "") {
@@ -13,7 +13,7 @@ function validateName(){
     }
 
     if (x != ''){
-        if ((!x.match(regex))){
+        if ((!x.match(re))){
             document.getElementById("demo").innerHTML = '\u2757 not numbers';
             result = false;
         }else{
