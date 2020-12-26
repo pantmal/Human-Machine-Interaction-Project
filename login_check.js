@@ -1,7 +1,7 @@
 
 function validateName(){
     var x = document.getElementById('uname').value;
-    var regex=/^[0-9]+$/; ///^[A-Za-z]+$/
+    var regex=/^[a-zA-ZΆ-ωΑ-ώ ]+$/ ///^[0-9]+$/;
 
     result = true;
 
@@ -12,14 +12,14 @@ function validateName(){
         document.getElementById("demo").innerHTML = '';
     }
 
-    // if (x != ''){
-    //     if ((!x.match(regex))){
-    //         document.getElementById("demo").innerHTML = '\u2757 not ok';
-    //         result = false;
-    //     }else{
-    //         document.getElementById("demo").innerHTML = '';
-    //     }
-    // }
+    if (x != ''){
+        if ((!x.match(regex))){
+            document.getElementById("demo").innerHTML = '\u2757 not numbers';
+            result = false;
+        }else{
+            document.getElementById("demo").innerHTML = '';
+        }
+    }
 
     return result;
 
