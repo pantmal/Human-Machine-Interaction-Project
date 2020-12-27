@@ -11,7 +11,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
 <!--CHANGE HERE-->
-<title>Κλείσιμο Ραντεβού</title>
+<title>Άδεια Ειδικού Σκοπού</title>
 <!--CHANGE HERE-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -25,6 +25,7 @@ Licence URI: https://www.os-templates.com/template-terms
 @media screen and (max-width:900px){.container .demo div{margin-bottom:0;}}
 /* DEMO ONLY */
 </style>
+<script type="text/javascript" src='rantevou_check.js'></script>
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -153,7 +154,7 @@ Licence URI: https://www.os-templates.com/template-terms
   <div id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <!--CHANGE HERE-->
-    <h6 class="heading"> Κλείσιμο ραντεβού</h6>
+    <h6 class="heading">Άδεια Ειδικού Σκοπού</h6>
     <ul>
       <li><a href="../index.html">Home</a></li>
       <li><a href="#">Lorem</a></li>
@@ -164,7 +165,7 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
   </div>
 </div>
-	
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -173,7 +174,7 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- main body -->
     <!-- ################################################################################################ -->
     
-	<h1 style="text-align:center">Κλείσιμο Ραντεβού</h1>
+	<h1 style="text-align:center">Άδεια Ειδικού Σκοπού</h1>
 	
 	<p>Παρακαλούμε συμπληρώστε την παρακάτω φόρμα </p>
 	<div class="boxed">
@@ -181,44 +182,114 @@ Licence URI: https://www.os-templates.com/template-terms
 	
           
             <label for="name">Όνομα: <span>*</span></label>
-            <input type="text" name="name" id="name" value="" size="22" required>
+            <input type="text" name="name1" id="name1"  size="22" onchange="return validateName(document.getElementById('name1').value,document.getElementById('demo'))"  required>
+            <p id='demo'></p>
+            
 			
 			<label for="name">Επώνυμο: <span>*</span></label>
-			<input type="text" name="name" id="surname" value="" size="22" required>
+			<input type="text" name="surname" id="surname" value="" size="22" onchange="return validateName(document.getElementById('surname').value,document.getElementById('demo1'))" required>
+            <p id='demo1'></p>
           
             <label for="email">Mail: <span>*</span></label>
-            <input type="email" name="email" id="email" value="" size="22" required>
+            <input type="email" name="email" id="email" value="" size="22" onchange="return validateMail(document.getElementById('email').value,document.getElementById('demo2'))"required>
+			<p id='demo2'></p>  
 			
 			<!--this will be implemented afterwards with js-->
             <label for="number">ΑΦΜ: <span>*</span></label>
-            <input type="text" name="Α.Φ.Μ" pattern="\d*" maxlength="9" required>	<!-- id="afm" size="9" maxlength="9" -->
+            <input type="text" name="Α.Φ.Μ" id="afm" pattern="\d*" maxlength="9" onchange="return validateNum(document.getElementById('afm').value,document.getElementById('demo3'))" required>	<!-- id="afm" size="9" maxlength="9" -->
+            <p id='demo3'></p>
 			
-			<br>
-			<p>Πείτε μας τον λόγο που κλείνεται αυτό το ραντεβού:</p>
-			<form>
-			<label for="male">Ενημέρωση</label>
-			<input type="radio" id="information" name="gender" value="male">
-			<label for="female">Κατάθεση αίτησης</label>
-			<input type="radio" id="application_submission" name="gender" value="female">
-			<label for="other">Παράπονα</label>
-			<input type="radio" id="complaints" name="gender" value="other">
-			<label for="other">Άλλο</label>
-			<input type="radio" id="other" name="gender" value="other">
-			</form>
+         <!--   <input type="datetime-local" id="meeting-time"
+       name="meeting-time" value="2018-06-12T19:30"
+       min="2018-06-07T00:00" max="2018-06-14T00:00">   -->
+            
+			<label for="birthday">Από:<span>*</span></label>
+			<input type="date" id="date_from" name="birthday" required>
 			
-			<br>
+			<label for="birthday">Εώς:<span>*</span></label>
+			<input type="date" id="date_to" name="birthday" required>
 			
-            <label for="comment">Πείτε μας τον λόγο που επιθυμείτε δια ζώσης εξυπηρέτηση:</label>
-            <textarea name="comment" id="comment" cols="100" rows="10"></textarea>
-          
+			
+			
+			<label for="paidia">Αριθμός Παιδιών:<span>*</span></label>
+      <!--cars44 change here-->      
+			<select name="number_of_kids" id="number_of_kids" onchange="show_func()" required>
+            <option value="" selected disabled hidden>Επιλέξτε</option>
+			<option value="one" >Ένα(1)</option>
+			<option value="two">Δύο(2)</option>
+			<option value="three">Τρία(3)</option>
+			<option value="four_or_more">Τέσσερα και πάνω(4+)</option>
+			</select>
+			
+			
+			
+
+		<!-- dont let the user insert less than 4 kids CSS master race-->
+		<!--added div here-->      
+		<div id='hidden' style="display: none;">
+		<label for="number">Αριθμός Παιδιών(4+): <span>*</span></label>
+        <input type="text" name="number_of_kids" pattern="\d*" maxlength="2" required>
+    </div>
+    
+    <br><br>
+		<div id='hidden_paidi_1' style="display: none;">
+		<h6>Εισάγετε την βαθμίδα των παιδιών σας</h6>
+		<h6>1ο παιδί</h6>
+		
+			<select name="cars" id="cars" required>
+            <option value="" selected disabled hidden>Επιλέξτε</option>
+			<option value="one">Νηπειαγωγείο</option>
+			<option value="two">Δημοτικό</option>
+			<option value="three">Γυμνάσιο</option>
+			<option value="four_or_more">Λύκειο</option>
+			</select>
+		</div>
+        
+		<div id='hidden_paidi_2' style="display: none;">	
+			<h6>2ο παιδί</h6>
+			
+			<select name="cars" id="cars" required>
+            <option value="" selected disabled hidden>Επιλέξτε</option>
+			<option value="one">Νηπειαγωγείο</option>
+			<option value="two">Δημοτικό</option>
+			<option value="three">Γυμνάσιο</option>
+			<option value="four_or_more">Λύκειο</option>
+			</select>
+			</div>
+			<div id='hidden_paidi_3' style="display: none;">
+			<h6>3ο παιδί</h6>
+			
+			<select name="cars" id="cars" required>
+            <option value="" selected disabled hidden>Επιλέξτε</option>
+			<option value="one">Νηπειαγωγείο</option>
+			<option value="two">Δημοτικό</option>
+			<option value="three">Γυμνάσιο</option>
+			<option value="four_or_more">Λύκειο</option>
+			</select>
+			</div>
+			
+            <div id='hidden_paidi_4' style="display: none;">
+			<h6>4ο παιδί</h6>
+			
+			<select name="cars" id="cars" required>
+            <option value="" selected disabled hidden>Επιλέξτε</option>
+			<option value="one">Νηπειαγωγείο</option>
+			<option value="two">Δημοτικό</option>
+			<option value="three">Γυμνάσιο</option>
+			<option value="four_or_more">Λύκειο</option>
+			</select>
+            
+            <div>
+			
+			
+          <br> <br>
           <div>
             <input type="submit" name="submit" value="Submit Form">
             &nbsp;
             <input type="reset" name="reset" value="Reset Form">
           </div>
         </form>
-</div>
-    
+</div>  
     <!-- ################################################################################################ -->
     <!-- / main body -->
     <!--CHANGE HERE-->
