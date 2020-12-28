@@ -16,6 +16,10 @@ Licence URI: https://www.os-templates.com/template-terms
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -60,7 +64,8 @@ Licence URI: https://www.os-templates.com/template-terms
 $cookie_name = 'user';
 if(!isset($_COOKIE[$cookie_name])) {
     echo "Cookie is not set! <br/>";
-    echo '<a href="login.html"><span>Login</span></a></li>';
+    echo '<a href="login.html"><span>Login</span></a>/</li>';
+    echo '<a href="register.html"><span>Register</span></a></li>';
 } else {
     echo "Cookie '" . $cookie_name . "' is set!<br>";
     echo "Value is: " . $_COOKIE[$cookie_name] . '<br/>';
@@ -163,81 +168,61 @@ if(!isset($_COOKIE[$cookie_name])) {
           </ul>
         </li> -->
       </ul>
+	  </nav>
+	  </header>
       <!--CHANGE HERE-->
       <!-- ################################################################################################ -->
-    </nav>
-  </header>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper bgded overlay gradient" style="background-image:url('images/demo/backgrounds/01.png');">
-  <div id="pageintro" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <article>
-      <p>Eu leo curabitur eleifend sapien</p>
-      <h3 class="heading">Sed eros nullam quis ligula</h3>
-      <p>Elementum lectus varius aliquet quisque fringilla est in porttitor</p>
-      <footer>
-        <ul class="nospace inline pushright">
-          <li><a class="btn" href="#">Ultricies dui orci</a></li>
-          <li><a class="btn inverse" href="#">Mollis libero quis</a></li>
-        </ul>
-      </footer>
-    </article>
-    <!-- ################################################################################################ -->
-  </div>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper row2">
-  <section class="hoc container clear"> 
-    <!-- ################################################################################################ -->
-    <div class="sectiontitle">
-      <h6 class="heading">Sagittis lacus neque ut lorem integer</h6>
-      <p>Elementum nisi ac volutpat vestibulum enim mi tincidunt eros</p>
+	  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="giousef.jpg" alt="Chania">
+      <div class="carousel-caption">
+        <h3>Los Angeles</h3>
+        <p>LA is always so much fun!</p>
+      </div>
     </div>
-    <ul class="nospace group prices">
-      <li class="one_third">
-        <article><i class="fas fa-deaf red"></i>
-          <h6 class="heading">Condimentum</h6>
-          <p>Sed porttitor justo magna odio sed lacus nunc consequat sem vel metus imperdiet lacinia suspendisse aliquet mi sed</p>
-          <p><sup>&euro;</sup><strong>80</strong><em>pcm</em></p>
-          <footer><a class="btn" href="#">Details</a></footer>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><i class="fas fa-dolly green"></i>
-          <h6 class="heading">Suscipit</h6>
-          <p>Justo in tortor quis dui in purus pede luctus eget condimentum ac bibendum in justo nam condimentum congue risus</p>
-          <p><sup>&euro;</sup><strong>100</strong><em>pcm</em></p>
-          <footer><a class="btn" href="#">Details</a></footer>
-        </article>
-      </li>
-      <li class="one_third">
-        <article><i class="fas fa-hands blue"></i>
-          <h6 class="heading">Dignissim</h6>
-          <p>Aliquam auctor nisl nec diam ornare nam molestie massa quis pede vestibulum fringilla risus in metus nullam egestas</p>
-          <p><sup>&euro;</sup><strong>125</strong><em>pcm</em></p>
-          <footer><a class="btn" href="#">Details</a></footer>
-        </article>
-      </li>
-    </ul>
-    <!-- ################################################################################################ -->
-  </section>
+
+    <div class="item">
+      <img src="covid.jpg" alt="Chicago">
+      <div class="carousel-caption">
+        <h3>Chicago</h3>
+        <p>Thank you, Chicago!</p>
+      </div>
+    </div>
+
+    <div class="item">
+      <img src="asteri.jpg" alt="New York">
+      <div class="carousel-caption">
+        <h3>New York</h3>
+        <p>We love the Big Apple!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<div class="wrapper coloured">
-  <article class="hoc cta clear"> 
-    <!-- ################################################################################################ -->
-    <h6 class="three_quarter first">Velit tristique sem vehicula laoreet nullam elementum</h6>
-    <footer class="one_quarter"><a class="btn" href="#">Ipsum pharetra leo</a></footer>
-    <!-- ################################################################################################ -->
-  </article>
-</div>
+
+
+
+
+
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -247,33 +232,42 @@ if(!isset($_COOKIE[$cookie_name])) {
     <!-- ################################################################################################ -->
     <section id="introblocks">
       <div class="sectiontitle">
-        <h6 class="heading">Augue pretium felis faucibus porttitor</h6>
-        <p>Metus nisl vitae ipsum integer vestibulum suspendisse potenti</p>
+        <h6 class="heading">Γρήγορη Πρόσβαση</h6>
       </div>
       <ul class="nospace group">
         <li class="one_third first">
-          <article><a href="#"><i class="fas fa-microphone-slash"></i></a>
-            <h6 class="heading">Class aptent taciti</h6>
-            <p>Sociosqu ad litora torquent per conubia nostra per inceptos himenaeos nullam tempus erat [&hellip;]</p>
-            <footer><a class="btn" href="#">Read More</a></footer>
+          <article><a href="#"><i class="#"></i></a>
+		  <img src="asteri.jpg" alt="" />
+            <h6 class="heading">Covid-19</h6>
+            <a href="https://www.w3schools.com/">BALE KATI ALLO</a><br>
+			<a href="https://www.w3schools.com/">BALE KATI ALLO</a><br>	
+			<a href="https://www.w3schools.com/">BALE KATI ALLO</a>
+            <footer><a class="btn" href="pages/kleisimo_rantevou.php">BALE KATI ALLO</a></footer>
           </article>
         </li>
         <li class="one_third">
-          <article><a href="#"><i class="fas fa-seedling"></i></a>
-            <h6 class="heading">Id tortor etiam orci</h6>
-            <p>Justo lobortis in consequat ut ornare vel tellus nulla elementum velit pretium ultricies [&hellip;]</p>
-            <footer><a class="btn" href="#">Read More</a></footer>
+          <article><a href="#"><i class="#"></i></a>
+		  <img src="asteri.jpg" alt="" />
+            <h6 class="heading">Εργαζόμενος</h6>
+            <a href="pages/kleisimo_rantevou.php">Μέτρα Προστασίας</a><br>
+			<a href="https://www.w3schools.com/">Εξ' αποστάσεως εργασία</a><br>	
+			<a href="https://www.w3schools.com/">Μετακινήσεις</a>
+            <footer><a class="btn" href="pages/kleisimo_rantevou.php">BALE KATI ALLO</a></footer>
           </article>
         </li>
         <li class="one_third">
-          <article><a href="#"><i class="fas fa-ship"></i></a>
-            <h6 class="heading">Tristique nibh turpis</h6>
-            <p>Fermentum dui sit amet consequat felis arcu quis pede curabitur elit lacus consectetuer vel [&hellip;]</p>
-            <footer><a class="btn" href="#">Read More</a></footer>
+          <article><a href="#"><i class="#"></i></a>
+		  <img src="asteri.jpg" alt="" />
+            <h6 class="heading">Εργοδότης</h6>
+            <a href="https://www.w3schools.com/">Διαθέσιμες θέσεις εργάσιας</a><br>
+			<a href="https://www.w3schools.com/">Αντιμετώπιση κρούσματος</a><br>	
+			<a href="https://www.w3schools.com/">Υποχρεώσεις εργοδότη</a>
+            <footer><a class="btn" href="pages/kleisimo_rantevou.php">BALE KATI ALLO</a></footer>
           </article>
         </li>
       </ul>
     </section>
+	
     <!-- ################################################################################################ -->
     <!-- / main body -->
     <div class="clear"></div>
@@ -282,47 +276,74 @@ if(!isset($_COOKIE[$cookie_name])) {
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row2">
+
+<h1> <center>Ανακοινώσεις </h1>
+
+<div class="announcements row2">
   <section id="latest" class="hoc container clear"> 
     <!-- ################################################################################################ -->
-    <div class="sectiontitle">
-      <h6 class="heading">Vestibulum nec pharetra eu nisl</h6>
-      <p>Sed auctor purus vel aliquet dignissim lectus nunc semper lorem</p>
-    </div>
+    
     <ul class="nospace group">
       <li class="one_third">
-        <figure><a class="imgover" href="#"><img src="images/demo/348x261.png" alt=""></a>
+        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
           <figcaption>Porta facilisis</figcaption>
         </figure>
       </li>
       <li class="one_third">
-        <figure><a class="imgover" href="#"><img src="images/demo/348x261.png" alt=""></a>
+        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
           <figcaption>Tellus lectus nec</figcaption>
         </figure>
       </li>
       <li class="one_third">
-        <figure><a class="imgover" href="#"><img src="images/demo/348x261.png" alt=""></a>
+        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
           <figcaption>Pede suspendisse</figcaption>
         </figure>
       </li>
     </ul>
-    <footer class="block center"><a class="btn" href="#">Tortor molestie</a></footer>
+    <!-- ################################################################################################ -->
+  </section>
+  
+  
+  
+</div>
+
+<div class="announcements row2">
+  <section id="latest" class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    
+    <ul class="nospace group">
+      <li class="one_third">
+        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
+          <figcaption>Porta facilisis</figcaption>
+        </figure>
+      </li>
+      <li class="one_third">
+        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
+          <figcaption>Tellus lectus nec</figcaption>
+        </figure>
+      </li>
+      <li class="one_third">
+        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
+          <figcaption>Pede suspendisse</figcaption>
+        </figure>
+      </li>
+    </ul>
+    <footer class="block center"><a class="btn" href="#">ΌΛΕΣ ΟΙ ΑΝΑΚΟΙΝΏΣΕΙΣ</a></footer>
     <!-- ################################################################################################ -->
   </section>
 </div>
+
+
+
+
+
+
+
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');">
-  <div class="hoc container testimonial clear"> 
-    <!-- ################################################################################################ -->
-    <article><img src="images/demo/100x100.png" alt="">
-      <blockquote>porta volutpat sit amet scelerisque sit amet leo morbi sem magna viverra quis sollicitudin quis consectetuer quis magna integer consectetuer tellus sed dui nullam.</blockquote>
-      <h6 class="heading font-x1">A. Doe</h6>
-      <em>justo massa adipiscing</em></article>
-    <!-- ################################################################################################ -->
-  </div>
-</div>
+
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -425,5 +446,7 @@ if(!isset($_COOKIE[$cookie_name])) {
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>
 <script src="layout/scripts/jquery.mobilemenu.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </body>
 </html>

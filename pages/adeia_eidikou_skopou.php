@@ -174,11 +174,20 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- main body -->
     <!-- ################################################################################################ -->
     
+<?php
+if(isset($_GET['status'])):
+    if( $_GET['status'] == 'success'):
+        echo '<script language="javascript">';
+        echo 'alert("Επιτυχής δήλωση")';
+        echo '</script>';
+    endif;
+endif;
+?>
 	<h1 style="text-align:center">Άδεια Ειδικού Σκοπού</h1>
 	
 	<p>Παρακαλούμε συμπληρώστε την παρακάτω φόρμα </p>
 	<div class="boxed">
-	<form action="#" method="post">
+	<form name="adeia_eidikou_form" action="adeia_eidikou_skopou_action.php" onsubmit="return validateForm()"  method="post">
 	
           
             <label for="name">Όνομα: <span>*</span></label>
@@ -196,7 +205,7 @@ Licence URI: https://www.os-templates.com/template-terms
 			
 			<!--this will be implemented afterwards with js-->
             <label for="number">ΑΦΜ: <span>*</span></label>
-            <input type="text" name="Α.Φ.Μ" id="afm" pattern="\d*" maxlength="9" onchange="return validateNum(document.getElementById('afm').value,document.getElementById('demo3'))" required>	<!-- id="afm" size="9" maxlength="9" -->
+            <input type="text" name="afm" id="afm" pattern="\d*" maxlength="9" onchange="return validateNum(document.getElementById('afm').value,document.getElementById('demo3'))" required>	<!-- id="afm" size="9" maxlength="9" -->
             <p id='demo3'></p>
 			
          <!--   <input type="datetime-local" id="meeting-time"
@@ -204,10 +213,10 @@ Licence URI: https://www.os-templates.com/template-terms
        min="2018-06-07T00:00" max="2018-06-14T00:00">   -->
             
 			<label for="birthday">Από:<span>*</span></label>
-			<input type="date" id="date_from" name="birthday" required>
+			<input type="date" id="date_from" name="date_from" required>
 			
 			<label for="birthday">Εώς:<span>*</span></label>
-			<input type="date" id="date_to" name="birthday" required>
+			<input type="date" id="date_to" name="date_to" required>
 			
 			
 			
@@ -215,20 +224,18 @@ Licence URI: https://www.os-templates.com/template-terms
       <!--cars44 change here-->      
 			<select name="number_of_kids" id="number_of_kids" onchange="show_func()" required>
             <option value="" selected disabled hidden>Επιλέξτε</option>
-			<option value="one" >Ένα(1)</option>
+			<option  value="one" >Ένα(1)</option>
 			<option value="two">Δύο(2)</option>
 			<option value="three">Τρία(3)</option>
 			<option value="four_or_more">Τέσσερα και πάνω(4+)</option>
 			</select>
-			
-			
-			
+		
 
 		<!-- dont let the user insert less than 4 kids CSS master race-->
 		<!--added div here-->      
 		<div id='hidden' style="display: none;">
 		<label for="number">Αριθμός Παιδιών(4+): <span>*</span></label>
-        <input type="text" name="number_of_kids" pattern="\d*" maxlength="2" required>
+        <input type="text" name="kids_4" id="kids_4"attern="\d*" maxlength="2" >
     </div>
     
     <br><br>
@@ -236,50 +243,50 @@ Licence URI: https://www.os-templates.com/template-terms
 		<h6>Εισάγετε την βαθμίδα των παιδιών σας</h6>
 		<h6>1ο παιδί</h6>
 		
-			<select name="cars" id="cars" required>
+			<select name="paidi_1" id="paidi_1" >
             <option value="" selected disabled hidden>Επιλέξτε</option>
-			<option value="one">Νηπειαγωγείο</option>
-			<option value="two">Δημοτικό</option>
-			<option value="three">Γυμνάσιο</option>
-			<option value="four_or_more">Λύκειο</option>
+			<option value="nipiagwgio">Νηπειαγωγείο</option>
+			<option value="dimotiko">Δημοτικό</option>
+			<option value="gymnasio">Γυμνάσιο</option>
+			<option value="lykeio">Λύκειο</option>
 			</select>
 		</div>
         
 		<div id='hidden_paidi_2' style="display: none;">	
 			<h6>2ο παιδί</h6>
 			
-			<select name="cars" id="cars" required>
+			<select name="paidi_2" id="paidi_2" >
             <option value="" selected disabled hidden>Επιλέξτε</option>
-			<option value="one">Νηπειαγωγείο</option>
-			<option value="two">Δημοτικό</option>
-			<option value="three">Γυμνάσιο</option>
-			<option value="four_or_more">Λύκειο</option>
+			<option value="nipiagwgio">Νηπειαγωγείο</option>
+			<option value="dimotiko">Δημοτικό</option>
+			<option value="gymnasio">Γυμνάσιο</option>
+			<option value="lykeio">Λύκειο</option>
 			</select>
 			</div>
 			<div id='hidden_paidi_3' style="display: none;">
 			<h6>3ο παιδί</h6>
 			
-			<select name="cars" id="cars" required>
+			<select name="paidi_3" id="paidi_3" >
             <option value="" selected disabled hidden>Επιλέξτε</option>
-			<option value="one">Νηπειαγωγείο</option>
-			<option value="two">Δημοτικό</option>
-			<option value="three">Γυμνάσιο</option>
-			<option value="four_or_more">Λύκειο</option>
+			<option value="nipiagwgio">Νηπειαγωγείο</option>
+			<option value="dimotiko">Δημοτικό</option>
+			<option value="gymnasio">Γυμνάσιο</option>
+			<option value="lykeio">Λύκειο</option>
 			</select>
 			</div>
 			
             <div id='hidden_paidi_4' style="display: none;">
 			<h6>4ο παιδί</h6>
 			
-			<select name="cars" id="cars" required>
+			<select name="paidi_4" id="paidi_4" >
             <option value="" selected disabled hidden>Επιλέξτε</option>
-			<option value="one">Νηπειαγωγείο</option>
-			<option value="two">Δημοτικό</option>
-			<option value="three">Γυμνάσιο</option>
-			<option value="four_or_more">Λύκειο</option>
+			<option value="nipiagwgio">Νηπειαγωγείο</option>
+			<option value="dimotiko">Δημοτικό</option>
+			<option value="gymnasio">Γυμνάσιο</option>
+			<option value="lykeio">Λύκειο</option>
 			</select>
+            </div>
             
-            <div>
 			
 			
           <br> <br>

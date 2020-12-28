@@ -1,6 +1,6 @@
 <?php
     $hn = 'localhost';
-    $db = 'sdi1600268';
+    $db = 'sdi1600191';
     $un = 'root';
     $pw = '';
 

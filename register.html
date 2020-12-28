@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+<!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
+<head>
+<!--CHANGE HERE-->  
+<title>Register</title>
+<!--CHANGE HERE-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script type="text/javascript" src='register_check.js'></script>
+</head>
+<body id="top">
+<form name="register_form" action="register_action.php" onsubmit="return validateForm()" method="post">
+  <label for="uname">Όνομα Χρήστη:</label><br>
+  <input type="text" id="uname" name="uname" onchange="return validateName()" ><br>
+  <p id='demo'></p>
+  <label for="pwd">Password:</label><br>
+  <input type="password" id="pwd" name="pwd" onchange="return validatePswd()"><br>
+  <p id='demo2'></p>
+  <label for="email">E-Mail: <span>*</span></label> <br>
+  <input type="email" name="email" id="email" value="" size="22" onchange="return validateMail()" >
+  <p id='demo3'></p>
+  <label for="number">ΑΦΜ: <span>*</span></label> <br>
+  <input type="text" name="afm" id="afm" pattern="\d*" maxlength="9" onchange="return validateNum()" >	
+  <p id='demo4'></p>
+  <label for="first_name">Όνομα:</label><br>
+  <input type="text" id="first_name" name="first_name" onchange="return validateFirstName()"><br>
+  <p id='demo5'></p>
+  <label for="last_name">Επώνυμο:</label><br>
+  <input type="text" id="last_name" name="last_name" onchange="return validateLastName()"><br>
+  <p id='demo6'></p>
+  <label for="message">Επιλέξτε έναν ρόλο χρήστη: <span>*</span></label>
+  <br>
+	<label for="enimerwsi">Εργαζόμενος</label> 
+  <input type="radio" id="ergazomenos" name="rdb" value="ergazomenos" >
+  <br>
+	<label for="katathesi">Εργοδότης</label>
+  <input type="radio" id="ergodotis" name="rdb" value="ergodotis" >		
+  <p id='demo7'></p>
+  <input type="submit" value="Submit">
+</form> 
+</body>
+</html>

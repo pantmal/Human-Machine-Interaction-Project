@@ -12,14 +12,14 @@ function validateName(){
         document.getElementById("demo").innerHTML = '';
     }
 
-    if (x != ''){
-        if ((!x.match(re))){
-            document.getElementById("demo").innerHTML = '\u2757 not numbers';
-            result = false;
-        }else{
-            document.getElementById("demo").innerHTML = '';
-        }
-    }
+    // if (x != ''){
+    //     if ((!x.match(regex))){
+    //         document.getElementById("demo").innerHTML = '\u2757 not numbers';
+    //         result = false;
+    //     }else{
+    //         document.getElementById("demo").innerHTML = '';
+    //     }
+    // }
 
     return result;
 

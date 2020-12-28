@@ -172,11 +172,13 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- main body -->
 
 <?php
-if( $_GET['status'] == 'success'):
-  echo '<script language="javascript">';
-  echo 'alert("Επιτυχής δήλωση")';
-  echo '</script>';
-endif;
+if (isset($_GET['status'])):
+  if( $_GET['status'] == 'success'):
+    echo '<script language="javascript">';
+    echo 'alert("Επιτυχής δήλωση")';
+    echo '</script>';
+  endif;
+endif
 ?>
 
 	<h1 style="text-align:center">Κλείσιμο Ραντεβού</h1>
