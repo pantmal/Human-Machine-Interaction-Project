@@ -181,6 +181,18 @@ if(isset($_GET['status'])):
         echo 'alert("Επιτυχής δήλωση")';
         echo '</script>';
     endif;
+    
+    if( $_GET['status'] == 'not_user'):
+      echo '<script language="javascript">';
+      echo 'alert("Δεν έχετε κάνει εγγραφή στην εφαρμογή")';
+      echo '</script>';
+    endif;
+
+    if( $_GET['status'] == 'not_parent'):
+      echo '<script language="javascript">';
+      echo 'alert("Δεν μπορείτε να λάβετε την άδεια ειδικού σκοπού αν δεν είστε γονέας")';
+      echo '</script>';
+    endif;
 endif;
 ?>
 	<h1 style="text-align:center">Άδεια Ειδικού Σκοπού</h1>

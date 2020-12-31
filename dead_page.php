@@ -10,16 +10,21 @@ Licence URI: https://www.os-templates.com/template-terms
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-<!--CHANGE HERE-->  
-<title>Υπουργείο Εργασίας</title>
+<!--CHANGE HERE-->
+<title>Σελίδα Υπό Κατασκεύη</title>
 <!--CHANGE HERE-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
+<style type="text/css">
+/* DEMO ONLY */
+.container .demo{text-align:center;}
+.container .demo div{padding:8px 0;}
+.container .demo div:nth-child(odd){color:#FFFFFF; background:#CCCCCC;}
+.container .demo div:nth-child(even){color:#FFFFFF; background:#979797;}
+@media screen and (max-width:900px){.container .demo div{margin-bottom:0;}}
+/* DEMO ONLY */
+</style>
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -38,13 +43,13 @@ Licence URI: https://www.os-templates.com/template-terms
     <div class="fl_right"> 
       <!-- ################################################################################################ -->
       <ul class="nospace">
-        <li><a href="index.html"><i class="fas fa-home"></i></a></li>
+        <li><a href="../index.html"><i class="fas fa-home"></i></a></li>
         <li><a href="#" title="Help Centre"><i class="far fa-life-ring"></i></a></li>
         <li><a href="#" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
         <li><a href="#" title="Sign Up"><i class="fas fa-edit"></i></a></li>
         <li id="searchform">
           <div>
-            <form action="dead_page.php" method="post">
+            <form action="#" method="post">
               <fieldset>
                 <legend>Quick Search:</legend>
                 <input type="text" placeholder="Enter search term&hellip;">
@@ -58,22 +63,6 @@ Licence URI: https://www.os-templates.com/template-terms
     </div>
   </div>
 </div>
-
-
-<?php
-$cookie_name = 'user';
-if(!isset($_COOKIE[$cookie_name])) {
-    echo "Cookie is not set! <br/>";
-    echo '<a href="login.html?header=index.php" ><span>Login</span></a>/</li>';
-    echo '<a href="register.html?header=index.php"><span>Register</span></a></li>';
-} else {
-    echo "Cookie '" . $cookie_name . "' is set!<br>";
-    echo "Value is: " . $_COOKIE[$cookie_name] . '<br/>';
-    echo '<a href="pages/edit_profile.php"><span>Edit Profile</span></a>/</li>';
-    echo '<a href="logout.php"><span>Logout</span></a></li>';
-}
-?>
-
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -82,7 +71,7 @@ if(!isset($_COOKIE[$cookie_name])) {
     <div id="logo" class="fl_left"> 
       <!-- ################################################################################################ -->
       <!--CHANGE HERE-->
-      <h1><a href="index.html">Υπουργείο Εργασίας</a></h1>
+      <h1><a href="../index.html">Υπουργείο Εργασίας</a></h1>
       <!--CHANGE HERE-->
       <!-- ################################################################################################ -->
     </div>
@@ -90,27 +79,15 @@ if(!isset($_COOKIE[$cookie_name])) {
       <!-- ################################################################################################ -->
       <ul class="clear">
         <!--CHANGE HERE-->
-        <li class="active"><a href="index.html">Αρχική</a></li>
-        <!--<li><a class="drop" href="#">Pages</a>
-          <ul>
-            <li><a href="pages/gallery.html">Gallery</a></li>
-            <li><a href="pages/full-width.html">Full Width</a></li>
-            <li><a href="pages/sidebar-left.html">Sidebar Left</a></li>
-            <li><a href="pages/sidebar-right.html">Sidebar Right</a></li>
-            <li><a href="pages/basic-grid.html">Basic Grid</a></li>
-            <li><a href="pages/font-icons.html">Font Icons</a></li>
-          </ul>
-        </li>
-        -->
-        <li><a href="#">COVID-19</a></li>
+        <li><a href="../index.html">Αρχική</a></li>
         <li><a class="drop" href="#">Εργαζόμενος</a>
           <ul>
             <li><a class="drop" href="#">COVID-19 και Εργασία</a>
               <ul>
-                <li><a href="pages/prev-measures.html">Μέτρα προστασίας στον χώρο εργασίας</a></li>
-                <li><a href="pages/case-handling.html">Αντιμετώπιση κρούσματος στον χώρο εργασίας</a></li>
+                <li><a href="prev-measures.html">Μέτρα προστασίας στον χώρο εργασίας</a></li>
+                <li class="active"><a href="case-handling.html">Αντιμετώπιση κρούσματος στον χώρο εργασίας</a></li>
                 <li><a href="#">Μετακινήσεις και απαραίτητα έγγραφα</a></li>
-                <li><a href="pages/tilergasia_anastolh_symvashs_adeia_skopou.html">Τηλεργασία-άδεια-ειδικού σκοπού-αναστολή σύμβαση</a></li>
+                <li><a href="#">Τηλεργασία-άδεια-ειδικού σκοπού-αναστολή σύμβαση</a></li>
                 <li><a href="#">Καρτέλα εργαζομένου</a></li>
               </ul>
             </li>
@@ -125,8 +102,8 @@ if(!isset($_COOKIE[$cookie_name])) {
               <ul>
                 <li><a href="#">Διαθέσιμες θέσεις εργασίας (COVID-19)</a></li>
                 <li><a href="#">Εργασία εξ αποστάσεως-αναστολή σύμβασης</a></li>
-                <li><a href="pages/prev-measures.html">Μέτρα προστασίας COVID-19</a></li>
-                <li><a href="pages/case-handling.html">Αντιμετώπιση κρούσματος</a></li>
+                <li><a href="prev-measures.html">Μέτρα προστασίας COVID-19</a></li>
+                <li class="active"><a href="case-handling.html">Αντιμετώπιση κρούσματος</a></li>
               </ul>
             </li>
             <li><a href="#">Υποχρεώσεις προς εργαζομένους</a></li>
@@ -141,21 +118,15 @@ if(!isset($_COOKIE[$cookie_name])) {
             <li><a href="#">Απασχόληση αλλοδαπων-ανηλίκων</a></li>
           </ul>
         </li>
-        <li><a class="drop" href="#">Επικοινωία</a>
+        <li><a class="drop" href="#">Επικοινωνία</a>
           <ul>
-            <li><a href="pages/epikoinwnia.html">Πληροφορίες για τις υπερησίες του Υπουργείου</a></li>
+            <li><a href="#">Πληροφορίες για τις υπερησίες του Υπουργείου</a></li>
             <li><a href="#">Αποστολή emai ερωτησέων</a></li>
             <li><a href="#">Τηλεφωνική επικοινωνία με υπάλληλο</a></li>
             <li><a href="#">Χάρτης συμβεβλημένων υπηρεσιών</a></li>
           </ul>
         </li>
-        <li><a class="drop" href="#">Ανακοινώσεις</a>
-          <ul>
-            <li><a href="#">Επιλογή 1 (MUST CHANGE)</a></li>
-            <li><a href="#">Επιλογή 2 (MUST CHANGE)</a></li>
-          </ul>
-        </li>
-        <!-- <li><a class="drop" href="#">Dropdown</a>
+        <li><a class="drop" href="#">Dropdown</a>
           <ul>
             <li><a href="#">Level 2</a></li>
             <li><a class="drop" href="#">Level 2 + Drop</a>
@@ -167,62 +138,32 @@ if(!isset($_COOKIE[$cookie_name])) {
             </li>
             <li><a href="#">Level 2</a></li>
           </ul>
-        </li> -->
+        </li>
+        <li><a href="#">Link Text</a></li>
       </ul>
-	  </nav>
-	  </header>
       <!--CHANGE HERE-->
       <!-- ################################################################################################ -->
-	  <div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="giousef.jpg" alt="Chania">
-      <div class="carousel-caption">
-        <h3>Los Angeles</h3>
-        <p>LA is always so much fun!</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <img src="covid.jpg" alt="Chicago">
-      <div class="carousel-caption">
-        <h3>Chicago</h3>
-        <p>Thank you, Chicago!</p>
-      </div>
-    </div>
-
-    <div class="item">
-      <img src="asteri.jpg" alt="New York">
-      <div class="carousel-caption">
-        <h3>New York</h3>
-        <p>We love the Big Apple!</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Left and right controls -->
-  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#myCarousel" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    </nav>
+  </header>
 </div>
-
-
-
-
-
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<!-- ################################################################################################ -->
+<div class="wrapper bgded overlay gradient" style="background-image:url('../images/demo/backgrounds/01.png');">
+  <div id="breadcrumb" class="hoc clear"> 
+    <!-- ################################################################################################ -->
+    <!--CHANGE HERE-->
+    <h6 class="heading">Σελίδα Υπό Κατασκεύη</h6>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="#">Lorem</a></li>
+      <li><a href="#">Ipsum</a></li>
+      <li><a href="#">Dolor</a></li>
+    </ul>
+    <!--CHANGE HERE-->
+    <!-- ################################################################################################ -->
+  </div>
+</div>
 
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -231,120 +172,14 @@ if(!isset($_COOKIE[$cookie_name])) {
   <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
-    <section id="introblocks">
-      <div class="sectiontitle">
-        <h6 class="heading">Γρήγορη Πρόσβαση</h6>
-      </div>
-      <ul class="nospace group">
-        <li class="one_third first">
-          <article><a href="#"><i class="#"></i></a>
-		  <img src="asteri.jpg" alt="" />
-            <h6 class="heading">Covid-19</h6>
-            <a href="https://www.w3schools.com/">BALE KATI ALLO</a><br>
-			<a href="https://www.w3schools.com/">BALE KATI ALLO</a><br>	
-			<a href="https://www.w3schools.com/">BALE KATI ALLO</a>
-            <footer><a class="btn" href="pages/kleisimo_rantevou.php">BALE KATI ALLO</a></footer>
-          </article>
-        </li>
-        <li class="one_third">
-          <article><a href="#"><i class="#"></i></a>
-		  <img src="asteri.jpg" alt="" />
-            <h6 class="heading">Εργαζόμενος</h6>
-            <a href="pages/kleisimo_rantevou.php">Μέτρα Προστασίας</a><br>
-			<a href="https://www.w3schools.com/">Εξ' αποστάσεως εργασία</a><br>	
-			<a href="https://www.w3schools.com/">Μετακινήσεις</a>
-            <footer><a class="btn" href="pages/kleisimo_rantevou.php">BALE KATI ALLO</a></footer>
-          </article>
-        </li>
-        <li class="one_third">
-          <article><a href="#"><i class="#"></i></a>
-		  <img src="asteri.jpg" alt="" />
-            <h6 class="heading">Εργοδότης</h6>
-            <a href="https://www.w3schools.com/">Διαθέσιμες θέσεις εργάσιας</a><br>
-			<a href="https://www.w3schools.com/">Αντιμετώπιση κρούσματος</a><br>	
-			<a href="https://www.w3schools.com/">Υποχρεώσεις εργοδότη</a>
-            <footer><a class="btn" href="pages/kleisimo_rantevou.php">BALE KATI ALLO</a></footer>
-          </article>
-        </li>
-      </ul>
-    </section>
-	
+    <img src="Page_Under_Construction.png" alt="" > <br> <br> <br> 
+    <h1> Η παρούσα σελίδα βρίσκεται υπό κατασκεύη και θα είναι σύντομα κοντά σας!</h1>
     <!-- ################################################################################################ -->
     <!-- / main body -->
+    <!--CHANGE HERE-->
     <div class="clear"></div>
   </main>
 </div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-
-<h1> <center>Ανακοινώσεις </h1>
-
-<div class="announcements row2">
-  <section id="latest" class="hoc container clear"> 
-    <!-- ################################################################################################ -->
-    
-    <ul class="nospace group">
-      <li class="one_third">
-        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
-          <figcaption>Porta facilisis</figcaption>
-        </figure>
-      </li>
-      <li class="one_third">
-        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
-          <figcaption>Tellus lectus nec</figcaption>
-        </figure>
-      </li>
-      <li class="one_third">
-        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
-          <figcaption>Pede suspendisse</figcaption>
-        </figure>
-      </li>
-    </ul>
-    <!-- ################################################################################################ -->
-  </section>
-  
-  
-  
-</div>
-
-<div class="announcements row2">
-  <section id="latest" class="hoc container clear"> 
-    <!-- ################################################################################################ -->
-    
-    <ul class="nospace group">
-      <li class="one_third">
-        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
-          <figcaption>Porta facilisis</figcaption>
-        </figure>
-      </li>
-      <li class="one_third">
-        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
-          <figcaption>Tellus lectus nec</figcaption>
-        </figure>
-      </li>
-      <li class="one_third">
-        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
-          <figcaption>Pede suspendisse</figcaption>
-        </figure>
-      </li>
-    </ul>
-    <footer class="block center"><a class="btn" href="#">ΌΛΕΣ ΟΙ ΑΝΑΚΟΙΝΏΣΕΙΣ</a></footer>
-    <!-- ################################################################################################ -->
-  </section>
-</div>
-
-
-
-
-
-
-
-
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -444,10 +279,8 @@ if(!isset($_COOKIE[$cookie_name])) {
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
-<script src="layout/scripts/jquery.min.js"></script>
-<script src="layout/scripts/jquery.backtotop.js"></script>
-<script src="layout/scripts/jquery.mobilemenu.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="../layout/scripts/jquery.min.js"></script>
+<script src="../layout/scripts/jquery.backtotop.js"></script>
+<script src="../layout/scripts/jquery.mobilemenu.js"></script>
 </body>
 </html>

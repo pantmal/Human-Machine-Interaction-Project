@@ -1,6 +1,24 @@
 <?php
 require_once "../settings.php";
 
+$parent_status = '';
+$cookie_name = 'user';
+if (isset($_COOKIE[$cookie_name])):
+    $query = "SELECT * FROM users WHERE username='$_COOKIE[$cookie_name]'";
+    $result = $conn->query($query);
+    $parent_status = $result->fetch_assoc()['parent'];
+else:
+    header('location:adeia_eidikou_skopou.php?status=not_user');    
+    mysqli_close($conn);
+endif;
+
+
+if($parent_status == 'no') {
+    header('location:adeia_eidikou_skopou.php?status=not_parent');    
+    mysqli_close($conn);
+}
+ 
+
 
 $name1 = $_POST["name1"];
 $surname = $_POST["surname"];  
