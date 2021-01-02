@@ -11,11 +11,12 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
 <!--CHANGE HERE-->
-<title>Αντιμετώπιση κρούσματος</title>
+<title>Αναστολή Σύμβασης</title>
 <!--CHANGE HERE-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link href="../layout/styles/framework.css" rel="stylesheet" type="text/css" media="all">
 <style type="text/css">
 /* DEMO ONLY */
 .container .demo{text-align:center;}
@@ -25,6 +26,7 @@ Licence URI: https://www.os-templates.com/template-terms
 @media screen and (max-width:900px){.container .demo div{margin-bottom:0;}}
 /* DEMO ONLY */
 </style>
+<script type="text/javascript" src='../layout/scripts/anastoli_check.js'></script>
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -153,7 +155,7 @@ Licence URI: https://www.os-templates.com/template-terms
   <div id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <!--CHANGE HERE-->
-    <h6 class="heading">Αντιμετώπιση κρούσματος</h6>
+    <h6 class="heading">Αναστολή Σύμβασης</h6>
     <ul>
       <li><a href="../index.html">Home</a></li>
       <li><a href="#">Lorem</a></li>
@@ -164,6 +166,29 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
   </div>
 </div>
+
+<?php
+if(isset($_GET['status'])):
+    if( $_GET['status'] == 'success'):
+        echo '<script language="javascript">';
+        echo 'alert("Επιτυχής δήλωση")';
+        echo '</script>';
+    endif;
+    
+    if( $_GET['status'] == 'not_user'):
+      echo '<script language="javascript">';
+      echo 'alert("Δεν έχετε κάνει εγγραφή στην εφαρμογή")';
+      echo '</script>';
+    endif;
+
+    if( $_GET['status'] == 'not_ergodotis'):
+      echo '<script language="javascript">';
+      echo 'alert("Δεν μπορείτε να δηλώσετε αναστολή σύμβασης ή τηλεργασία αν δεν είστε εργοδοτης")';
+      echo '</script>';
+    endif;
+endif;
+?>
+	
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -171,56 +196,80 @@ Licence URI: https://www.os-templates.com/template-terms
   <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
-    <!--CHANGE HERE-->
-    <h1>1. Διαχείριση περιστατικών στον χώρο εργασίας</h1>
-    <p>Συμβουλευτείτε τον παρακάτω σύνδεσμο (link) του ΕΟΔΥ, σχετικά με τα είδη των κρουσμάτων και τα είδη των επαφών.</p>
-    <ul>
-    <li> υπάρχουν 3 είδη κρούσματος (ενδεχόμενο - πιθανό - επιβεβαιωμένο) και </li>
-    <li> 2 είδη επαφών (στενή υψηλού κινδύνου - απλή χαμηλού κινδύνου) </li>
-    </ul>
-    <p>Περισσότερες πληροφορίες:
-    <a href="https://eody.gov.gr/orismoi-kroysmatos-covid-19-kai-epafon-kroysmatos-covid-19/">https://eody.gov.gr/orismoi-kroysmatos-covid-19-kai-epafon-kroysmatos-covid-19/</a> 
-    </p>
-    <h1>2. Πιθανά σενάρια και αντίστοιχες δράσεις από τους εργαζομένους</h1>
-    <p> <b>2.1</b> Αν ο εργαζόμενος παρουσιάσει συμπτωματολογία ίωσης (πυρετό, βήχα, δυσκολία στην αναπνοή, 
-        αγευσία ή ανοσμία, πονοκέφαλο, ρίγος, μυαλγίες, καταβολή, έμετο ή διάρροια)
-        <b>τότε δεν έρχεται στην εργασία του, μένει στο σπίτι του,</b> επικοινωνεί με τον
-        θεράποντα ιατρό του και παραμένει εκτός εργασίας για όσο χρονικό διάστημα
-        απαιτηθεί, προσκομίζοντας ιατρική βεβαίωση ή άδεια απουσίας λόγω ασθενείας
-        από τον ασφαλιστικό του φορέα.
-    </p>
-    <p> <b>2.2 </b> Αν ο εργαζόμενος παρουσιάσει συμπτωματολογία ίωσης όπως παραπάνω, <b>και
-        έχει ιστορικό στενής επαφής</b> (= έκθεση υψηλού κινδύνου, < 1,5 μέτρα και > 15
-        min) με επιβεβαιωμένο κρούσμα ιού SARS-CoV-2, τις προηγούμενες 14 μέρες
-        <b>τότε δεν έρχεται στην εργασία του, μένει στο σπίτι του,</b> επικοινωνεί με
-        <ol>
-            <li>τον θεράποντα ιατρό του,</li>
-            <li>με τον ΕΟΔΥ (τηλ. 1135 για λήψη οδηγιών),</li>
-            <li>με τον Προϊστάμενο του και μέσω αυτού με την Εταιρεία</li>
-            <li>υποβάλλεται σε τεστ ανίχνευσης του ιού</li>
-        </ol> 
-    </p>
-    <p> <b>2.3</b> Αν εργαζόμενος δεν έχει κανένα σύμπτωμα, <b> αλλά
-        έχει ιστορικό στενής επαφής</b> = έκθεση υψηλού κινδύνου, < 1,5 μέτρα και > 15
-        min) με ύποπτο ή επιβεβαιωμένο κρούσμα ιού SARS-CoV-2 (π.χ. μέλος της
-        οικογένειας του, συνοδηγός σε αυτοκίνητο),
-        <b>τότε δεν έρχεται στην εργασία του, μένει στο σπίτι του,</b> επικοινωνεί με
-        <ol>
-            <li>τον θεράποντα ιατρό του,</li>
-            <li>με τον ΕΟΔΥ (τηλ. 1135 για λήψη οδηγιών),</li>
-            <li>με τον Προϊστάμενο του και μέσω αυτού με την Εταιρεία</li>
-            <li>υποβάλλεται σε τεστ ανίχνευσης του ιού</li>
-        </ol> 
-    </p>
-    <p> <b>2.4</b> Αν εργαζόμενος δεν έχει κανένα σύμπτωμα
-        <b>αλλά έχει ιστορικό απλής περιστασιακής επαφής </b> (= έκθεση χαμηλού κινδύνου, >1,5
-        μέτρα και < 15 min) με ύποπτο ή επιβεβαιωμένο κρούσμα ιού SARS-CoV-2
-        <b>τότε έρχεται</b> μεν στην εργασία του, παρακολουθώντας στενά τον εαυτό του για πιθανά
-        συμπτώματα, ακολουθώντας πιστά τις οδηγίες ατομικής υγιεινής.
-    </p>
-    <p> Όλα τα παραπάνω υπόκεινται σε αλλαγές σύμφωνα με τις οδηγίες των: </p>
-    <p> Εθνικός Οργανισμός Δημόσιας Υγείας <a href="https://eody.gov.gr"> https://eody.gov.gr </a> </p>
-    <p> Ευρωπαικό Κέντρο Πρόληψης Νοσημάτων <a href="https://ecdc.europa.eu"> https://ecdc.europa.eu </a> </p>
+    
+	<h1 style="text-align:center">Αίτηση αναστολής σύμβασης ή εξ' αποστάσεως εργασίας (από εργοδότη)</h1>
+	
+    <p>Παρακαλούμε συμπληρώστε την παρακάτω φόρμα αίτησης τηλεργασίας ή εξ' αποστάσεως εργασίας: </p>
+    <!-- TAXIS???-->
+	<div class="boxed">
+  <div style="border: 1px solid black; padding: 10px">  
+	<form action="actions/anastoli_action.php" method="post">
+	
+    <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br>  
+  
+    <label for="name">Όνομα Εργοδότη: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+    <input type="text" name="name" id="name" value="" size="22" >
+			
+		<label for="surname">Επώνυμο Εργοδότη: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+		<input type="text" name="surname" id="surname" value="" size="22" >
+          
+			<!--this will be implemented afterwards with js-->
+    <label for="afm">ΑΦΜ Εργοδότη: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+    <input type="text" name="afm" pattern="\d*" maxlength="9" >	<!-- id="afm" size="9" maxlength="9" -->
+            
+    <br/>
+            <!--#########################################################-->
+
+
+    <label for="name_worker">Όνομα Εργαζόμενου: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+    <input type="text" name="name_worker" id="name_worker" value="" size="22" >
+			
+		<label for="surname_worker">Επώνυμο Εργαζόμενου: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+		<input type="text" name="name_worker" id="surname_worker" value="" size="22" >
+          
+			<!--this will be implemented afterwards with js-->
+    <label for="afm_worker">ΑΦΜ Εργαζόμενου: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+    <input type="text" name="afm_worker" pattern="\d*" maxlength="9" >
+            
+		<br/>
+    <label for="comment">Πείτε μας τον λόγο που στέλνετε την αίτηση: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+    <label for="tilergasia">Τηλεργασία</label>
+		<input type="checkbox" id="tilergasia" name="tilergasia" value="yes" onclick="show_options(document.getElementById('tilergasia'), document.getElementById('tilergasia_options'))">
+		<label for="anastoli">Αναστολή Σύμβασης</label>
+		<input type="checkbox" id="anastoli" name="anastoli" value="yes" onclick="show_options(document.getElementById('anastoli'), document.getElementById('anastoli_options'))">
+            
+    <br/>
+    <div id='tilergasia_options' style='display:none'>
+    <label>Διάρκεια τηλεργασίας: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+    <label for="tilergasia">Από:<span>*</span></label>
+		<input type="date" id="date_from_til" name="date_from_til" >
+			
+		<label for="tilergasia">Εώς:<span>*</span></label>
+    <input type="date" id="date_to_til" name="date_to_til" >
+    </div>
+    
+    <br/>
+    <div id='anastoli_options' style='display:none'>
+    <label>Διάρκεια αναστολής σύμβασης: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+    <label for="anastoli">Από:<span>*</span></label>
+		<input type="date" id="date_from_anastoli" name="date_from_anastoli" >
+			
+		<label for="anastoli">Εώς:<span>*</span></label>
+		<input type="date" id="date_to_anastoli" name="date_to_anastoli" >
+    </div>
+
+    <p> Mεταβείτε αν θέλετε στην <a href="lista_ergazomenwn.php"> λίστα εργαζομένων </a> για να δείτε όλους τους εργαζομένους σας.</p>
+    <br/>
+    <br/>
+    <div>
+      <input type="submit" name="submit" value="Submit Form">
+      &nbsp;
+      <input type="reset" name="reset" value="Reset Form">
+    </div>
+  </div>  
+  </form>
+</div>
+    
     <!-- ################################################################################################ -->
     <!-- / main body -->
     <!--CHANGE HERE-->

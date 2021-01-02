@@ -11,7 +11,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
 <!--CHANGE HERE-->
-<title>Αναστολή Σύμβασης</title>
+<title>Λίστα Εργαζομένων</title>
 <!--CHANGE HERE-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -25,6 +25,7 @@ Licence URI: https://www.os-templates.com/template-terms
 @media screen and (max-width:900px){.container .demo div{margin-bottom:0;}}
 /* DEMO ONLY */
 </style>
+<script type="text/javascript" src='anastoli_check.js'></script>
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -153,7 +154,7 @@ Licence URI: https://www.os-templates.com/template-terms
   <div id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
     <!--CHANGE HERE-->
-    <h6 class="heading">Αναστολή Σύμβασης</h6>
+    <h6 class="heading">Λίστα Εργαζομένων</h6>
     <ul>
       <li><a href="../index.html">Home</a></li>
       <li><a href="#">Lorem</a></li>
@@ -164,6 +165,16 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- ################################################################################################ -->
   </div>
 </div>
+
+<?php
+if(isset($_GET['status'])):
+    if( $_GET['status'] == 'success'):
+        echo '<script language="javascript">';
+        echo 'alert("Η κατάσταση του εργαζομένου άλλαξε με επιτυχία.")';
+        echo '</script>';
+    endif;
+endif;    
+?>
 	
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -173,57 +184,125 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- main body -->
     <!-- ################################################################################################ -->
     
-	<h1 style="text-align:center">Αίτηση αναστολής σύμβασης ή εξ' αποστάσεως εργασίας (από εργοδότη)</h1>
-	
-    <p>Παρακαλούμε συμπληρώστε την παρακάτω φόρμα </p>
-    <!-- TAXIS???-->
-	<div class="boxed">
-	<form action="#" method="post">
-	
-          
-            <label for="name">Όνομα Εργοδότη: <span>*</span></label>
-            <input type="text" name="name" id="name" value="" size="22" required>
-			
-			<label for="name">Επώνυμο Εργοδότη: <span>*</span></label>
-			<input type="text" name="name" id="surname" value="" size="22" required>
-          
-			<!--this will be implemented afterwards with js-->
-            <label for="number">ΑΦΜ Εργοδότη: <span>*</span></label>
-            <input type="text" name="Α.Φ.Μ" pattern="\d*" maxlength="9" required>	<!-- id="afm" size="9" maxlength="9" -->
-            
-            <br/>
-            <!--#########################################################-->
 
-
-            <label for="name_worker">Όνομα Εργαζόμενου: <span>*</span></label>
-            <input type="text" name="name_worker" id="name_worker" value="" size="22" required>
-			
-			<label for="name">Επώνυμο Εργαζόμενου: <span>*</span></label>
-			<input type="text" name="name_worker" id="surname_worker" value="" size="22" required>
-          
-			<!--this will be implemented afterwards with js-->
-            <label for="number_worker">ΑΦΜ Εργαζόμενου: <span>*</span></label>
-            <input type="text" name="Α.Φ.Μ_worker" pattern="\d*" maxlength="9" required>
-            
-			<br/>
-            <label for="comment">Πείτε μας τον λόγο που στέλνετε την αίτηση: <span>*</span></label>
+    
+    <?php
+        require_once "../settings.php";
         
-            <label for="male">Τηλεργασία</label>
-			<input type="radio" id="information" name="gender" value="male">
-			<label for="female">Αναστολή Σύμβασης</label>
-			<input type="radio" id="application_submission" name="gender" value="female">
+        echo '<table>';
+        echo '<thead>';
+        echo '<tr>';
+        echo '<th>Όνομα</th>';
+        echo '<th>Επώνυμο</th>';
+        echo '<th>Τηλεργασία</th>';
+        echo '<th>Αναστολή σύμβασης</th>';
+        echo '<th>Τηλεργασία από</th>';
+        echo '<th>Τηλεργασία μέχρι</th>';
+        echo '<th>Αναστολή από</th>';
+        echo '<th>Αναστολή μέχρι</th>';
+        echo '<th>Άρση τηλεργασίας</th>';
+        echo '<th>Άρση αναστολής</th>';
+        echo '<th>Δήλωση νέας περιόδου αναστολής σύμβασης ή τηλεργασίας</th>';
+        echo '</tr>';
+        echo '</thead>';
+        
+        $query = "SELECT * FROM users WHERE role ='ergazomenos'";
+        $result = $conn->query($query);
+        $rows = $result->num_rows;
+    
+        echo '<tbody>';
+        for ($i = 0; $i < $rows; ++$i){
+            echo '<tr>';
+            $result->data_seek($i);
+            $first_name = $result->fetch_assoc()['first_name'];
+            $result->data_seek($i);
+            $last_name = $result->fetch_assoc()['last_name'];
+            $result->data_seek($i);
+            $tilergasia_start = $result->fetch_assoc()['tilergasia_start'];
+            $result->data_seek($i);
+            $tilergasia_end = $result->fetch_assoc()['tilergasia_end'];
+            $result->data_seek($i);
+            $anastoli_start = $result->fetch_assoc()['anastoli_start'];
+            $result->data_seek($i);
+            $anastoli_end = $result->fetch_assoc()['anastoli_end'];
+            $result->data_seek($i);
+            $afm = $result->fetch_assoc()['afm'];
+
+            $tilergasia_start_split = explode('-',$tilergasia_start);
+            $new_tilergasia_start = $tilergasia_start_split[2].'-'.$tilergasia_start_split[1].'-'.$tilergasia_start_split[0];
+
+            $tilergasia_end_split = explode('-',$tilergasia_end);
+            $new_tilergasia_end = $tilergasia_end_split[2].'-'.$tilergasia_end_split[1].'-'.$tilergasia_end_split[0];
+
+            $anastoli_start_split = explode('-',$anastoli_start);
+            $new_anastoli_start = $anastoli_start_split[2].'-'.$anastoli_start_split[1].'-'.$anastoli_start_split[0];
+
+            $anastoli_end_split = explode('-',$anastoli_end);
+            $new_anastoli_end = $anastoli_end_split[2].'-'.$anastoli_end_split[1].'-'.$anastoli_end_split[0];
             
-            <br/>
-            <label for="comment">Διάρκεια τηλεργασίας ή αναστολής σύμβασης σε ημέρες <span>*</span></label>
-            <input type="text" id="range" name="range" ><br>
             
-          
-          <div>
-            <input type="submit" name="submit" value="Submit Form">
-            &nbsp;
-            <input type="reset" name="reset" value="Reset Form">
-          </div>
-        </form>
+            echo '<td> ' . $first_name .' </td>';    
+            echo '<td> ' . $last_name .' </td>';           
+            if($tilergasia_start != NULL ){
+                echo '<td> Ναι </td>';    
+            }else{
+                echo '<td> Όχι </td>';    
+            }
+            if($anastoli_start != NULL ){
+                echo '<td> Ναι </td>';    
+            }else{
+                echo '<td> Όχι </td>';    
+            }
+            if($tilergasia_start != NULL ){
+                echo '<td>' . $new_tilergasia_start . '</td>';    
+                echo '<td>' . $new_tilergasia_end . '</td>';    
+            }else{
+                echo '<td> - </td>';    
+                echo '<td> - </td>';    
+            }
+            if($anastoli_start != NULL ){
+                echo '<td>' . $new_anastoli_start . '</td>';    
+                echo '<td>' . $new_anastoli_end . '</td>';   
+            }else{
+                echo '<td> - </td>';    
+                echo '<td> - </td>';   
+            }
+            
+            if($tilergasia_start != NULL ){
+                echo '<td> <form action="actions/arsi_action.php?option=til&afm=' . $afm .'  " method="post">';
+                echo '<input type="submit" name="arsi" id="arsi" value="Άρση" />';
+                echo '</form> </td>';
+            }else{
+                echo '<td> - </td>';    
+            }
+            if($anastoli_start != NULL ){
+                echo '<td> <form action="actions/arsi_action.php?option=anas&afm=' . $afm .'  " method="post">';
+                echo '<input type="submit" name="arsi" id="arsi" value="Άρση" />';
+                echo '</form> </td>';
+            }else{
+                echo '<td> - </td>';    
+            }
+            echo '<td><a href="anastoli_symvasis.php" ><span>Δήλωση</span></a></li> </td>';    
+
+            echo '</tr>';
+            
+        }
+        echo '</tbody>';
+        echo '</table>';
+
+        mysqli_close($conn);
+    ?>
+    
+    
+  </table>
+
+    
+    <!-- <div>
+      <input type="submit" name="submit" value="Submit Form">
+      &nbsp;
+      <input type="reset" name="reset" value="Reset Form">
+    </div> -->
+  </form>
 </div>
     
     <!-- ################################################################################################ -->

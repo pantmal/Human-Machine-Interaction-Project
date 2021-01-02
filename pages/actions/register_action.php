@@ -1,5 +1,5 @@
 <?php
-require_once "settings.php";
+require_once "../../settings.php";
 
 $string_split = explode('=',$_SERVER['HTTP_REFERER']);
 $head_back = $string_split[1];
@@ -31,7 +31,11 @@ $cookie_value = $uname;
 setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
 
 // Redirect user to welcome page
-header("location: " . $head_back);
+if (str_contains($head_back, 'index.php')){    
+    header("location:../../" . $head_back);
+}else{
+    header("location:../" . $head_back);
+}
 
 mysqli_close($conn);
 

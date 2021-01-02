@@ -1,5 +1,5 @@
 <?php
-require_once "../settings.php";
+require_once "../../settings.php";
 
 
 $username = $_POST["uname"];
@@ -40,7 +40,7 @@ $result = $conn->query($query);
 
 if (!$result) echo "INSERT failed: $query <br>" . $conn->error . "<br><br>";
 
-header('location:edit_profile.php?status=success');
+header('location:../edit_profile.php?status=success');
 
 mysqli_close($conn);
 

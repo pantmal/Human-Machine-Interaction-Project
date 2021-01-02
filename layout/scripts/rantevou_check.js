@@ -166,6 +166,17 @@ function show_func() {
         input.style.display = 'none';
     }
     
-    
-
 }
+
+function show_textarea() {
+    var x = document.getElementsByName('rdb');
+    var hidden_text = document.getElementById("hidden_text");
+  
+    // If the checkbox is checked, display the output text
+    if ( x[3].checked == true){
+        hidden_text.style.display = "inline";
+    } else {
+        hidden_text.style.display = "none";
+    }
+        
+  }

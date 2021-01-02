@@ -16,6 +16,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link href="../layout/styles/framework.css" rel="stylesheet" type="text/css" media="all">
 <style type="text/css">
 /* DEMO ONLY */
 .container .demo{text-align:center;}
@@ -25,7 +26,7 @@ Licence URI: https://www.os-templates.com/template-terms
 @media screen and (max-width:900px){.container .demo div{margin-bottom:0;}}
 /* DEMO ONLY */
 </style>
-<script type="text/javascript" src='rantevou_check.js'></script>
+<script type="text/javascript" src='../layout/scripts/rantevou_check.js'></script>
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -197,26 +198,28 @@ endif;
 ?>
 	<h1 style="text-align:center">Άδεια Ειδικού Σκοπού</h1>
 	
-	<p>Παρακαλούμε συμπληρώστε την παρακάτω φόρμα </p>
+	<p>Παρακαλούμε συμπληρώστε την παρακάτω φόρμα αίτησης άδειας ειδικού σκοπού: </p>
 	<div class="boxed">
-	<form name="adeia_eidikou_form" action="adeia_eidikou_skopou_action.php" onsubmit="return validateForm()"  method="post">
+  <div style="border: 1px solid black; padding: 10px">  
+	<form name="adeia_eidikou_form" action="actions/adeia_eidikou_skopou_action.php" onsubmit="return validateForm()"  method="post">
 	
-          
-            <label for="name">Όνομα: <span>*</span></label>
+  <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br>
+            
+            <label for="name">Όνομα: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label> 
             <input type="text" name="name1" id="name1"  size="22" onchange="return validateName(document.getElementById('name1').value,document.getElementById('demo'))"  required>
             <p id='demo'></p>
             
 			
-			<label for="name">Επώνυμο: <span>*</span></label>
+			<label for="name">Επώνυμο: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
 			<input type="text" name="surname" id="surname" value="" size="22" onchange="return validateName(document.getElementById('surname').value,document.getElementById('demo1'))" required>
             <p id='demo1'></p>
           
-            <label for="email">Mail: <span>*</span></label>
+            <label for="email">Mail: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
             <input type="email" name="email" id="email" value="" size="22" onchange="return validateMail(document.getElementById('email').value,document.getElementById('demo2'))"required>
 			<p id='demo2'></p>  
 			
 			<!--this will be implemented afterwards with js-->
-            <label for="number">ΑΦΜ: <span>*</span></label>
+            <label for="number">ΑΦΜ: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
             <input type="text" name="afm" id="afm" pattern="\d*" maxlength="9" onchange="return validateNum(document.getElementById('afm').value,document.getElementById('demo3'))" required>	<!-- id="afm" size="9" maxlength="9" -->
             <p id='demo3'></p>
 			
@@ -224,15 +227,15 @@ endif;
        name="meeting-time" value="2018-06-12T19:30"
        min="2018-06-07T00:00" max="2018-06-14T00:00">   -->
             
-			<label for="birthday">Από:<span>*</span></label>
+			<label for="birthday">Από:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
 			<input type="date" id="date_from" name="date_from" required>
 			
-			<label for="birthday">Εώς:<span>*</span></label>
+			<label for="birthday">Εώς:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
 			<input type="date" id="date_to" name="date_to" required>
 			
 			
 			
-			<label for="paidia">Αριθμός Παιδιών:<span>*</span></label>
+			<label for="paidia">Αριθμός Παιδιών:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
       <!--cars44 change here-->      
 			<select name="number_of_kids" id="number_of_kids" onchange="show_func()" required>
             <option value="" selected disabled hidden>Επιλέξτε</option>
@@ -246,13 +249,13 @@ endif;
 		<!-- dont let the user insert less than 4 kids CSS master race-->
 		<!--added div here-->      
 		<div id='hidden' style="display: none;">
-		<label for="number">Αριθμός Παιδιών(4+): <span>*</span></label>
+		<label for="number">Αριθμός Παιδιών(4+): <span>*</span><div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
         <input type="text" name="kids_4" id="kids_4"attern="\d*" maxlength="2" >
     </div>
     
     <br><br>
 		<div id='hidden_paidi_1' style="display: none;">
-		<h6>Εισάγετε την βαθμίδα των παιδιών σας</h6>
+		<h6>Εισάγετε την βαθμίδα των παιδιών σας <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></h6>
 		<h6>1ο παιδί</h6>
 		
 			<select name="paidi_1" id="paidi_1" >
@@ -307,6 +310,7 @@ endif;
             &nbsp;
             <input type="reset" name="reset" value="Reset Form">
           </div>
+        </div>  
         </form>
 </div>  
     <!-- ################################################################################################ -->

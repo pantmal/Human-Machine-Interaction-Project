@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+<title>Εγγραφή</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script type="text/javascript" src='../layout/scripts/register_check.js'></script>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <style>
+      html, body {
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      }
+      body, div, h1, form, input, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 16px;
+      color: #666;
+      }
+      h1 {
+      padding: 10px 0;
+      font-size: 32px;
+      font-weight: 300;
+      text-align: center;
+      }
+      p {
+      font-size: 12px;
+      }
+      hr {
+      color: #a9a9a9;
+      opacity: 0.3;
+      }
+      .main-block {
+      max-width: 340px; 
+      min-height: 460px; 
+      padding: 10px 0;
+      margin: auto;
+      border-radius: 5px; 
+      border: solid 1px #ccc;
+      box-shadow: 1px 2px 5px rgba(0,0,0,.31); 
+      background: #ebebeb; 
+      }
+      form {
+      margin: 0 30px;
+      }
+      .account-type, .gender {
+      margin: 15px 0;
+      }
+      
+      label#icon {
+      margin: 0;
+      border-radius: 5px 0 0 5px;
+      }
+      
+      
+      #icon {
+      display: inline-block;
+      padding: 9.3px 15px;
+      box-shadow: 1px 2px 5px rgba(0,0,0,.09); 
+      background: #1c87c9;
+      color: #fff;
+      text-align: center;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 100%;
+      padding: 10px 0;
+      margin: 10px auto;
+      border-radius: 5px; 
+      border: none;
+      background: #1c87c9; 
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      }
+      button:hover {
+      background: #26a9e0;
+      }
+      span {
+        color: red;
+      }
+    </style>
+</head>
+<body id="top">
+<div class="main-block">
+<h1>Εγγραφή</h1>
+<form name="register_form" action="actions/register_action.php" onsubmit="return validateForm()" method="post">
+  <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br> <br>
+  <label for="uname">Όνομα Χρήστη: <span>*</span></label></label><br>
+  <input type="text" id="uname" name="uname" onchange="return validateName()" ><br>
+  <p id='demo'></p>
+  <hr>
+  <label for="pwd">Password: <span>*</span></label></label><br>
+  <input type="password" id="pwd" name="pwd" onchange="return validatePswd()"><br>
+  <p id='demo2'></p>
+  <hr>
+  <label for="email">E-Mail: <span>*</span></label> <br>
+  <input type="email" name="email" id="email" value="" size="22" onchange="return validateMail()" >
+  <p id='demo3'></p>
+  <hr>
+  <label for="number">ΑΦΜ: <span>*</span></label> <br>
+  <input type="text" name="afm" id="afm" pattern="\d*" maxlength="9" onchange="return validateNum()" >	
+  <p id='demo4'></p>
+  <hr>
+  <label for="first_name">Όνομα: <span>*</span></label></label><br>
+  <input type="text" id="first_name" name="first_name" onchange="return validateFirstName()"><br>
+  <p id='demo5'></p>
+  <hr>
+  <label for="last_name">Επώνυμο: <span>*</span></label></label><br>
+  <input type="text" id="last_name" name="last_name" onchange="return validateLastName()"><br>
+  <p id='demo6'></p>
+  <hr>
+  <label for="message">Επιλέξτε έναν ρόλο χρήστη: <span>*</span></label> <br>
+  <br>
+	<label for="enimerwsi">Εργαζόμενος</label> 
+  <input type="radio" id="ergazomenos" name="rdb" value="ergazomenos" > <br>
+  <br>
+	<label for="katathesi">Εργοδότης</label>
+  <input type="radio" id="ergodotis" name="rdb" value="ergodotis" >	<br>	
+  <p id='demo7'></p>
+  <hr>
+  <label for="parent">Είστε γονέας; <span>*</span></label></label> 
+  <input type="checkbox" name="parent" value="yes" /> <br> 
+  <hr>
+  <input type="submit" value="Submit">
+</form> 
+</div>
+</body>
+</html>
+
+<!-- https://www.w3docs.com/learn-html/html-form-templates.html -->
+<!-- https://www.w3docs.com/tools/editor/5789 -->

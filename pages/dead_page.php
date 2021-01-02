@@ -15,7 +15,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!--CHANGE HERE-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
 <style type="text/css">
 /* DEMO ONLY */
 .container .demo{text-align:center;}
@@ -172,7 +172,7 @@ Licence URI: https://www.os-templates.com/template-terms
   <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
-    <img src="Page_Under_Construction.png" alt="" > <br> <br> <br> 
+    <img src="../Page_Under_Construction.png" alt="" > <br> <br> <br> 
     <h1> Η παρούσα σελίδα βρίσκεται υπό κατασκεύη και θα είναι σύντομα κοντά σας!</h1>
     <!-- ################################################################################################ -->
     <!-- / main body -->

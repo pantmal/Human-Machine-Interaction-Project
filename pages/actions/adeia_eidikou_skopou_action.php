@@ -1,5 +1,5 @@
 <?php
-require_once "../settings.php";
+require_once "../../settings.php";
 
 $parent_status = '';
 $cookie_name = 'user';
@@ -74,7 +74,7 @@ $result = $conn->query($query);
 
 if (!$result) echo "INSERT failed: $query <br>" . $conn->error . "<br><br>";
 
-header('location:adeia_eidikou_skopou.php?status=success');
+header('location:../adeia_eidikou_skopou.php?status=success');
 
 mysql_close($conn);
 

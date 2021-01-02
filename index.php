@@ -44,7 +44,7 @@ Licence URI: https://www.os-templates.com/template-terms
         <li><a href="#" title="Sign Up"><i class="fas fa-edit"></i></a></li>
         <li id="searchform">
           <div>
-            <form action="dead_page.php" method="post">
+            <form action="pages/dead_page.php" method="post">
               <fieldset>
                 <legend>Quick Search:</legend>
                 <input type="text" placeholder="Enter search term&hellip;">
@@ -64,13 +64,13 @@ Licence URI: https://www.os-templates.com/template-terms
 $cookie_name = 'user';
 if(!isset($_COOKIE[$cookie_name])) {
     echo "Cookie is not set! <br/>";
-    echo '<a href="login.html?header=index.php" ><span>Login</span></a>/</li>';
-    echo '<a href="register.html?header=index.php"><span>Register</span></a></li>';
+    echo '<a href="pages/login.html?header=index.php" ><span>Login</span></a>/</li>';
+    echo '<a href="pages/register.html?header=index.php"><span>Register</span></a></li>';
 } else {
     echo "Cookie '" . $cookie_name . "' is set!<br>";
     echo "Value is: " . $_COOKIE[$cookie_name] . '<br/>';
     echo '<a href="pages/edit_profile.php"><span>Edit Profile</span></a>/</li>';
-    echo '<a href="logout.php"><span>Logout</span></a></li>';
+    echo '<a href="pages/actions/logout.php"><span>Logout</span></a></li>';
 }
 ?>
 

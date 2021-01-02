@@ -1,9 +1,11 @@
 <?php
-require_once "settings.php";
+require_once "../../settings.php";
  
 
 $string_split = explode('=',$_SERVER['HTTP_REFERER']);
 $head_back = $string_split[1];
+
+echo $head_back;
 
 $username = trim($_POST["uname"]);
 $password = trim($_POST["pwd"]);    
@@ -36,8 +38,14 @@ if(empty($username_err) && empty($password_err)){
                         $cookie_value = $username;
                         setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 = 1 day
                         
-                        // Redirect user to welcome page
-                        header("location: " . $head_back);
+                        
+                        // Redirect user to previous page
+                        if (str_contains($head_back, 'index.php')){    
+                            header("location:../../" . $head_back);
+                        }else{
+                            header("location:../" . $head_back);
+                        }
+                        
                     }else{
                         // Display an error message if password is not valid
                         $password_err = "The password you entered was not valid.";

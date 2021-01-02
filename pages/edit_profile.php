@@ -16,6 +16,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+<link href="../layout/styles/framework.css" rel="stylesheet" type="text/css" media="all">
 <style type="text/css">
 /* DEMO ONLY */
 .container .demo{text-align:center;}
@@ -25,7 +26,7 @@ Licence URI: https://www.os-templates.com/template-terms
 @media screen and (max-width:900px){.container .demo div{margin-bottom:0;}}
 /* DEMO ONLY */
 </style>
-<script type="text/javascript" src='rantevou_check.js'></script>
+<script type="text/javascript" src='../layout/scripts/rantevou_check.js'></script>
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -190,6 +191,23 @@ Licence URI: https://www.os-templates.com/template-terms
     $first_name = $row['first_name'];
     $last_name = $row['last_name'];
     $parent = $row['parent'];
+    $role = $row['role'];
+    $tilergasia_start = $row['tilergasia_start'];
+    $tilergasia_end = $row['tilergasia_end'];
+    $anastoli_start = $row['anastoli_start'];
+    $anastoli_end = $row['anastoli_end'];
+    
+    $tilergasia_start_split = explode('-',$tilergasia_start);
+    $new_tilergasia_start = $tilergasia_start_split[2].'-'.$tilergasia_start_split[1].'-'.$tilergasia_start_split[0];
+
+    $tilergasia_end_split = explode('-',$tilergasia_end);
+    $new_tilergasia_end = $tilergasia_end_split[2].'-'.$tilergasia_end_split[1].'-'.$tilergasia_end_split[0];
+
+    $anastoli_start_split = explode('-',$anastoli_start);
+    $new_anastoli_start = $anastoli_start_split[2].'-'.$anastoli_start_split[1].'-'.$anastoli_start_split[0];
+
+    $anastoli_end_split = explode('-',$anastoli_end);
+    $new_anastoli_end = $anastoli_end_split[2].'-'.$anastoli_end_split[1].'-'.$anastoli_end_split[0];
   endif;
 
   if ($parent == 'yes'):
@@ -212,17 +230,17 @@ endif;
 ?>
 
 
-	<form name="edit_form" action="edit_action.php" method="post">
+	<form name="edit_form" action="actions/edit_action.php" method="post">
   
         <p>Όνομα Χρήστη: <?php echo $username ?> </p> 
-        <label for="uname">Εισάγετε νέο όνομα χρήστη αν το επιθυμείτε:</label> 
+        <label for="uname">Εισάγετε νέο όνομα χρήστη αν το επιθυμείτε: <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label> 
         <input type="text" id="uname" name="uname" onchange="return validateName()" > <br>
         <p id='demo'></p>
-        <label for="pwd">Εισάγετε νέο κωδικό πρόσβασης αν το επιθυμείτε:</label> 
+        <label for="pwd">Εισάγετε νέο κωδικό πρόσβασης αν το επιθυμείτε: <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label> 
         <input type="password" id="pwd" name="pwd" onchange="return validatePswd()"> <br>
         <p id='demo2'></p>
         <p> Email: <?php echo $email ?> </p> 
-        <label for="email">Εισάγετε νέο e-mail αν το επιθυμείτε: </label> 
+        <label for="email">Εισάγετε νέο e-mail αν το επιθυμείτε:  <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label> 
         <input type="email" name="email" id="email" value="" size="22" onchange="return validateMail()" > <br>
         <p id='demo3'></p>
         <p>ΑΦΜ: <?php echo $afm ?> </p> 
@@ -238,11 +256,23 @@ endif;
               echo 'Ως γονέας έχετε λάβει ' . $adeies . ' άδειες ειδικού σκοπού';
             endif;
           endif;
+
+          if ($role == 'ergodotis'){
+            echo 'Ως εργοδότης μπορείτε να μεταβείτε στην <a href="lista_ergazomenwn.php"> λίστα </a> των εργαζομένων σας.';
+            echo '<br> <br>';
+          }else{
+            if ($tilergasia_start != NULL){
+              echo 'Ως εργαζόμενος είστε σε διάστημα τηλεργασίας από '. $new_tilergasia_start . ' μέχρι ' . $new_tilergasia_end ;
+              echo '<br> <br>';
+            }
+            if ($anastoli_start != NULL){
+              echo 'Ως εργαζόμενος είστε σε διάστημα αναστολής σύμβασης από '. $new_anastoli_start . ' μέχρι ' . $new_anastoli_end ;
+              echo '<br> <br>';
+            }
+          }
         
         ?>
 
-
-        <p> Ημέρες αναστολής:  </p>
         <div>
         <input type="submit" name="submit" value="Αποθηκεύστε τις αλλαγές σας">
         </div>
