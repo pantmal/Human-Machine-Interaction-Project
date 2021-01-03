@@ -72,15 +72,12 @@ Licence URI: https://www.os-templates.com/template-terms
   <header id="header" class="hoc clear">
     <div id="logo" class="fl_left"> 
       <!-- ################################################################################################ -->
-      <!--CHANGE HERE-->
       <h1><a href="../index.html">Υπουργείο Εργασίας</a></h1>
-      <!--CHANGE HERE-->
       <!-- ################################################################################################ -->
     </div>
     <nav id="mainav" class="fl_right"> 
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <!--CHANGE HERE-->
         <li><a href="../index.html">Αρχική</a></li>
         <li><a class="drop" href="#">Εργαζόμενος</a>
           <ul>
@@ -143,7 +140,6 @@ Licence URI: https://www.os-templates.com/template-terms
         </li>
         <li><a href="#">Link Text</a></li>
       </ul>
-      <!--CHANGE HERE-->
       <!-- ################################################################################################ -->
     </nav>
   </header>
@@ -154,7 +150,6 @@ Licence URI: https://www.os-templates.com/template-terms
 <div class="wrapper bgded overlay gradient" style="background-image:url('../images/demo/backgrounds/01.png');">
   <div id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <!--CHANGE HERE-->
     <h6 class="heading">Αναστολή Σύμβασης</h6>
     <ul>
       <li><a href="../index.html">Home</a></li>
@@ -162,7 +157,6 @@ Licence URI: https://www.os-templates.com/template-terms
       <li><a href="#">Ipsum</a></li>
       <li><a href="#">Dolor</a></li>
     </ul>
-    <!--CHANGE HERE-->
     <!-- ################################################################################################ -->
   </div>
 </div>
@@ -183,7 +177,7 @@ if(isset($_GET['status'])):
 
     if( $_GET['status'] == 'not_ergodotis'):
       echo '<script language="javascript">';
-      echo 'alert("Δεν μπορείτε να δηλώσετε αναστολή σύμβασης ή τηλεργασία αν δεν είστε εργοδοτης")';
+      echo 'alert("Δεν μπορείτε να κάνετε δήλωση για αναστολή σύμβασης ή τηλεργασίας αν δεν είστε εργοδοτης")';
       echo '</script>';
     endif;
 endif;
@@ -197,82 +191,90 @@ endif;
     <!-- main body -->
     <!-- ################################################################################################ -->
     
-	<h1 style="text-align:center">Αίτηση αναστολής σύμβασης ή εξ' αποστάσεως εργασίας (από εργοδότη)</h1>
-	
+    <h1 style="text-align:center">Αίτηση αναστολής σύμβασης ή εξ' αποστάσεως εργασίας (από εργοδότη)</h1>
+    
     <p>Παρακαλούμε συμπληρώστε την παρακάτω φόρμα αίτησης τηλεργασίας ή εξ' αποστάσεως εργασίας: </p>
-    <!-- TAXIS???-->
-	<div class="boxed">
-  <div style="border: 1px solid black; padding: 10px">  
-	<form action="actions/anastoli_action.php" method="post">
-	
-    <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br>  
-  
-    <label for="name">Όνομα Εργοδότη: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-    <input type="text" name="name" id="name" value="" size="22" >
-			
-		<label for="surname">Επώνυμο Εργοδότη: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-		<input type="text" name="surname" id="surname" value="" size="22" >
-          
-			<!--this will be implemented afterwards with js-->
-    <label for="afm">ΑΦΜ Εργοδότη: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-    <input type="text" name="afm" pattern="\d*" maxlength="9" >	<!-- id="afm" size="9" maxlength="9" -->
-            
-    <br/>
-            <!--#########################################################-->
-
-
-    <label for="name_worker">Όνομα Εργαζόμενου: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-    <input type="text" name="name_worker" id="name_worker" value="" size="22" >
-			
-		<label for="surname_worker">Επώνυμο Εργαζόμενου: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-		<input type="text" name="name_worker" id="surname_worker" value="" size="22" >
-          
-			<!--this will be implemented afterwards with js-->
-    <label for="afm_worker">ΑΦΜ Εργαζόμενου: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-    <input type="text" name="afm_worker" pattern="\d*" maxlength="9" >
-            
-		<br/>
-    <label for="comment">Πείτε μας τον λόγο που στέλνετε την αίτηση: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-    <label for="tilergasia">Τηλεργασία</label>
-		<input type="checkbox" id="tilergasia" name="tilergasia" value="yes" onclick="show_options(document.getElementById('tilergasia'), document.getElementById('tilergasia_options'))">
-		<label for="anastoli">Αναστολή Σύμβασης</label>
-		<input type="checkbox" id="anastoli" name="anastoli" value="yes" onclick="show_options(document.getElementById('anastoli'), document.getElementById('anastoli_options'))">
-            
-    <br/>
-    <div id='tilergasia_options' style='display:none'>
-    <label>Διάρκεια τηλεργασίας: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-    <label for="tilergasia">Από:<span>*</span></label>
-		<input type="date" id="date_from_til" name="date_from_til" >
-			
-		<label for="tilergasia">Εώς:<span>*</span></label>
-    <input type="date" id="date_to_til" name="date_to_til" >
-    </div>
+      <!-- TAXIS???-->
+    <div id="comments">
+    <div style="border: 1px solid black; padding: 10px; margin-right: 400px">  
+    <form action="actions/anastoli_action.php" onsubmit="return validateAnastoliForm()" method="post">
     
-    <br/>
-    <div id='anastoli_options' style='display:none'>
-    <label>Διάρκεια αναστολής σύμβασης: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-    <label for="anastoli">Από:<span>*</span></label>
-		<input type="date" id="date_from_anastoli" name="date_from_anastoli" >
-			
-		<label for="anastoli">Εώς:<span>*</span></label>
-		<input type="date" id="date_to_anastoli" name="date_to_anastoli" >
-    </div>
-
-    <p> Mεταβείτε αν θέλετε στην <a href="lista_ergazomenwn.php"> λίστα εργαζομένων </a> για να δείτε όλους τους εργαζομένους σας.</p>
-    <br/>
-    <br/>
-    <div>
-      <input type="submit" name="submit" value="Submit Form">
-      &nbsp;
-      <input type="reset" name="reset" value="Reset Form">
-    </div>
-  </div>  
-  </form>
-</div>
+      <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br>  
     
+      <label for="name">Όνομα Εργοδότη: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <input type="text" name="name" id="name" value="" size="22" onchange="return validateName(document.getElementById('name'),document.getElementById('demo'))" > <br>
+      <p style="color: darkred" id='demo'></p>
+        
+      <label for="surname">Επώνυμο Εργοδότη: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <input type="text" name="surname" id="surname" value="" size="22" onchange="return validateName(document.getElementById('surname'),document.getElementById('demo1'))"> <br>
+      <p style="color: darkred" id='demo1'></p>
+            
+      <label for="afm">ΑΦΜ Εργοδότη: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <input type="text" name="afm" id="afm" pattern="\d*" size="9" maxlength="9" onchange="return validateNum(document.getElementById('afm'),document.getElementById('demo2'))"> <br>	<!-- id="afm" size="9" maxlength="9" -->
+      <p style="color: darkred" id='demo2'></p>
+              
+      <br/>
+        
+      <label for="name_worker">Όνομα Εργαζόμενου: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <input type="text" name="name_worker" id="name_worker" value="" size="22"  onchange="return validateName(document.getElementById('name_worker'),document.getElementById('demo3'))"> <br>
+      <p style="color: darkred" id='demo3'></p>
+        
+      <label for="surname_worker">Επώνυμο Εργαζόμενου: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <input type="text" name="name_worker" id="surname_worker" value="" size="22"  onchange="return validateName(document.getElementById('surname_worker'),document.getElementById('demo4'))"> <br>
+      <p style="color: darkred" id='demo4'></p>
+            
+      <label for="afm_worker">ΑΦΜ Εργαζόμενου: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <input type="text" name="afm_worker" id="afm_worker" pattern="\d*" size="9" maxlength="9"  onchange="return validateNum(document.getElementById('afm_worker'),document.getElementById('demo5'))"> <br>
+      <p style="color: darkred" id='demo5'></p>
+              
+      <br/>
+      <label for="comment">Πείτε μας τον λόγο που στέλνετε την αίτηση: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <label for="tilergasia">Τηλεργασία</label> 
+      <input type="checkbox" id="tilergasia" name="tilergasia" value="yes" onclick="show_options(document.getElementById('tilergasia'), document.getElementById('tilergasia_options'))">
+      <br>
+      <label for="anastoli">Αναστολή Σύμβασης</label> 
+      <input type="checkbox" id="anastoli" name="anastoli" value="yes" onclick="show_options(document.getElementById('anastoli'), document.getElementById('anastoli_options'))">
+      <p style="color: darkred" id='demo6'></p>
+              
+      <br/>
+      <div id='tilergasia_options' style='display:none'>
+        <label>Διάρκεια τηλεργασίας: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+        <label for="tilergasia">Από:<span>*</span></label>
+        <input type="date" id="date_from_til" name="date_from_til" > <br>
+        <p style="color: darkred" id='demo7'></p>
+        
+        <label for="tilergasia">Εώς:<span>*</span></label>
+        <input type="date" id="date_to_til" name="date_to_til" >
+        <p style="color: darkred" id='demo8'></p>
+      </div>
+      
+      <br/>
+      <div id='anastoli_options' style='display:none'>
+        <label>Διάρκεια αναστολής σύμβασης: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+        <label for="anastoli">Από:<span>*</span></label>
+        <input type="date" id="date_from_anastoli" name="date_from_anastoli" > <br>
+        <p style="color: darkred" id='demo9'></p>
+        
+        <label for="anastoli">Εώς:<span>*</span></label>
+        <input type="date" id="date_to_anastoli" name="date_to_anastoli">
+        <p style="color: darkred" id='demo10'></p>
+      </div>
+
+      <br>
+      <p> Mεταβείτε και στην <a href="lista_ergazomenwn.php"> λίστα εργαζομένων </a> για να δείτε όλους τους εργαζομένους σας.</p>
+      <br/>
+      <br/>
+      <div style="text-align:center">
+        <input type="submit" name="submit" value="Κατάθεση αίτησης">
+        &nbsp;
+        <input type="reset" name="reset" value="Καθαρισμός πεδίων">
+      </div>
+    </div>  
+    </form>
+    </div>
+      
     <!-- ################################################################################################ -->
     <!-- / main body -->
-    <!--CHANGE HERE-->
     <div class="clear"></div>
   </main>
 </div>

@@ -1,5 +1,5 @@
 <?php
-require_once "../settings.php";
+require_once "../../settings.php";
 
 
 $name1 = $_POST["name1"];

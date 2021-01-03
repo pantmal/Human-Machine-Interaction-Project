@@ -1,23 +1,26 @@
 function validateName(id,demo){
-    var x = id
+    var x = id.value
     var regex=/^[a-zA-ZΆ-ωΑ-ώ ]+$/ ///^[0-9]+$/;
 
     result = true;
-    console.log(x);
-
+    
     if (x == "") {
-        demo.innerHTML = '\u2757not empty';
+        demo.innerHTML = '\u2757 Το πεδιό αυτό είναι υποχρεωτικό.';
+        id.style.borderColor = "darkred";
         result = false;
     }else{
        demo.innerHTML = '';
+       id.style.borderColor = "black";
     }
 
     if (x != ''){
         if ((!x.match(regex))){
-            demo.innerHTML = '\u2757 not numbers';
+            demo.innerHTML = '\u2757 Δεν επιτρέπονται αριθμοί.';
+            id.style.borderColor = "darkred";
             result = false;
         }else{
             demo.innerHTML = '';
+            id.style.borderColor = "black";
         }
     }
 
@@ -26,25 +29,28 @@ function validateName(id,demo){
 }
 
 function validateMail(id,demo){
-    var x = id
-    var regex=/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)$/ //XANA DESTO
+    var x = id.value
+    var regex=/^[a-zA-Z0-9.!#$%&'+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:.[a-zA-Z0-9-]+)$/ 
 
     result = true;
-    console.log(x);
 
     if (x == "") {
-        demo.innerHTML = '\u2757not empty';
+        demo.innerHTML = '\u2757 Το πεδιό αυτό είναι υποχρεωτικό.';
+        id.style.borderColor = "darkred";
         result = false;
     }else{
        demo.innerHTML = '';
+       id.style.borderColor = "black";
     }
 
     if (x != ''){
         if ((!x.match(regex))){
-            demo.innerHTML = '\u2757 Λάθος διεύθυνση email';
+            demo.innerHTML = '\u2757 Λάθος διεύθυνση email.';
+            id.style.borderColor = "darkred";
             result = false;
         }else{
             demo.innerHTML = '';
+            id.style.borderColor = "black";
         }
     }
 
@@ -53,30 +59,33 @@ function validateMail(id,demo){
 }
 
 function validateNum(id,demo){
-    var x = id
+    var x = id.value
     var regex=/^[0-9]+$/ 
 
     result = true;
-    console.log(x);
 
     if (x == "") {
-        demo.innerHTML = '\u2757not empty';
+        demo.innerHTML = '\u2757 Το πεδιό αυτό είναι υποχρεωτικό.';
+        id.style.borderColor = "darkred";
         result = false;
     }else{
        demo.innerHTML = '';
+       id.style.borderColor = "black";
     }
     
-    if(x.length!=9)
-    {demo.innerHTML = '\u2757 Eisagete 9 ari8mous';
-            result = false;
-            return result;
-    }
+    
     if (x != ''){
         if ((!x.match(regex))){
-            demo.innerHTML = '\u2757 Γράψτε μόνο αριθμούς';
+            demo.innerHTML = '\u2757 Γράψτε μόνο αριθμούς.';
+            id.style.borderColor = "darkred";
+            result = false;
+        }else if(x.length!=9){
+            demo.innerHTML = '\u2757 Εισάγετε 9 αριθμούς.';
+            id.style.borderColor = "darkred";
             result = false;
         }else{
             demo.innerHTML = '';
+            id.style.borderColor = "black";
         }
     }
 
@@ -84,88 +93,42 @@ function validateNum(id,demo){
 
 }
 
-function validateDate(id,demo){
-    var x = id
+function validateEmpty(id,demo){
+    var x = id.value
     
 
     result = true;
-    console.log(x);
-
+    
     if (x == "") {
-        demo.innerHTML = '\u2757not empty';
+        demo.innerHTML = '\u2757 Το πεδιό αυτό είναι υποχρεωτικό.';
+        id.style.borderColor = "darkred";
         result = false;
     }else{
        demo.innerHTML = '';
+       id.style.borderColor = "black";
     }
 
     
-
     return result;
 
 }
 
-// function validateForm() {
-
-//     result = true;
-//     errors = false;
-
-   
-        
+function validateReason(){ //doesn't work for on change
+    var x = document.getElementsByName('rdb');
     
-//     if(validateDate(document.getElementById('date_from').value,document.getElementById('demo4'))==false){
-//         errors = true;        
-//     }
-
-//     if (errors == true){
-//         result = false;
-//     }
-
-//     return result;
-
-// }
-
-function show_func() {
-    var number_of_kids = document.getElementById("hidden");
-    var hidden_paidi_1= document.getElementById("hidden_paidi_1");
-    var hidden_paidi_2=document.getElementById("hidden_paidi_2");
-    var hidden_paidi_3=document.getElementById("hidden_paidi_3");
-    var hidden_paidi_4=document.getElementById("hidden_paidi_4");
     
-    if (document.getElementById('number_of_kids').value == 'one'){
-        number_of_kids.style.display = 'none';
-        hidden_paidi_1.style.display = 'inline';
-          hidden_paidi_2.style.display ='none';
-        hidden_paidi_3.style.display = 'none';
-        hidden_paidi_4.style.display = 'none';
-        
-    }
-    else if (document.getElementById('number_of_kids').value == 'two'){
-        number_of_kids.style.display = 'none';
-        hidden_paidi_1.style.display = 'inline';
-        hidden_paidi_2.style.display = 'inline';
-          hidden_paidi_3.style.display = 'none';
-        hidden_paidi_4.style.display = 'none';
-    }
-    else if(document.getElementById('number_of_kids').value == 'three'){
-        number_of_kids.style.display = 'none';
-        hidden_paidi_1.style.display = 'inline';
-        hidden_paidi_2.style.display = 'inline';
-        hidden_paidi_3.style.display = 'inline';
-        hidden_paidi_4.style.display = 'none';
-    }
-    else if(document.getElementById('number_of_kids').value == 'four_or_more'){
-        
-        number_of_kids.style.display = 'inline';
-        hidden_paidi_1.style.display = 'inline';
-        hidden_paidi_2.style.display = 'inline';
-        hidden_paidi_3.style.display = 'inline';
-        hidden_paidi_4.style.display = 'inline';
-        
-    }
-    else{
-        input.style.display = 'none';
-    }
+    result = true;
     
+    if (x[0].checked == false && x[1].checked == false && x[2].checked == false && x[3].checked == false ) {
+        document.getElementById("demo6").innerHTML = '\u2757 Το πεδιό αυτό είναι υποχρεωτικό.';
+        result = false;
+    }else{
+        document.getElementById("demo6").innerHTML = '';
+    }
+
+    
+    return result;
+
 }
 
 function show_textarea() {
@@ -178,5 +141,69 @@ function show_textarea() {
     } else {
         hidden_text.style.display = "none";
     }
+
+    validateReason();
         
-  }
+}
+
+function validateTextArea(){
+    var x = document.getElementsByName('rdb');
+    
+    result = true;
+    
+    if ( x[3].checked == true && document.getElementById('comment_text').value == '' ) {
+        document.getElementById("demo7").innerHTML = '\u2757 Το πεδιό αυτό είναι υποχρεωτικό.';
+        result = false;
+    }else{
+        document.getElementById("demo7").innerHTML = '';
+    }
+
+    return result;
+}
+
+function validateRantevouForm() {
+
+    result = true;
+    errors = false;
+
+    if (validateName(document.getElementById('name1'),document.getElementById('demo'))==false){
+        errors = true; 
+    }
+   
+    if (validateName(document.getElementById('surname'),document.getElementById('demo1'))==false){
+        errors = true; 
+    }
+
+    if (validateMail(document.getElementById('email'),document.getElementById('demo2'))==false){
+        errors = true; 
+    }
+
+    if (validateNum(document.getElementById('afm'),document.getElementById('demo3'))==false){
+        errors = true; 
+    }
+        
+    if(validateEmpty(document.getElementById('date_from'),document.getElementById('demo4'))==false){
+        errors = true;        
+    }
+
+    if(validateEmpty(document.getElementById('time'),document.getElementById('demo5'))==false){
+        errors = true;        
+    }
+
+    if(validateReason()==false){
+        errors = true;        
+    }
+
+    if(validateTextArea()==false){
+        errors = true;        
+    }
+
+    if (errors == true){
+        result = false;
+    }
+
+    return result;
+
+}
+
+

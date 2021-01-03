@@ -1,20 +1,20 @@
 <?php
 require_once "../../settings.php";
 
-$parent_status = '';
+$role = '';
 $cookie_name = 'user';
 if (isset($_COOKIE[$cookie_name])):
     $query = "SELECT * FROM users WHERE username='$_COOKIE[$cookie_name]'";
     $result = $conn->query($query);
-    $parent_status = $result->fetch_assoc()['role'];
+    $role = $result->fetch_assoc()['role'];
 else:
-    header('location:adeia_eidikou_skopou.php?status=not_user');    
+    header('location:anastoli_symvasis.php?status=not_user');    
     mysqli_close($conn);
 endif;
 
 
-if($role == 'ergazomenos') {
-    header('location:adeia_eidikou_skopou.php?status=not_ergodotis');    
+if($role != 'ergodotis') {
+    header('location:anastoli_symvasis.php?status=not_ergodotis');    
     mysqli_close($conn);
 }
  

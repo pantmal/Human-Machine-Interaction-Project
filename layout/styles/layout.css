@@ -106,13 +106,13 @@ File: Layout CSS
 #comments time{font-size:smaller;}
 #comments .comcont{display:block; margin:0; padding:0;}
 #comments .comcont p{margin:10px 5px 10px 0; padding:0;}
-
+/* width 100 in the second rule */
 #comments form{display:block; width:100%;}
-#comments input, #comments textarea{width:100%; padding:10px; border:1px solid;}
+#comments input, #comments textarea, #comments select{padding:10px; border:3px solid;}
 #comments textarea{overflow:auto;}
 #comments div{margin-bottom:15px;}
-#comments input[type="submit"], #comments input[type="reset"]{display:inline-block; width:auto; min-width:150px; margin:0; padding:8px 5px; cursor:pointer;}
-
+#comments input[type="submit"], #comments input[type="reset"]{display:inline-block; width:auto; min-width:150px; margin:0; padding:15px 10px; cursor:pointer;}
+/* padding from 8 kai 5 px to -> 15 kai 10*/
 /* Sidebar */
 .container .sidebar{}
 
@@ -406,10 +406,10 @@ input:focus, textarea:focus, *:required:focus{border-color:#53D3DE;}
 
 
 /* Tables + Comments */
-table, th, td, #comments .avatar, #comments input, #comments textarea{border-color:#D7D7D7;}
-#comments input:focus, #comments textarea:focus, #comments *:required:focus{border-color:#53D3DE;}
+table, th, td, #comments .avatar, #comments input, #comments textarea, #comments select {border-color:#353434;}
+/* #comments input:focus, #comments textarea:focus, #comments *:required:focus{border-color:#53D3DE;} */
 th{color:#FFFFFF; background-color:#373737;}
-tr, #comments li, #comments input[type="submit"], #comments input[type="reset"]{color:inherit; background-color:#FBFBFB;}
+tr, #comments li, #comments input[type="submit"], #comments input[type="reset"], #comments select{color:inherit; background-color:#FBFBFB;}
 tr:nth-child(even), #comments li:nth-child(even){color:inherit; background-color:#F7F7F7;}
 table a, #comments a{background-color:inherit;}
 

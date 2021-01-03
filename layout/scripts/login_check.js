@@ -1,69 +1,34 @@
-
-function validateName(){
-    var x = document.getElementById('uname').value;
-    var regex=/^[a-zA-ZΆ-ωΑ-ώ ]+$/ ///^[0-9]+$/;
-    var re = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
-    result = true;
-
-    if (x == "") {
-        document.getElementById("demo").innerHTML = '\u2757not empty';
-        result = false;
-    }else{
-        document.getElementById("demo").innerHTML = '';
-    }
-
-    // if (x != ''){
-    //     if ((!x.match(regex))){
-    //         document.getElementById("demo").innerHTML = '\u2757 not numbers';
-    //         result = false;
-    //     }else{
-    //         document.getElementById("demo").innerHTML = '';
-    //     }
-    // }
-
-    return result;
-
-}
-
-function validatePswd(){
-
-    var y = document.getElementById('pwd').value;
-    var regex=/^[0-9]+$/; ///^[A-Za-z]+$/
-
-    result = true;
-
-    if (y == "") {
-        document.getElementById("demo2").innerHTML = '\u2757not empty';
-        result = false;
-    }else{
-        document.getElementById("demo2").innerHTML = '';
-    }
-
-    // if (y != ''){
-    //     if ((!y.match(regex))){
-    //         document.getElementById("demo2").innerHTML = '\u2757 not ok';
-    //         result = false;
-    //     }else{
-    //         document.getElementById("demo2").innerHTML = '';
-    //     }
-    // }
-
-    return result;
+function validateEmpty(id,demo){
+    var x = id.value
     
+    result = true;
+    
+    if (x == "") {
+        demo.innerHTML = '\u2757 Το πεδιό αυτό είναι υποχρεωτικό.';
+        id.style.borderColor = "darkred";
+        result = false;
+    }else{
+       demo.innerHTML = '';
+       id.style.borderColor = "#ccc";
+    }
+    
+    return result;
+
 }
 
-function validateForm() {
+function validateLoginForm() {
 
     result = true;
     errors = false;
 
-    if(validateName()==false){
-        errors = true;
-        
-    }
-    if(validatePswd()==false){
+    if(validateEmpty(document.getElementById('uname'),document.getElementById('demo'))==false){
         errors = true;        
     }
+
+    if(validateEmpty(document.getElementById('pwd'),document.getElementById('demo2'))==false){
+        errors = true;        
+    }
+
 
     if (errors == true){
         result = false;

@@ -12,14 +12,7 @@ function validateName(){
         document.getElementById("demo").innerHTML = '';
     }
 
-    // if (x != ''){
-    //     if ((!x.match(regex))){
-    //         document.getElementById("demo").innerHTML = '\u2757 not numbers';
-    //         result = false;
-    //     }else{
-    //         document.getElementById("demo").innerHTML = '';
-    //     }
-    // }
+   
 
     return result;
 
@@ -39,14 +32,7 @@ function validatePswd(){
         document.getElementById("demo2").innerHTML = '';
     }
 
-    // if (y != ''){
-    //     if ((!y.match(regex))){
-    //         document.getElementById("demo2").innerHTML = '\u2757 not ok';
-    //         result = false;
-    //     }else{
-    //         document.getElementById("demo2").innerHTML = '';
-    //     }
-    // }
+    
 
     return result;
     
@@ -110,6 +96,7 @@ function validateNum(){
 
 }
 
+
 function validateFirstName(){
     var x = document.getElementById('first_name').value;
     var regex=/^[a-zA-ZΆ-ωΑ-ώ ]+$/ ///^[0-9]+$/;
@@ -160,7 +147,7 @@ function validateLastName(){
 
 }
 
-function validateRole(){ //doesn't work for on change
+function validateRole(){ 
     var x = document.getElementsByName('rdb');
     
     
@@ -173,7 +160,8 @@ function validateRole(){ //doesn't work for on change
         document.getElementById("demo7").innerHTML = '';
     }
 
-   
+    show_afm_ergodoti();
+
     return result;
 
 }
@@ -211,10 +199,26 @@ function validateForm() {
        errors = true;   
     }
 
+
+
     if (errors == true){
         result = false;
     }
 
     return result;
 
+}
+
+function show_afm_ergodoti() {
+    var x = document.getElementsByName('rdb');
+    var hidden_text = document.getElementById("hidden_input");
+  
+    // If the checkbox is checked, display the output text
+    if ( x[1].checked == true){
+        hidden_text.style.display = "inline";
+    } else {
+        hidden_text.style.display = "none";
+    }
+
+        
 }

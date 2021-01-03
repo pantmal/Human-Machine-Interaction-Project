@@ -10,9 +10,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-<!--CHANGE HERE-->
 <title>Λίστα Εργαζομένων</title>
-<!--CHANGE HERE-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -71,15 +69,12 @@ Licence URI: https://www.os-templates.com/template-terms
   <header id="header" class="hoc clear">
     <div id="logo" class="fl_left"> 
       <!-- ################################################################################################ -->
-      <!--CHANGE HERE-->
       <h1><a href="../index.html">Υπουργείο Εργασίας</a></h1>
-      <!--CHANGE HERE-->
       <!-- ################################################################################################ -->
     </div>
     <nav id="mainav" class="fl_right"> 
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <!--CHANGE HERE-->
         <li><a href="../index.html">Αρχική</a></li>
         <li><a class="drop" href="#">Εργαζόμενος</a>
           <ul>
@@ -142,7 +137,6 @@ Licence URI: https://www.os-templates.com/template-terms
         </li>
         <li><a href="#">Link Text</a></li>
       </ul>
-      <!--CHANGE HERE-->
       <!-- ################################################################################################ -->
     </nav>
   </header>
@@ -153,7 +147,6 @@ Licence URI: https://www.os-templates.com/template-terms
 <div class="wrapper bgded overlay gradient" style="background-image:url('../images/demo/backgrounds/01.png');">
   <div id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <!--CHANGE HERE-->
     <h6 class="heading">Λίστα Εργαζομένων</h6>
     <ul>
       <li><a href="../index.html">Home</a></li>
@@ -161,19 +154,31 @@ Licence URI: https://www.os-templates.com/template-terms
       <li><a href="#">Ipsum</a></li>
       <li><a href="#">Dolor</a></li>
     </ul>
-    <!--CHANGE HERE-->
     <!-- ################################################################################################ -->
   </div>
 </div>
 
+
 <?php
 if(isset($_GET['status'])):
     if( $_GET['status'] == 'success'):
-        echo '<script language="javascript">';
-        echo 'alert("Η κατάσταση του εργαζομένου άλλαξε με επιτυχία.")';
-        echo '</script>';
+      echo '<script language="javascript">';
+      echo 'alert("Η κατάσταση του εργαζομένου άλλαξε με επιτυχία.")';
+      echo '</script>';
     endif;
-endif;    
+    
+    if( $_GET['status'] == 'not_user'):
+      echo '<script language="javascript">';
+      echo 'alert("Δεν έχετε κάνει εγγραφή στην εφαρμογή")';
+      echo '</script>';
+    endif;
+
+    if( $_GET['status'] == 'not_ergodotis'):
+      echo '<script language="javascript">';
+      echo 'alert("Δεν μπορείτε να κάνετε δήλωση για αναστολή σύμβασης ή τηλεργασίας αν δεν είστε εργοδοτης")';
+      echo '</script>';
+    endif;
+endif;
 ?>
 	
 <!-- ################################################################################################ -->
@@ -183,9 +188,7 @@ endif;
   <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
-    
-
-    
+        
     <?php
         require_once "../settings.php";
         
@@ -205,8 +208,14 @@ endif;
         echo '<th>Δήλωση νέας περιόδου αναστολής σύμβασης ή τηλεργασίας</th>';
         echo '</tr>';
         echo '</thead>';
-        
-        $query = "SELECT * FROM users WHERE role ='ergazomenos'";
+
+        $cookie_name = 'user';
+        $query = "SELECT * FROM users WHERE username='$_COOKIE[$cookie_name]'";
+        $result = $conn->query($query);
+        $row = $result->fetch_array(MYSQLI_ASSOC);
+        $afm_master = $row['afm'];
+    
+        $query = "SELECT * FROM users WHERE role = 'ergazomenos' AND afm_ergodoti = '$afm_master' ";
         $result = $conn->query($query);
         $rows = $result->num_rows;
     
@@ -270,14 +279,18 @@ endif;
             
             if($tilergasia_start != NULL ){
                 echo '<td> <form action="actions/arsi_action.php?option=til&afm=' . $afm .'  " method="post">';
-                echo '<input type="submit" name="arsi" id="arsi" value="Άρση" />';
+                echo '<div id="comments">';
+                echo '<input style="padding:5px; min-width:70px" type="submit" name="arsi" id="arsi" value="Άρση" />';
+                echo '</div>';
                 echo '</form> </td>';
             }else{
                 echo '<td> - </td>';    
             }
             if($anastoli_start != NULL ){
                 echo '<td> <form action="actions/arsi_action.php?option=anas&afm=' . $afm .'  " method="post">';
-                echo '<input type="submit" name="arsi" id="arsi" value="Άρση" />';
+                echo '<div id="comments">';
+                echo '<input style="padding:5px; min-width:70px" type="submit" name="arsi" id="arsi" value="Άρση" />';
+                echo '</div>';
                 echo '</form> </td>';
             }else{
                 echo '<td> - </td>';    
@@ -292,17 +305,7 @@ endif;
 
         mysqli_close($conn);
     ?>
-    
-    
-  </table>
-
-    
-    <!-- <div>
-      <input type="submit" name="submit" value="Submit Form">
-      &nbsp;
-      <input type="reset" name="reset" value="Reset Form">
-    </div> -->
-  </form>
+      
 </div>
     
     <!-- ################################################################################################ -->

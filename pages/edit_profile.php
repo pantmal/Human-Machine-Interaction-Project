@@ -10,9 +10,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-<!--CHANGE HERE-->
 <title>Προφίλ Χρήστη</title>
-<!--CHANGE HERE-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -26,7 +24,7 @@ Licence URI: https://www.os-templates.com/template-terms
 @media screen and (max-width:900px){.container .demo div{margin-bottom:0;}}
 /* DEMO ONLY */
 </style>
-<script type="text/javascript" src='../layout/scripts/rantevou_check.js'></script>
+<script type="text/javascript" src='../layout/scripts/edit_profile_check.js'></script>
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -72,15 +70,12 @@ Licence URI: https://www.os-templates.com/template-terms
   <header id="header" class="hoc clear">
     <div id="logo" class="fl_left"> 
       <!-- ################################################################################################ -->
-      <!--CHANGE HERE-->
       <h1><a href="../index.html">Υπουργείο Εργασίας</a></h1>
-      <!--CHANGE HERE-->
       <!-- ################################################################################################ -->
     </div>
     <nav id="mainav" class="fl_right"> 
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <!--CHANGE HERE-->
         <li><a href="../index.html">Αρχική</a></li>
         <li><a class="drop" href="#">Εργαζόμενος</a>
           <ul>
@@ -143,7 +138,6 @@ Licence URI: https://www.os-templates.com/template-terms
         </li>
         <li><a href="#">Link Text</a></li>
       </ul>
-      <!--CHANGE HERE-->
       <!-- ################################################################################################ -->
     </nav>
   </header>
@@ -154,7 +148,6 @@ Licence URI: https://www.os-templates.com/template-terms
 <div class="wrapper bgded overlay gradient" style="background-image:url('../images/demo/backgrounds/01.png');">
   <div id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <!--CHANGE HERE-->
     <h6 class="heading"> Προφίλ Χρήστη</h6>
     <ul>
       <li><a href="../index.html">Home</a></li>
@@ -162,7 +155,6 @@ Licence URI: https://www.os-templates.com/template-terms
       <li><a href="#">Ipsum</a></li>
       <li><a href="#">Dolor</a></li>
     </ul>
-    <!--CHANGE HERE-->
     <!-- ################################################################################################ -->
   </div>
 </div>
@@ -172,116 +164,116 @@ Licence URI: https://www.os-templates.com/template-terms
   <main class="hoc container clear"> 
     <!-- main body -->
 
+    <h1 style="text-align:center">Προφίλ Χρήστη</h1>
 
+    <div id="comments">
 
-	<h1 style="text-align:center">Προφίλ Χρήστη</h1>
-	
-	<div class="boxed">
-  
-  <?php
-  require_once "../settings.php";
-  $cookie_name = 'user';
-  if (isset($_COOKIE[$cookie_name])):
-    $query = "SELECT * FROM users WHERE username='$_COOKIE[$cookie_name]'";
-    $result = $conn->query($query);
-    $row = $result->fetch_array(MYSQLI_ASSOC);
-    $username = $row['username'];
-    $email = $row['email'];
-    $afm = $row['afm'];
-    $first_name = $row['first_name'];
-    $last_name = $row['last_name'];
-    $parent = $row['parent'];
-    $role = $row['role'];
-    $tilergasia_start = $row['tilergasia_start'];
-    $tilergasia_end = $row['tilergasia_end'];
-    $anastoli_start = $row['anastoli_start'];
-    $anastoli_end = $row['anastoli_end'];
-    
-    $tilergasia_start_split = explode('-',$tilergasia_start);
-    $new_tilergasia_start = $tilergasia_start_split[2].'-'.$tilergasia_start_split[1].'-'.$tilergasia_start_split[0];
-
-    $tilergasia_end_split = explode('-',$tilergasia_end);
-    $new_tilergasia_end = $tilergasia_end_split[2].'-'.$tilergasia_end_split[1].'-'.$tilergasia_end_split[0];
-
-    $anastoli_start_split = explode('-',$anastoli_start);
-    $new_anastoli_start = $anastoli_start_split[2].'-'.$anastoli_start_split[1].'-'.$anastoli_start_split[0];
-
-    $anastoli_end_split = explode('-',$anastoli_end);
-    $new_anastoli_end = $anastoli_end_split[2].'-'.$anastoli_end_split[1].'-'.$anastoli_end_split[0];
-  endif;
-
-  if ($parent == 'yes'):
-    $query = "SELECT * FROM adeia_eidikou_skopou WHERE afm='$afm'";
-    $result = $conn->query($query);
-    $adeies = $result->num_rows;
-  endif;
-
-  mysqli_close($conn);
-  ?>
-
-<?php
-if(isset($_GET['status'])):
-    if( $_GET['status'] == 'success'):
-        echo '<script language="javascript">';
-        echo 'alert("Οι αλλαγές σας αποθηκεύτηκαν με επιτυχία")';
-        echo '</script>';
-    endif;
-endif;
-?>
-
-
-	<form name="edit_form" action="actions/edit_action.php" method="post">
-  
-        <p>Όνομα Χρήστη: <?php echo $username ?> </p> 
-        <label for="uname">Εισάγετε νέο όνομα χρήστη αν το επιθυμείτε: <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label> 
-        <input type="text" id="uname" name="uname" onchange="return validateName()" > <br>
-        <p id='demo'></p>
-        <label for="pwd">Εισάγετε νέο κωδικό πρόσβασης αν το επιθυμείτε: <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label> 
-        <input type="password" id="pwd" name="pwd" onchange="return validatePswd()"> <br>
-        <p id='demo2'></p>
-        <p> Email: <?php echo $email ?> </p> 
-        <label for="email">Εισάγετε νέο e-mail αν το επιθυμείτε:  <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label> 
-        <input type="email" name="email" id="email" value="" size="22" onchange="return validateMail()" > <br>
-        <p id='demo3'></p>
-        <p>ΑΦΜ: <?php echo $afm ?> </p> 
-        <p>Όνομα: <?php echo $first_name ?></p>
-        <p>Επώνυμο: <?php echo $last_name ?> </p> <br>
+    <?php
+      require_once "../settings.php";
+      $cookie_name = 'user';
+      if (isset($_COOKIE[$cookie_name])):
+        $query = "SELECT * FROM users WHERE username='$_COOKIE[$cookie_name]'";
+        $result = $conn->query($query);
+        $row = $result->fetch_array(MYSQLI_ASSOC);
+        $username = $row['username'];
+        $email = $row['email'];
+        $afm = $row['afm'];
+        $first_name = $row['first_name'];
+        $last_name = $row['last_name'];
+        $parent = $row['parent'];
+        $role = $row['role'];
+        $tilergasia_start = $row['tilergasia_start'];
+        $tilergasia_end = $row['tilergasia_end'];
+        $anastoli_start = $row['anastoli_start'];
+        $anastoli_end = $row['anastoli_end'];
         
-        <?php 
+        $tilergasia_start_split = explode('-',$tilergasia_start);
+        $new_tilergasia_start = $tilergasia_start_split[2].'-'.$tilergasia_start_split[1].'-'.$tilergasia_start_split[0];
 
-          if ($adeies > 0):
-            if ($adeies == 1):
-              echo 'Ως γονέας έχετε λάβει 1 άδεια ειδικού σκοπού';
-            else:
-              echo 'Ως γονέας έχετε λάβει ' . $adeies . ' άδειες ειδικού σκοπού';
-            endif;
-          endif;
+        $tilergasia_end_split = explode('-',$tilergasia_end);
+        $new_tilergasia_end = $tilergasia_end_split[2].'-'.$tilergasia_end_split[1].'-'.$tilergasia_end_split[0];
 
-          if ($role == 'ergodotis'){
-            echo 'Ως εργοδότης μπορείτε να μεταβείτε στην <a href="lista_ergazomenwn.php"> λίστα </a> των εργαζομένων σας.';
+        $anastoli_start_split = explode('-',$anastoli_start);
+        $new_anastoli_start = $anastoli_start_split[2].'-'.$anastoli_start_split[1].'-'.$anastoli_start_split[0];
+
+        $anastoli_end_split = explode('-',$anastoli_end);
+        $new_anastoli_end = $anastoli_end_split[2].'-'.$anastoli_end_split[1].'-'.$anastoli_end_split[0];
+      endif;
+
+      if ($parent == 'yes'):
+        $query = "SELECT * FROM adeia_eidikou_skopou WHERE afm='$afm'";
+        $result = $conn->query($query);
+        $adeies = $result->num_rows;
+      endif;
+
+      mysqli_close($conn);
+    ?>
+
+    <?php
+      if(isset($_GET['status'])):
+        if( $_GET['status'] == 'success'):
+            echo '<script language="javascript">';
+            echo 'alert("Οι αλλαγές σας αποθηκεύτηκαν με επιτυχία")';
+            echo '</script>';
+        endif;
+      endif;
+    ?>
+
+
+    <form name="edit_form" action="actions/edit_action.php" method="post">
+
+      <p>Όνομα Χρήστη: <?php echo $username ?> </p> 
+      <label for="uname">Εισάγετε νέο όνομα χρήστη αν το επιθυμείτε: <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label> 
+      <input type="text" id="uname" name="uname" > <br>
+      
+      <p> Email: <?php echo $email ?> </p> 
+      <label for="email">Εισάγετε νέο e-mail αν το επιθυμείτε:  <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label> 
+      <input type="email" name="email" id="email" value="" size="22"  > <br>
+      
+      <label for="pwd">Ανανεώστε τον κωδικό πρόσβασης σας αν το επιθυμείτε: <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label> 
+      <input type="password" id="pwd" name="pwd" > <br>
+      
+      <p>ΑΦΜ: <?php echo $afm ?> </p> 
+      <p>Όνομα: <?php echo $first_name ?></p>
+      <p>Επώνυμο: <?php echo $last_name ?> </p> <br>
+      
+      <?php 
+
+        if ($adeies > 0):
+          if ($adeies == 1):
+            echo 'Ως γονέας έχετε λάβει 1 άδεια ειδικού σκοπού.';
             echo '<br> <br>';
-          }else{
-            if ($tilergasia_start != NULL){
-              echo 'Ως εργαζόμενος είστε σε διάστημα τηλεργασίας από '. $new_tilergasia_start . ' μέχρι ' . $new_tilergasia_end ;
-              echo '<br> <br>';
-            }
-            if ($anastoli_start != NULL){
-              echo 'Ως εργαζόμενος είστε σε διάστημα αναστολής σύμβασης από '. $new_anastoli_start . ' μέχρι ' . $new_anastoli_end ;
-              echo '<br> <br>';
-            }
-          }
-        
-        ?>
+          else:
+            echo 'Ως γονέας έχετε λάβει ' . $adeies . ' άδειες ειδικού σκοπού.';
+            echo '<br> <br>';
+          endif;
+        endif;
 
-        <div>
-        <input type="submit" name="submit" value="Αποθηκεύστε τις αλλαγές σας">
-        </div>
+        if ($role == 'ergodotis'){
+          echo 'Ως εργοδότης μπορείτε να μεταβείτε στην <a href="lista_ergazomenwn.php"> λίστα </a> των εργαζομένων σας.';
+          echo '<br> <br>';
+        }else{
+          if ($tilergasia_start != NULL){
+            echo 'Ως εργαζόμενος είστε σε διάστημα τηλεργασίας από '. $new_tilergasia_start . ' μέχρι ' . $new_tilergasia_end ;
+            echo '<br> <br>';
+          }
+          if ($anastoli_start != NULL){
+            echo 'Ως εργαζόμενος είστε σε διάστημα αναστολής σύμβασης από '. $new_anastoli_start . ' μέχρι ' . $new_anastoli_end ;
+            echo '<br> <br>';
+          }
+        }
+      
+      ?>
+
+      <div style="text-align:center">
+      <input type="submit" name="submit" value="Αποθηκεύστε τις αλλαγές σας">
+      </div>
     </form>        
     </div>
-    
+      
     <!-- ################################################################################################ -->
     <!-- / main body -->
-    <!--CHANGE HERE-->
+    
     <div class="clear"></div>
   </main>
 </div>

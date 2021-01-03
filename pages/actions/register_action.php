@@ -19,7 +19,15 @@ if (isset($_POST['parent']) && $_POST['parent'] == 'yes') {
     $parent = 'no';
 }    
 
-$query = "INSERT INTO users VALUES" . "(DEFAULT, '$uname', '$password', '$email', '$afm', '$first_name', '$last_name', '$radio', '$parent', NULL, NULL, NULL, NULL)";
+
+if ($_POST["afm_ergodoti"]!=''){
+    $afm_ergodoti = $_POST["afm_ergodoti"];
+    $query = "INSERT INTO users VALUES" . "(DEFAULT, '$uname', '$password', '$email', '$afm', '$afm_ergodoti', '$first_name', '$last_name', '$radio', '$parent', NULL, NULL, NULL, NULL)";
+}else{
+    $query = "INSERT INTO users VALUES" . "(DEFAULT, '$uname', '$password', '$email', '$afm', NULL, '$first_name', '$last_name', '$radio', '$parent', NULL, NULL, NULL, NULL)";
+}
+
+
 
 $result = $conn->query($query);
 

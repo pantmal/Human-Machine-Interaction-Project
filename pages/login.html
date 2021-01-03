@@ -2,90 +2,89 @@
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-<!--CHANGE HERE-->  
 <title>Σύνδεση</title>
-<!--CHANGE HERE-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <script type="text/javascript" src='../layout/scripts/login_check.js'></script>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
-    <style>
-      html, body {
-      display: flex;
-      justify-content: center;
-      font-family: Roboto, Arial, sans-serif;
-      font-size: 15px;
-      }
-      form {
-      border: 5px solid #f1f1f1;
-      padding: 30px;
-      }
-      input[type=text], input[type=password] {
-      width: 100%;
-      padding: 16px 8px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      box-sizing: border-box;
-      }
-      button {
-      background-color: #8ebf42;
-      color: white;
-      padding: 14px 0;
-      margin: 10px 0;
-      border: none;
-      cursor: grabbing;
-      width: 100%;
-      }
-      h1 {
-      text-align:center;
-      font-size:18;
-      }
-      button:hover {
-      opacity: 0.8;
-      }
-      .formcontainer {
-      text-align: left;
-      margin: 24px 50px 12px;
-      }
-      .container {
-      padding: 16px 0;
-      text-align:left;
-      }
-      span.psw {
-      float: right;
-      padding-top: 0;
-      padding-right: 15px;
-      }
-      span{
-        color: red;
-      }
-      /* Change styles for span on extra small screens */
-      @media screen and (max-width: 300px) {
-      span.psw {
-      display: block;
-      float: none;
-      }
-    }
-    </style>
+<style>
+  html, body {
+  display: flex;
+  justify-content: center;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 15px;
+  }
+  form {
+  border: 5px solid #f1f1f1;
+  padding: 30px;
+  }
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 16px 8px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  }
+  button {
+  background-color: #4274bf;
+  color: white;
+  padding: 14px 0;
+  margin: 10px 0;
+  border: none;
+  cursor: grabbing;
+  width: 100%;
+  }
+  h1 {
+  text-align:center;
+  font-size:18;
+  }
+  button:hover {
+  opacity: 0.8;
+  }
+  .formcontainer {
+  text-align: left;
+  margin: 24px 50px 12px;
+  }
+  .container {
+  padding: 16px 0;
+  text-align:left;
+  }
+  span.psw {
+  float: right;
+  padding-top: 0;
+  padding-right: 15px;
+  }
+  span{
+    color: red;
+  }
+  /* Change styles for span on extra small screens */
+  @media screen and (max-width: 300px) {
+  span.psw {
+  display: block;
+  float: none;
+  }
+  }
+</style>
 </head>
 <body id="top">
-<form name="login_form" action="actions/login_action.php" onsubmit="return validateForm()" method="post">
+<form name="login_form" action="actions/login_action.php" onsubmit="return validateLoginForm()" method="post">
   <h1>Σύνδεση</h1>
   <div class="formcontainer"></div>
   <hr>
   <div class="container">
-  <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br> <br>
-  <label for="uname"><strong>Username: <span>*</span></strong></label><br>
-  <input type="text" id="uname" name="uname" onchange="return validateName()" ><br>
-  <p id='demo'></p>
-  <label for="pwd"><strong>Password: <span>*</span></strong></label><br>
-  <input type="password" id="pwd" name="pwd" onchange="return validatePswd()"><br>
-  <p id='demo2'></p>
+    <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br> <br>
+    
+    <label for="uname"><strong>Username: <span>*</span></strong></label><br>
+    <input type="text" id="uname" name="uname" onchange="return validateEmpty(document.getElementById('uname'),document.getElementById('demo'))" ><br>
+    <p id='demo'></p>
+    
+    <label for="pwd"><strong>Password: <span>*</span></strong></label><br>
+    <input type="password" id="pwd" name="pwd" onchange="return validateEmpty(document.getElementById('pwd'),document.getElementById('demo2'))"><br>
+    <p id='demo2'></p>
+    
   </div>
-  <button type="submit">Login</button>
-  </form>
-  </div>
+  <button type="submit">Σύνδεση</button>
 </form> 
 </body>
 </html>

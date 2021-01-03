@@ -26,7 +26,7 @@ Licence URI: https://www.os-templates.com/template-terms
 @media screen and (max-width:900px){.container .demo div{margin-bottom:0;}}
 /* DEMO ONLY */
 </style>
-<script type="text/javascript" src='../layout/scripts/rantevou_check.js'></script>
+<script type="text/javascript" src='../layout/scripts/adeia_eidikou_check.js'></script>
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -72,15 +72,12 @@ Licence URI: https://www.os-templates.com/template-terms
   <header id="header" class="hoc clear">
     <div id="logo" class="fl_left"> 
       <!-- ################################################################################################ -->
-      <!--CHANGE HERE-->
       <h1><a href="../index.html">Υπουργείο Εργασίας</a></h1>
-      <!--CHANGE HERE-->
       <!-- ################################################################################################ -->
     </div>
     <nav id="mainav" class="fl_right"> 
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <!--CHANGE HERE-->
         <li><a href="../index.html">Αρχική</a></li>
         <li><a class="drop" href="#">Εργαζόμενος</a>
           <ul>
@@ -143,7 +140,6 @@ Licence URI: https://www.os-templates.com/template-terms
         </li>
         <li><a href="#">Link Text</a></li>
       </ul>
-      <!--CHANGE HERE-->
       <!-- ################################################################################################ -->
     </nav>
   </header>
@@ -154,7 +150,6 @@ Licence URI: https://www.os-templates.com/template-terms
 <div class="wrapper bgded overlay gradient" style="background-image:url('../images/demo/backgrounds/01.png');">
   <div id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <!--CHANGE HERE-->
     <h6 class="heading">Άδεια Ειδικού Σκοπού</h6>
     <ul>
       <li><a href="../index.html">Home</a></li>
@@ -162,7 +157,6 @@ Licence URI: https://www.os-templates.com/template-terms
       <li><a href="#">Ipsum</a></li>
       <li><a href="#">Dolor</a></li>
     </ul>
-    <!--CHANGE HERE-->
     <!-- ################################################################################################ -->
   </div>
 </div>
@@ -175,147 +169,144 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- main body -->
     <!-- ################################################################################################ -->
     
-<?php
-if(isset($_GET['status'])):
-    if( $_GET['status'] == 'success'):
-        echo '<script language="javascript">';
-        echo 'alert("Επιτυχής δήλωση")';
-        echo '</script>';
-    endif;
-    
-    if( $_GET['status'] == 'not_user'):
-      echo '<script language="javascript">';
-      echo 'alert("Δεν έχετε κάνει εγγραφή στην εφαρμογή")';
-      echo '</script>';
-    endif;
-
-    if( $_GET['status'] == 'not_parent'):
-      echo '<script language="javascript">';
-      echo 'alert("Δεν μπορείτε να λάβετε την άδεια ειδικού σκοπού αν δεν είστε γονέας")';
-      echo '</script>';
-    endif;
-endif;
-?>
-	<h1 style="text-align:center">Άδεια Ειδικού Σκοπού</h1>
-	
-	<p>Παρακαλούμε συμπληρώστε την παρακάτω φόρμα αίτησης άδειας ειδικού σκοπού: </p>
-	<div class="boxed">
-  <div style="border: 1px solid black; padding: 10px">  
-	<form name="adeia_eidikou_form" action="actions/adeia_eidikou_skopou_action.php" onsubmit="return validateForm()"  method="post">
-	
-  <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br>
-            
-            <label for="name">Όνομα: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label> 
-            <input type="text" name="name1" id="name1"  size="22" onchange="return validateName(document.getElementById('name1').value,document.getElementById('demo'))"  required>
-            <p id='demo'></p>
-            
-			
-			<label for="name">Επώνυμο: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-			<input type="text" name="surname" id="surname" value="" size="22" onchange="return validateName(document.getElementById('surname').value,document.getElementById('demo1'))" required>
-            <p id='demo1'></p>
-          
-            <label for="email">Mail: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-            <input type="email" name="email" id="email" value="" size="22" onchange="return validateMail(document.getElementById('email').value,document.getElementById('demo2'))"required>
-			<p id='demo2'></p>  
-			
-			<!--this will be implemented afterwards with js-->
-            <label for="number">ΑΦΜ: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-            <input type="text" name="afm" id="afm" pattern="\d*" maxlength="9" onchange="return validateNum(document.getElementById('afm').value,document.getElementById('demo3'))" required>	<!-- id="afm" size="9" maxlength="9" -->
-            <p id='demo3'></p>
-			
-         <!--   <input type="datetime-local" id="meeting-time"
-       name="meeting-time" value="2018-06-12T19:30"
-       min="2018-06-07T00:00" max="2018-06-14T00:00">   -->
-            
-			<label for="birthday">Από:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-			<input type="date" id="date_from" name="date_from" required>
-			
-			<label for="birthday">Εώς:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-			<input type="date" id="date_to" name="date_to" required>
-			
-			
-			
-			<label for="paidia">Αριθμός Παιδιών:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-      <!--cars44 change here-->      
-			<select name="number_of_kids" id="number_of_kids" onchange="show_func()" required>
-            <option value="" selected disabled hidden>Επιλέξτε</option>
-			<option  value="one" >Ένα(1)</option>
-			<option value="two">Δύο(2)</option>
-			<option value="three">Τρία(3)</option>
-			<option value="four_or_more">Τέσσερα και πάνω(4+)</option>
-			</select>
-		
-
-		<!-- dont let the user insert less than 4 kids CSS master race-->
-		<!--added div here-->      
-		<div id='hidden' style="display: none;">
-		<label for="number">Αριθμός Παιδιών(4+): <span>*</span><div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-        <input type="text" name="kids_4" id="kids_4"attern="\d*" maxlength="2" >
-    </div>
-    
-    <br><br>
-		<div id='hidden_paidi_1' style="display: none;">
-		<h6>Εισάγετε την βαθμίδα των παιδιών σας <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></h6>
-		<h6>1ο παιδί</h6>
-		
-			<select name="paidi_1" id="paidi_1" >
-            <option value="" selected disabled hidden>Επιλέξτε</option>
-			<option value="nipiagwgio">Νηπειαγωγείο</option>
-			<option value="dimotiko">Δημοτικό</option>
-			<option value="gymnasio">Γυμνάσιο</option>
-			<option value="lykeio">Λύκειο</option>
-			</select>
-		</div>
+    <?php
+    if(isset($_GET['status'])):
+        if( $_GET['status'] == 'success'):
+            echo '<script language="javascript">';
+            echo 'alert("Επιτυχής δήλωση")';
+            echo '</script>';
+        endif;
         
-		<div id='hidden_paidi_2' style="display: none;">	
-			<h6>2ο παιδί</h6>
-			
-			<select name="paidi_2" id="paidi_2" >
-            <option value="" selected disabled hidden>Επιλέξτε</option>
-			<option value="nipiagwgio">Νηπειαγωγείο</option>
-			<option value="dimotiko">Δημοτικό</option>
-			<option value="gymnasio">Γυμνάσιο</option>
-			<option value="lykeio">Λύκειο</option>
-			</select>
-			</div>
-			<div id='hidden_paidi_3' style="display: none;">
-			<h6>3ο παιδί</h6>
-			
-			<select name="paidi_3" id="paidi_3" >
-            <option value="" selected disabled hidden>Επιλέξτε</option>
-			<option value="nipiagwgio">Νηπειαγωγείο</option>
-			<option value="dimotiko">Δημοτικό</option>
-			<option value="gymnasio">Γυμνάσιο</option>
-			<option value="lykeio">Λύκειο</option>
-			</select>
-			</div>
-			
-            <div id='hidden_paidi_4' style="display: none;">
-			<h6>4ο παιδί</h6>
-			
-			<select name="paidi_4" id="paidi_4" >
-            <option value="" selected disabled hidden>Επιλέξτε</option>
-			<option value="nipiagwgio">Νηπειαγωγείο</option>
-			<option value="dimotiko">Δημοτικό</option>
-			<option value="gymnasio">Γυμνάσιο</option>
-			<option value="lykeio">Λύκειο</option>
-			</select>
-            </div>
+        if( $_GET['status'] == 'not_user'):
+          echo '<script language="javascript">';
+          echo 'alert("Δεν έχετε κάνει εγγραφή στην εφαρμογή")';
+          echo '</script>';
+        endif;
+
+        if( $_GET['status'] == 'not_parent'):
+          echo '<script language="javascript">';
+          echo 'alert("Δεν μπορείτε να λάβετε την άδεια ειδικού σκοπού αν δεν είστε γονέας")';
+          echo '</script>';
+        endif;
+    endif;
+    ?>
+    <h1 style="text-align:center">Άδεια Ειδικού Σκοπού</h1>
+    
+    <p>Παρακαλούμε συμπληρώστε την παρακάτω φόρμα αίτησης άδειας ειδικού σκοπού: </p>
+    <div id="comments">
+    <div style="border: 1px solid black; padding: 10px; margin-right:400px">  
+    <form name="adeia_eidikou_form" action="actions/adeia_eidikou_skopou_action.php" onsubmit="return validateAdeiaEidikouForm()"  method="post">
+    
+      <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br>
+              
+      <label for="name1">Όνομα: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label> 
+      <input type="text" name="name1" id="name1"  size="22" onchange="return validateName(document.getElementById('name1'),document.getElementById('demo'))" >
+      <p style="color: darkred" id='demo'></p>
+              
+      <label for="surname">Επώνυμο: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <input type="text" name="surname" id="surname" value="" size="22" onchange="return validateName(document.getElementById('surname'),document.getElementById('demo1'))">
+      <p style="color: darkred" id='demo1'></p>
             
-			
-			
-          <br> <br>
-          <div>
-            <input type="submit" name="submit" value="Submit Form">
-            &nbsp;
-            <input type="reset" name="reset" value="Reset Form">
-          </div>
-        </div>  
-        </form>
-</div>  
+      <label for="email">Mail: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <input type="email" name="email" id="email" value="" size="22" onchange="return validateMail(document.getElementById('email'),document.getElementById('demo2'))">
+      <p style="color: darkred" id='demo2'></p>  
+        
+      <label for="number">ΑΦΜ: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <input type="text" name="afm" id="afm" pattern="\d*" size="9" maxlength="9" onchange="return validateNum(document.getElementById('afm'),document.getElementById('demo3'))" >	<!-- id="afm" size="9" maxlength="9" -->
+      <p style="color: darkred" id='demo3'></p>
+        
+      <!--   <input type="datetime-local" id="meeting-time"
+        name="meeting-time" value="2018-06-12T19:30"
+        min="2018-06-07T00:00" max="2018-06-14T00:00">   -->
+              
+      <label for="birthday">Από:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <input type="date" id="date_from" name="date_from" onchange="return validateEmpty(document.getElementById('date_from'),document.getElementById('demo4'))" >
+      <p style="color: darkred" id='demo4' ></p>
+      <br>  
+      <label for="birthday">Εώς:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <input type="date" id="date_to" name="date_to" onchange="return validateEmpty(document.getElementById('date_to'),document.getElementById('demo5'))" >
+      <p style="color: darkred" id='demo5'></p>
+        
+        
+      <label for="number_of_kids">Αριθμός Παιδιών:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <select name="number_of_kids" id="number_of_kids" onchange="show_func()" >
+        <option value="" selected disabled hidden>Επιλέξτε</option>
+        <option value="one">Ένα(1)</option>
+        <option value="two">Δύο(2)</option>
+        <option value="three">Τρία(3)</option>
+        <option value="four_or_more">Τέσσερα και πάνω(4+)</option>
+      </select>
+      
+      <br>
+      <div id='hidden' style="display: none;">
+        <label for="kids_4">Αριθμός Παιδιών(4+): <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+        <input type="text" name="kids_4" id="kids_4" pattern="\d*" maxlength="2" >
+      </div>
+      
+      <br><br>
+      <div id='hidden_paidi_1' style="display: none;">
+        <h6>Εισάγετε την βαθμίδα των παιδιών σας <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></h6>
+        <h6>1ο παιδί</h6>
+      
+        <select name="paidi_1" id="paidi_1" onchange="return validateSelect()">
+          <option value="" selected disabled hidden>Επιλέξτε</option>
+          <option value="nipiagwgio">Νηπειαγωγείο</option>
+          <option value="dimotiko">Δημοτικό</option>
+          <option value="gymnasio">Γυμνάσιο</option>
+          <option value="lykeio">Λύκειο</option>
+        </select>
+      </div>
+      <br>
+          
+      <div id='hidden_paidi_2' style="display: none;">	
+        <h6>2ο παιδί</h6>
+        
+        <select name="paidi_2" id="paidi_2" onchange="return validateSelect()">
+          <option value="" selected disabled hidden>Επιλέξτε</option>
+          <option value="nipiagwgio">Νηπειαγωγείο</option>
+          <option value="dimotiko">Δημοτικό</option>
+          <option value="gymnasio">Γυμνάσιο</option>
+          <option value="lykeio">Λύκειο</option>
+        </select>
+      </div>
+      <br>
+      
+      <div id='hidden_paidi_3' style="display: none;">
+        <h6>3ο παιδί</h6>
+        
+        <select name="paidi_3" id="paidi_3" onchange="return validateSelect()">
+          <option value="" selected disabled hidden>Επιλέξτε</option>
+          <option value="nipiagwgio">Νηπειαγωγείο</option>
+          <option value="dimotiko">Δημοτικό</option>
+          <option value="gymnasio">Γυμνάσιο</option>
+          <option value="lykeio">Λύκειο</option>
+        </select>
+      </div>
+      <br>
+        
+      <div id='hidden_paidi_4' style="display: none;">
+        <h6>4ο παιδί</h6>
+        
+        <select name="paidi_4" id="paidi_4" onchange="return validateSelect()">
+          <option value="" selected disabled hidden>Επιλέξτε</option>
+          <option value="nipiagwgio">Νηπειαγωγείο</option>
+          <option value="dimotiko">Δημοτικό</option>
+          <option value="gymnasio">Γυμνάσιο</option>
+          <option value="lykeio">Λύκειο</option>
+        </select>
+      </div>
+              
+      <br> <br>
+      <div style="text-align:center">
+        <input type="submit" name="submit" value="Κατάθεση αίτησης">
+        &nbsp;
+        <input type="reset" name="reset" value="Καθαρισμός πεδίων">
+      </div>
+    </div>  
+    </form>
+    </div>  
     <!-- ################################################################################################ -->
     <!-- / main body -->
-    <!--CHANGE HERE-->
     <div class="clear"></div>
   </main>
 </div>

@@ -1,6 +1,23 @@
 <?php
 require_once "../../settings.php";
 
+$role = '';
+$cookie_name = 'user';
+if (isset($_COOKIE[$cookie_name])):
+    $query = "SELECT * FROM users WHERE username='$_COOKIE[$cookie_name]'";
+    $result = $conn->query($query);
+    $role = $result->fetch_assoc()['role'];
+else:
+    header('location:lista_ergazomenwn.php?status=not_user');    
+    mysqli_close($conn);
+endif;
+
+
+if($role != 'ergodotis') {
+    header('location:lista_ergazomenwn.php?status=not_ergodotis');    
+    mysqli_close($conn);
+}
+
 
 $afm = $_GET['afm'];
 $option = $_GET['option'];

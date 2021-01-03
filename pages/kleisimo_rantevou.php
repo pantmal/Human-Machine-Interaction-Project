@@ -10,9 +10,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-<!--CHANGE HERE-->
 <title>Κλείσιμο Ραντεβού</title>
-<!--CHANGE HERE-->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -72,15 +70,12 @@ Licence URI: https://www.os-templates.com/template-terms
   <header id="header" class="hoc clear">
     <div id="logo" class="fl_left"> 
       <!-- ################################################################################################ -->
-      <!--CHANGE HERE-->
       <h1><a href="../index.html">Υπουργείο Εργασίας</a></h1>
-      <!--CHANGE HERE-->
       <!-- ################################################################################################ -->
     </div>
     <nav id="mainav" class="fl_right"> 
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <!--CHANGE HERE-->
         <li><a href="../index.html">Αρχική</a></li>
         <li><a class="drop" href="#">Εργαζόμενος</a>
           <ul>
@@ -143,7 +138,6 @@ Licence URI: https://www.os-templates.com/template-terms
         </li>
         <li><a href="#">Link Text</a></li>
       </ul>
-      <!--CHANGE HERE-->
       <!-- ################################################################################################ -->
     </nav>
   </header>
@@ -154,7 +148,6 @@ Licence URI: https://www.os-templates.com/template-terms
 <div class="wrapper bgded overlay gradient" style="background-image:url('../images/demo/backgrounds/01.png');">
   <div id="breadcrumb" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <!--CHANGE HERE-->
     <h6 class="heading"> Κλείσιμο ραντεβού</h6>
     <ul>
       <li><a href="../index.html">Home</a></li>
@@ -162,7 +155,6 @@ Licence URI: https://www.os-templates.com/template-terms
       <li><a href="#">Ipsum</a></li>
       <li><a href="#">Dolor</a></li>
     </ul>
-    <!--CHANGE HERE-->
     <!-- ################################################################################################ -->
   </div>
 </div>
@@ -172,49 +164,51 @@ Licence URI: https://www.os-templates.com/template-terms
   <main class="hoc container clear"> 
     <!-- main body -->
 
-<?php
-if (isset($_GET['status'])):
-  if( $_GET['status'] == 'success'):
-    echo '<script language="javascript">';
-    echo 'alert("Επιτυχής δήλωση")';
-    echo '</script>';
-  endif;
-endif
-?>
+    <?php
+    if (isset($_GET['status'])):
+      if( $_GET['status'] == 'success'):
+        echo '<script language="javascript">';
+        echo 'alert("Επιτυχής δήλωση")';
+        echo '</script>';
+      endif;
+    endif
+    ?>
 
-	<h1 style="text-align:center">Κλείσιμο Ραντεβού για δια ζώσης εξυπηρέτηση.</h1>
+    <h1 style="text-align:center">Κλείσιμο Ραντεβού για δια ζώσης εξυπηρέτηση.</h1>
+
+    <p>Παρακαλούμε συμπληρώστε την παρακάτω φόρμα αίτησης για το κλείσιμο ραντεβού:</p>
+    <div id="comments">
+    <div style="border: 1px solid black; padding: 10px; margin-right: 150px">  
+    <form name="rantevou_form" action="actions/rantevou_action.php" onsubmit="return validateRantevouForm()" method="post">
 	
-	<p>Παρακαλούμε συμπληρώστε την παρακάτω φόρμα αίτησης για το κλείσιμο ραντεβού:</p>
-	<div class="boxed">
-  <div style="border: 1px solid black; padding: 10px">  
-	<form name="rantevou_form" action="actions/rantevou_action.php" onsubmit="return validateForm()" method="post">
-	
-          <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br>
-            <label for="name">Όνομα: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-            <input type="text" name="name1" id="name1"  size="22" onchange="return validateName(document.getElementById('name1').value,document.getElementById('demo'))"  required>
-            <p id='demo'></p>
+      <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br>
+      <label for="name1">Όνομα: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <input type="text" name="name1" id="name1"  size="22" onchange="return validateName(document.getElementById('name1'),document.getElementById('demo'))" >
+      <p style="color: darkred" id='demo'></p>
 			
-			<label for="name">Επώνυμο: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-			<input type="text" name="surname" id="surname" value="" size="22" onchange="return validateName(document.getElementById('surname').value,document.getElementById('demo1'))" required>
-            <p id='demo1'></p>
+			<label for="surname">Επώνυμο: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+			<input type="text" name="surname" id="surname" value="" size="22" onchange="return validateName(document.getElementById('surname'),document.getElementById('demo1'))">
+      <p style="color: darkred" id='demo1'></p>
           
-            <label for="email">Mail: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-            <input type="email" name="email" id="email" value="" size="22" onchange="return validateMail(document.getElementById('email').value,document.getElementById('demo2'))"required>
-			<p id='demo2'></p>
-			<!--this will be implemented afterwards with js-->
-            <label for="number">ΑΦΜ: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-            <input type="text" name="afm" id="afm" pattern="\d*" maxlength="9" onchange="return validateNum(document.getElementById('afm').value,document.getElementById('demo3'))" required>	<!-- id="afm" size="9" maxlength="9" -->
-            <p id='demo3'></p>
-			<label for="birthday">Ποιά ημερομηνία επιθυμείτε να κλείσετε το ραντεβού:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-			<input type="date" id="date_from" name="date_from" onchange="return validateDate(document.getElementById('date_from').value,document.getElementById('demo4'))" >
-                        <p id='demo4'></p>
+      <label for="email">Mail: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <input type="email" name="email" id="email" value="" size="22" onchange="return validateMail(document.getElementById('email'),document.getElementById('demo2'))">
+			<p style="color: darkred" id='demo2'></p>
+			
+      <label for="number">ΑΦΜ: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <input type="text" name="afm" id="afm" pattern="\d*" size="9" maxlength="9" onchange="return validateNum(document.getElementById('afm'),document.getElementById('demo3'))" >
+      <p style="color: darkred" id='demo3'></p>
 
-            
-            <label for="time"> Ποιά ώρα επιθυμείτε να κλείσετε το ραντεβού:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-            <input id="time" type="time" name="time"  required>
+			<label for="birthday">Ποιά ημερομηνία επιθυμείτε να κλείσετε το ραντεβού: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+			<input type="date" id="date_from" name="date_from" onchange="return validateEmpty(document.getElementById('date_from'),document.getElementById('demo4'))" >
+      <p style="color: darkred" id='demo4'></p>
+
+      <label for="time"> Ποιά ώρα επιθυμείτε να κλείσετε το ραντεβού:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <input id="time" type="time" name="time"  onchange="return validateEmpty(document.getElementById('time'),document.getElementById('demo5'))">
+      <p style="color: darkred" id='demo5'></p>
 			<br>
-			<!--<p>Πείτε μας τον λόγο που κλείνεται αυτό το ραντεβού:</p> -->
-			<label for="message">Πείτε μας τον λόγο που κλείνετε αυτό το ραντεβού: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+			
+      <label for="message">Πείτε μας τον λόγο που κλείνετε αυτό το ραντεβού: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <p style="color: darkred" id='demo6'></p>
 			<label for="enimerwsi">Ενημέρωση</label>
 			<input type="radio" id="enimerwsi" name="rdb" value="enimerwsi" onchange="show_textarea()">
 			<label for="katathesi">Κατάθεση αίτησης</label>
@@ -223,28 +217,26 @@ endif
 			<input type="radio" id="parapona" name="rdb" value="parapona" onchange="show_textarea()">
 			<label for="other">Άλλο</label>
 			<input type="radio" id="other" name="rdb" value="other" onchange="show_textarea()">
-			
-			
-			<br>
+      <br>
       
       <div id="hidden_text" style="display: none"> 
-      <label for="comment">Πείτε μας τον λόγο που επιθυμείτε δια ζώσης εξυπηρέτηση: <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-      <textarea name="comment" id="comment" cols="100" rows="10"></textarea>
+        <label for="comment_text">Πείτε μας τον λόγο που επιθυμείτε δια ζώσης εξυπηρέτηση: <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+        <textarea name="comment_text" id="comment_text" cols="100" rows="10" onchange="return validateTextArea()"></textarea>
+        <p style="color: darkred" id='demo7'></p>
       </div>
           
       <br>
-          <div>
-            <input type="submit" name="submit" value="Submit Form">
-            &nbsp;
-            <input type="reset" name="reset" value="Reset Form">
-          </div>
-        </form> 
+      <div style="text-align:center">
+        <input type="submit" name="submit" value="Κατάθεση αίτησης">
+        &nbsp;
+        <input type="reset" name="reset" value="Καθαρισμός πεδίων">
+      </div>
+    </form> 
     </div>
-</div>
+    </div>
     
     <!-- ################################################################################################ -->
     <!-- / main body -->
-    <!--CHANGE HERE-->
     <div class="clear"></div>
   </main>
 </div>
