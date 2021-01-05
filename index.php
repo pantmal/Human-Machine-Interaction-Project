@@ -7,7 +7,7 @@ Copyright: OS-Templates.com
 Licence: Free to use under our free template licence terms
 Licence URI: https://www.os-templates.com/template-terms
 -->
-<html lang="">
+<html lang="el">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
 <title>Υπουργείο Εργασίας</title>
@@ -35,19 +35,30 @@ Licence URI: https://www.os-templates.com/template-terms
     </div>
     <div class="fl_right"> 
       <!-- ################################################################################################ -->
+      
       <ul class="nospace">
         <li><a href="index.html"><i class="fas fa-home"></i></a></li>
         <li><a href="#" title="Help Centre"><i class="far fa-life-ring"></i></a></li>
-        <li><a href="#" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
-        <li><a href="#" title="Sign Up"><i class="fas fa-edit"></i></a></li>
+        <?php 
+          $cookie_name = 'user';
+          if(!isset($_COOKIE[$cookie_name])) {        
+              echo '<li><a style="color: #0026ff" href="pages/login.html?header=index.php" title="Σύνδεση">Σύνδεση <i class="fas fa-sign-in-alt"></i></a></li>';
+              echo '<li><a style="color: #0026ff" href="pages/register.html?header=index.php" title="Εγγραφή">Εγγραφή <i class="fas fa-edit"></i></a></li>';
+          } else {
+              echo '<li><a href="pages/edit_profile.php" title="Προφίλ Χρήστη">Προφίλ Χρήστη <i class="fas fa-user"></i></a></li>';
+              echo '<li><a href="pages/actions/logout.php" title="Αποσύνδεση">Αποσύνδεση <i class="fas fa-sign-out-alt"></i></a></li>';
+          }
+        ?>
+        
         <li id="searchform">
           <div>
             <form action="pages/dead_page.php" method="post">
-              <fieldset>
-                <legend>Quick Search:</legend>
-                <input type="text" placeholder="Enter search term&hellip;">
-                <button type="submit"><i class="fas fa-search"></i></button>
-              </fieldset>
+              
+              
+                <label for="search_term">Aναζητήστε: </label>
+                <input type="text" id="search_term" name="search_term">
+                
+              
             </form>
           </div>
         </li>
@@ -58,20 +69,6 @@ Licence URI: https://www.os-templates.com/template-terms
 </div>
 
 
-<?php
-$cookie_name = 'user';
-if(!isset($_COOKIE[$cookie_name])) {
-    echo "Cookie is not set! <br/>";
-    echo '<a href="pages/login.html?header=index.php" ><span>Login</span></a>/</li>';
-    echo '<a href="pages/register.html?header=index.php"><span>Register</span></a></li>';
-} else {
-    echo "Cookie '" . $cookie_name . "' is set!<br>";
-    echo "Value is: " . $_COOKIE[$cookie_name] . '<br/>';
-    echo '<a href="pages/edit_profile.php"><span>Edit Profile</span></a>/</li>';
-    echo '<a href="pages/actions/logout.php"><span>Logout</span></a></li>';
-}
-?>
-
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -79,13 +76,13 @@ if(!isset($_COOKIE[$cookie_name])) {
   <header id="header" class="hoc clear">
     <div id="logo" class="fl_left"> 
       <!-- ################################################################################################ -->
-      <h1><a href="index.html">Υπουργείο Εργασίας</a></h1>
+      <h1><a href="index.php">Υπουργείο Εργασίας</a></h1>
       <!-- ################################################################################################ -->
     </div>
     <nav id="mainav" class="fl_right"> 
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <li class="active"><a href="index.html">Αρχική</a></li>
+        <li class="active"><a href="index.php?nav=true">Αρχική</a></li>
         <!--<li><a class="drop" href="#">Pages</a>
           <ul>
             <li><a href="pages/gallery.html">Gallery</a></li>
@@ -102,10 +99,10 @@ if(!isset($_COOKIE[$cookie_name])) {
           <ul>
             <li><a class="drop" href="#">COVID-19 και Εργασία</a>
               <ul>
-                <li><a href="pages/prev-measures.html">Μέτρα προστασίας στον χώρο εργασίας</a></li>
-                <li><a href="pages/case-handling.html">Αντιμετώπιση κρούσματος στον χώρο εργασίας</a></li>
+                <li><a href="pages/metra_prolipsis.html">Μέτρα προστασίας στον χώρο εργασίας</a></li>
+                <li><a href="pages/antimetwpisi_krousmatos.html">Αντιμετώπιση κρούσματος στον χώρο εργασίας</a></li>
                 <li><a href="#">Μετακινήσεις και απαραίτητα έγγραφα</a></li>
-                <li><a href="pages/tilergasia_anastolh_symvashs_adeia_skopou.html">Τηλεργασία-άδεια-ειδικού σκοπού-αναστολή σύμβαση</a></li>
+                <li><a href="pages/tilergasia_info.html">Τηλεργασία-άδεια-ειδικού σκοπού-αναστολή σύμβαση</a></li>
                 <li><a href="#">Καρτέλα εργαζομένου</a></li>
               </ul>
             </li>
@@ -120,8 +117,8 @@ if(!isset($_COOKIE[$cookie_name])) {
               <ul>
                 <li><a href="#">Διαθέσιμες θέσεις εργασίας (COVID-19)</a></li>
                 <li><a href="#">Εργασία εξ αποστάσεως-αναστολή σύμβασης</a></li>
-                <li><a href="pages/prev-measures.html">Μέτρα προστασίας COVID-19</a></li>
-                <li><a href="pages/case-handling.html">Αντιμετώπιση κρούσματος</a></li>
+                <li><a href="pages/metra_prolipsis.html">Μέτρα προστασίας COVID-19</a></li>
+                <li><a href="pages/antimetwpisi_krousmatos.html">Αντιμετώπιση κρούσματος</a></li>
               </ul>
             </li>
             <li><a href="#">Υποχρεώσεις προς εργαζομένους</a></li>
@@ -178,15 +175,15 @@ if(!isset($_COOKIE[$cookie_name])) {
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img src="giousef.jpg" alt="Chania">
+      <img src="images/giousef.jpg" alt="Chania">
       <div class="carousel-caption">
-        <h3>Los Angeles</h3>
+        <h2>Los Angeles</h2>
         <p>LA is always so much fun!</p>
       </div>
     </div>
 
     <div class="item">
-      <img src="covid.jpg" alt="Chicago">
+      <img src="images/covid.jpg" alt="Chicago">
       <div class="carousel-caption">
         <h3>Chicago</h3>
         <p>Thank you, Chicago!</p>
@@ -194,7 +191,7 @@ if(!isset($_COOKIE[$cookie_name])) {
     </div>
 
     <div class="item">
-      <img src="asteri.jpg" alt="New York">
+      <img src="images/asteri.jpg" alt="New York">
       <div class="carousel-caption">
         <h3>New York</h3>
         <p>We love the Big Apple!</p>
@@ -222,13 +219,13 @@ if(!isset($_COOKIE[$cookie_name])) {
     <!-- ################################################################################################ -->
     <section id="introblocks">
       <div class="sectiontitle">
-        <h6 class="heading">Γρήγορη Πρόσβαση</h6>
+        <h4 class="heading">Γρήγορη Πρόσβαση</h4>
       </div>
       <ul class="nospace group">
         <li class="one_third first">
           <article><a href="#"><i class="#"></i></a>
-		  <img src="asteri.jpg" alt="" />
-            <h6 class="heading">Covid-19</h6>
+		  <img src="images/asteri.jpg" alt="" />
+            <h5 class="heading">Covid-19</h5>
             <a href="https://www.w3schools.com/">BALE KATI ALLO</a><br>
 			<a href="https://www.w3schools.com/">BALE KATI ALLO</a><br>	
 			<a href="https://www.w3schools.com/">BALE KATI ALLO</a>
@@ -237,8 +234,8 @@ if(!isset($_COOKIE[$cookie_name])) {
         </li>
         <li class="one_third">
           <article><a href="#"><i class="#"></i></a>
-		  <img src="asteri.jpg" alt="" />
-            <h6 class="heading">Εργαζόμενος</h6>
+		  <img src="images/asteri.jpg" alt="" />
+            <h5 class="heading">Εργαζόμενος</h5>
             <a href="pages/kleisimo_rantevou.php">Μέτρα Προστασίας</a><br>
 			<a href="https://www.w3schools.com/">Εξ' αποστάσεως εργασία</a><br>	
 			<a href="https://www.w3schools.com/">Μετακινήσεις</a>
@@ -247,8 +244,8 @@ if(!isset($_COOKIE[$cookie_name])) {
         </li>
         <li class="one_third">
           <article><a href="#"><i class="#"></i></a>
-		  <img src="asteri.jpg" alt="" />
-            <h6 class="heading">Εργοδότης</h6>
+		  <img src="images/asteri.jpg" alt="" />
+            <h5 class="heading">Εργοδότης</h5>
             <a href="https://www.w3schools.com/">Διαθέσιμες θέσεις εργάσιας</a><br>
 			<a href="https://www.w3schools.com/">Αντιμετώπιση κρούσματος</a><br>	
 			<a href="https://www.w3schools.com/">Υποχρεώσεις εργοδότη</a>
@@ -275,17 +272,17 @@ if(!isset($_COOKIE[$cookie_name])) {
     
     <ul class="nospace group">
       <li class="one_third">
-        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
+        <figure><a class="imgover" href="#"><img src="images/giousef.jpg" alt=""></a>
           <figcaption>Porta facilisis</figcaption>
         </figure>
       </li>
       <li class="one_third">
-        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
+        <figure><a class="imgover" href="#"><img src="images/giousef.jpg" alt=""></a>
           <figcaption>Tellus lectus nec</figcaption>
         </figure>
       </li>
       <li class="one_third">
-        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
+        <figure><a class="imgover" href="#"><img src="images/giousef.jpg" alt=""></a>
           <figcaption>Pede suspendisse</figcaption>
         </figure>
       </li>
@@ -303,17 +300,17 @@ if(!isset($_COOKIE[$cookie_name])) {
     
     <ul class="nospace group">
       <li class="one_third">
-        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
+        <figure><a class="imgover" href="#"><img src="images/giousef.jpg" alt=""></a>
           <figcaption>Porta facilisis</figcaption>
         </figure>
       </li>
       <li class="one_third">
-        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
+        <figure><a class="imgover" href="#"><img src="images/giousef.jpg" alt=""></a>
           <figcaption>Tellus lectus nec</figcaption>
         </figure>
       </li>
       <li class="one_third">
-        <figure><a class="imgover" href="#"><img src="giousef.jpg" alt=""></a>
+        <figure><a class="imgover" href="#"><img src="images/giousef.jpg" alt=""></a>
           <figcaption>Pede suspendisse</figcaption>
         </figure>
       </li>
@@ -420,7 +417,7 @@ if(!isset($_COOKIE[$cookie_name])) {
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<a id="backtotop" href="#top"><p style="display: none">Top</p><i class="fas fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>

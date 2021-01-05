@@ -191,14 +191,14 @@ Licence URI: https://www.os-templates.com/template-terms
       <p style="color: darkred" id='demo1'></p>
           
       <label for="email">Mail: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-      <input type="email" name="email" id="email" value="" size="22" onchange="return validateMail(document.getElementById('email'),document.getElementById('demo2'))">
+      <input type="text" name="email" id="email" value="" size="22" onchange="return validateMail(document.getElementById('email'),document.getElementById('demo2'))">
 			<p style="color: darkred" id='demo2'></p>
 			
-      <label for="number">ΑΦΜ: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <label for="afm">ΑΦΜ: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
       <input type="text" name="afm" id="afm" pattern="\d*" size="9" maxlength="9" onchange="return validateNum(document.getElementById('afm'),document.getElementById('demo3'))" >
       <p style="color: darkred" id='demo3'></p>
 
-			<label for="birthday">Ποιά ημερομηνία επιθυμείτε να κλείσετε το ραντεβού: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+			<label for="date_from">Ποιά ημερομηνία επιθυμείτε να κλείσετε το ραντεβού: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
 			<input type="date" id="date_from" name="date_from" onchange="return validateEmpty(document.getElementById('date_from'),document.getElementById('demo4'))" >
       <p style="color: darkred" id='demo4'></p>
 
@@ -207,16 +207,19 @@ Licence URI: https://www.os-templates.com/template-terms
       <p style="color: darkred" id='demo5'></p>
 			<br>
 			
-      <label for="message">Πείτε μας τον λόγο που κλείνετε αυτό το ραντεβού: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <label>Πείτε μας τον λόγο που κλείνετε αυτό το ραντεβού: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
       <p style="color: darkred" id='demo6'></p>
-			<label for="enimerwsi">Ενημέρωση</label>
-			<input type="radio" id="enimerwsi" name="rdb" value="enimerwsi" onchange="show_textarea()">
-			<label for="katathesi">Κατάθεση αίτησης</label>
-			<input type="radio" id="katathesi" name="rdb" value="katathesi" onchange="show_textarea()">
-			<label for="parapona">Παράπονα</label>
-			<input type="radio" id="parapona" name="rdb" value="parapona" onchange="show_textarea()">
-			<label for="other">Άλλο</label>
-			<input type="radio" id="other" name="rdb" value="other" onchange="show_textarea()">
+      <fieldset>
+        <legend> Επιλέξτε έναν από τους παρακάτω λόγους </legend> <!--????-->
+        <label for="enimerwsi">Ενημέρωση</label>
+        <input type="radio" id="enimerwsi" name="rdb" value="enimerwsi" onchange="show_textarea()">
+        <label for="katathesi">Κατάθεση αίτησης</label>
+        <input type="radio" id="katathesi" name="rdb" value="katathesi" onchange="show_textarea()">
+        <label for="parapona">Παράπονα</label>
+        <input type="radio" id="parapona" name="rdb" value="parapona" onchange="show_textarea()">
+        <label for="other">Άλλο</label>
+        <input type="radio" id="other" name="rdb" value="other" onchange="show_textarea()">
+      </fieldset>
       <br>
       
       <div id="hidden_text" style="display: none"> 
@@ -337,7 +340,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<a id="backtotop" href="#top"><p style="display: none">Top</p><i class="fas fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
 <script src="../layout/scripts/jquery.min.js"></script>
 <script src="../layout/scripts/jquery.backtotop.js"></script>

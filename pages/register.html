@@ -56,7 +56,7 @@
   padding-right: 15px;
   }
   span{
-    color: red;
+    color: darkred;
   }
   /* Change styles for span on extra small screens */
   @media screen and (max-width: 300px) {
@@ -68,68 +68,70 @@
 </style>
 </head>
 <body id="top">
-<div class="main-block">
+<main>
 <h1>Εγγραφή</h1>
 <form name="register_form" action="actions/register_action.php" onsubmit="return validateForm()" method="post">
   <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br>
   <hr>
 
   <label for="uname">Όνομα Χρήστη: <span>*</span></label></label><br>
-  <input type="text" id="uname" name="uname" onchange="return validateName()" ><br>
-  <p id='demo'></p>
+  <input type="text" id="uname" name="uname" onchange="return validateEmpty(document.getElementById('uname'),document.getElementById('demo'))" ><br>
+  <p style="color: darkred" id='demo'></p>
   <hr>
   
   <label for="pwd">Password: <span>*</span></label></label><br>
-  <input type="password" id="pwd" name="pwd" onchange="return validatePswd()"><br>
-  <p id='demo2'></p>
+  <input type="password" id="pwd" name="pwd" onkeyup="PswdKeyUp()" onchange="return validatePswd()"><br>
+  <p style="color: darkred" id='demo2'></p>
   <hr>
   
   <label for="email">E-Mail: <span>*</span></label> <br>
-  <input type="email" name="email" id="email" value="" size="22" onchange="return validateMail()" >
-  <p id='demo3'></p>
+  <input type="text" name="email" id="email" value="" size="22" onchange="return validateMail(document.getElementById('email'),document.getElementById('demo3'))" >
+  <p style="color: darkred" id='demo3'></p>
   <hr>
   
-  <label for="number">ΑΦΜ: <span>*</span></label> <br>
-  <input type="text" name="afm" id="afm" pattern="\d*" size="9" maxlength="9" onchange="return validateNum()" >	
-  <p id='demo4'></p>
+  <label for="afm">ΑΦΜ: <span>*</span></label> <br>
+  <input type="text" name="afm" id="afm" pattern="\d*" size="9" maxlength="9" onchange="return validateNum(document.getElementById('afm'),document.getElementById('demo4'))" >	
+  <p style="color: darkred" id='demo4'></p>
   <hr>
   
   <label for="first_name">Όνομα: <span>*</span></label></label><br>
-  <input type="text" id="first_name" name="first_name" onchange="return validateFirstName()"><br>
-  <p id='demo5'></p>
+  <input type="text" id="first_name" name="first_name" onchange="return validateName(document.getElementById('first_name'),document.getElementById('demo5'))"><br>
+  <p style="color: darkred" id='demo5'></p>
   <hr>
   
   <label for="last_name">Επώνυμο: <span>*</span></label></label><br>
-  <input type="text" id="last_name" name="last_name" onchange="return validateLastName()"><br>
-  <p id='demo6'></p>
+  <input type="text" id="last_name" name="last_name" onchange="return validateName(document.getElementById('last_name'),document.getElementById('demo6'))"><br>
+  <p style="color: darkred" id='demo6'></p>
   <hr>
   
-  <label for="message">Επιλέξτε έναν ρόλο χρήστη: <span>*</span></label> <br>
+  <label>Ρόλος χρήστη: <span>*</span></label> <br>
   <br>
-
-  <label for="ergodotis">Εργοδότης</label>
-  <input type="radio" id="ergodotis" name="rdb" value="ergodotis" onchange="return validateRole()">	<br>	
-  
-  <label for="ergazomenos">Εργαζόμενος</label> 
-  <input type="radio" id="ergazomenos" name="rdb" value="ergazomenos" onchange="return validateRole()"> <br>
+  <fieldset>
+    <legend> Επιλέξτε μία επιλογή από τις δύο </legend> <!--????-->
+    <label for="ergodotis">Εργοδότης</label>
+    <input type="radio" id="ergodotis" name="rdb" value="ergodotis" onchange="return validateRole()">	<br>	
+    
+    <label for="ergazomenos">Εργαζόμενος</label> 
+    <input type="radio" id="ergazomenos" name="rdb" value="ergazomenos" onchange="return validateRole()"> <br>
+  </fieldset>
   <br>
+  <p style="color: darkred" id='demo7'></p>
 
   <div id="hidden_input" style="display: none"> 
-    <label for="afm_ergodoti">Εάν είστε εργαζόμενος, συμπληρώστε και το ΑΦΜ του ερογοδοτη σας: </label> <br>
-    <input type="text" name="afm_ergodoti" id="afm_ergodoti" pattern="\d*" size="9" maxlength="9" >	
-    <!-- <p style="color: darkred" id='demo7'></p> -->
+    <label for="afm_ergodoti">Εάν είστε εργαζόμενος, συμπληρώστε <br>και το ΑΦΜ του ερογοδοτη σας: </label> <br>
+    <input type="text" name="afm_ergodoti" id="afm_ergodoti" pattern="\d*" size="9" maxlength="9" onchange="return validateNum(document.getElementById('afm_ergodoti'),document.getElementById('demo8'))">	
+    <p style="color: darkred" id='demo8'></p>
   </div>
   
-  <p id='demo7'></p>
   <hr>
 
-  <label for="parent">Είστε γονέας; <span>*</span></label></label> 
-  <input type="checkbox" name="parent" value="yes" /> <br> 
+  <label for="parent">Είστε γονέας; </label></label> 
+  <input type="checkbox" id="parent" name="parent" value="yes" /> <br> 
   <hr>
 
   <button type="submit"> Εγγραφή </button>
 </form> 
-</div>
+</main>
 </body>
 </html>
 

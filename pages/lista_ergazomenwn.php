@@ -191,118 +191,128 @@ endif;
         
     <?php
         require_once "../settings.php";
-        
-        echo '<table>';
-        echo '<thead>';
-        echo '<tr>';
-        echo '<th>Όνομα</th>';
-        echo '<th>Επώνυμο</th>';
-        echo '<th>Τηλεργασία</th>';
-        echo '<th>Αναστολή σύμβασης</th>';
-        echo '<th>Τηλεργασία από</th>';
-        echo '<th>Τηλεργασία μέχρι</th>';
-        echo '<th>Αναστολή από</th>';
-        echo '<th>Αναστολή μέχρι</th>';
-        echo '<th>Άρση τηλεργασίας</th>';
-        echo '<th>Άρση αναστολής</th>';
-        echo '<th>Δήλωση νέας περιόδου αναστολής σύμβασης ή τηλεργασίας</th>';
-        echo '</tr>';
-        echo '</thead>';
 
         $cookie_name = 'user';
         $query = "SELECT * FROM users WHERE username='$_COOKIE[$cookie_name]'";
         $result = $conn->query($query);
         $row = $result->fetch_array(MYSQLI_ASSOC);
-        $afm_master = $row['afm'];
-    
-        $query = "SELECT * FROM users WHERE role = 'ergazomenos' AND afm_ergodoti = '$afm_master' ";
-        $result = $conn->query($query);
-        $rows = $result->num_rows;
-    
-        echo '<tbody>';
-        for ($i = 0; $i < $rows; ++$i){
-            echo '<tr>';
-            $result->data_seek($i);
-            $first_name = $result->fetch_assoc()['first_name'];
-            $result->data_seek($i);
-            $last_name = $result->fetch_assoc()['last_name'];
-            $result->data_seek($i);
-            $tilergasia_start = $result->fetch_assoc()['tilergasia_start'];
-            $result->data_seek($i);
-            $tilergasia_end = $result->fetch_assoc()['tilergasia_end'];
-            $result->data_seek($i);
-            $anastoli_start = $result->fetch_assoc()['anastoli_start'];
-            $result->data_seek($i);
-            $anastoli_end = $result->fetch_assoc()['anastoli_end'];
-            $result->data_seek($i);
-            $afm = $result->fetch_assoc()['afm'];
+        $role = $row['role'];
 
-            $tilergasia_start_split = explode('-',$tilergasia_start);
-            $new_tilergasia_start = $tilergasia_start_split[2].'-'.$tilergasia_start_split[1].'-'.$tilergasia_start_split[0];
+        if ($role!='ergodotis'){
+          echo '<p>Πρέπει να είστε εργοδότης για να έχετε πρόσβαση σε αυτήν την σελίδα.</p>';
+        }else{
+        
+          echo '<table>';
+          echo '<thead>';
+          echo '<tr>';
+          echo '<th>Όνομα</th>';
+          echo '<th>Επώνυμο</th>';
+          echo '<th>Τηλεργασία</th>';
+          echo '<th>Αναστολή σύμβασης</th>';
+          echo '<th>Τηλεργασία από</th>';
+          echo '<th>Τηλεργασία μέχρι</th>';
+          echo '<th>Αναστολή από</th>';
+          echo '<th>Αναστολή μέχρι</th>';
+          echo '<th>Άρση τηλεργασίας</th>';
+          echo '<th>Άρση αναστολής</th>';
+          echo '<th>Δήλωση νέας περιόδου αναστολής σύμβασης ή τηλεργασίας</th>';
+          echo '</tr>';
+          echo '</thead>';
 
-            $tilergasia_end_split = explode('-',$tilergasia_end);
-            $new_tilergasia_end = $tilergasia_end_split[2].'-'.$tilergasia_end_split[1].'-'.$tilergasia_end_split[0];
+          $cookie_name = 'user';
+          $query = "SELECT * FROM users WHERE username='$_COOKIE[$cookie_name]'";
+          $result = $conn->query($query);
+          $row = $result->fetch_array(MYSQLI_ASSOC);
+          $afm_master = $row['afm'];
+      
+          $query = "SELECT * FROM users WHERE role = 'ergazomenos' AND afm_ergodoti = '$afm_master' ";
+          $result = $conn->query($query);
+          $rows = $result->num_rows;
+      
+          echo '<tbody>';
+          for ($i = 0; $i < $rows; ++$i){
+              echo '<tr>';
+              $result->data_seek($i);
+              $first_name = $result->fetch_assoc()['first_name'];
+              $result->data_seek($i);
+              $last_name = $result->fetch_assoc()['last_name'];
+              $result->data_seek($i);
+              $tilergasia_start = $result->fetch_assoc()['tilergasia_start'];
+              $result->data_seek($i);
+              $tilergasia_end = $result->fetch_assoc()['tilergasia_end'];
+              $result->data_seek($i);
+              $anastoli_start = $result->fetch_assoc()['anastoli_start'];
+              $result->data_seek($i);
+              $anastoli_end = $result->fetch_assoc()['anastoli_end'];
+              $result->data_seek($i);
+              $afm = $result->fetch_assoc()['afm'];
 
-            $anastoli_start_split = explode('-',$anastoli_start);
-            $new_anastoli_start = $anastoli_start_split[2].'-'.$anastoli_start_split[1].'-'.$anastoli_start_split[0];
+              $tilergasia_start_split = explode('-',$tilergasia_start);
+              $new_tilergasia_start = $tilergasia_start_split[2].'-'.$tilergasia_start_split[1].'-'.$tilergasia_start_split[0];
 
-            $anastoli_end_split = explode('-',$anastoli_end);
-            $new_anastoli_end = $anastoli_end_split[2].'-'.$anastoli_end_split[1].'-'.$anastoli_end_split[0];
-            
-            
-            echo '<td> ' . $first_name .' </td>';    
-            echo '<td> ' . $last_name .' </td>';           
-            if($tilergasia_start != NULL ){
-                echo '<td> Ναι </td>';    
-            }else{
-                echo '<td> Όχι </td>';    
-            }
-            if($anastoli_start != NULL ){
-                echo '<td> Ναι </td>';    
-            }else{
-                echo '<td> Όχι </td>';    
-            }
-            if($tilergasia_start != NULL ){
-                echo '<td>' . $new_tilergasia_start . '</td>';    
-                echo '<td>' . $new_tilergasia_end . '</td>';    
-            }else{
-                echo '<td> - </td>';    
-                echo '<td> - </td>';    
-            }
-            if($anastoli_start != NULL ){
-                echo '<td>' . $new_anastoli_start . '</td>';    
-                echo '<td>' . $new_anastoli_end . '</td>';   
-            }else{
-                echo '<td> - </td>';    
-                echo '<td> - </td>';   
-            }
-            
-            if($tilergasia_start != NULL ){
-                echo '<td> <form action="actions/arsi_action.php?option=til&afm=' . $afm .'  " method="post">';
-                echo '<div id="comments">';
-                echo '<input style="padding:5px; min-width:70px" type="submit" name="arsi" id="arsi" value="Άρση" />';
-                echo '</div>';
-                echo '</form> </td>';
-            }else{
-                echo '<td> - </td>';    
-            }
-            if($anastoli_start != NULL ){
-                echo '<td> <form action="actions/arsi_action.php?option=anas&afm=' . $afm .'  " method="post">';
-                echo '<div id="comments">';
-                echo '<input style="padding:5px; min-width:70px" type="submit" name="arsi" id="arsi" value="Άρση" />';
-                echo '</div>';
-                echo '</form> </td>';
-            }else{
-                echo '<td> - </td>';    
-            }
-            echo '<td><a href="anastoli_symvasis.php" ><span>Δήλωση</span></a></li> </td>';    
+              $tilergasia_end_split = explode('-',$tilergasia_end);
+              $new_tilergasia_end = $tilergasia_end_split[2].'-'.$tilergasia_end_split[1].'-'.$tilergasia_end_split[0];
 
-            echo '</tr>';
-            
-        }
-        echo '</tbody>';
-        echo '</table>';
+              $anastoli_start_split = explode('-',$anastoli_start);
+              $new_anastoli_start = $anastoli_start_split[2].'-'.$anastoli_start_split[1].'-'.$anastoli_start_split[0];
 
+              $anastoli_end_split = explode('-',$anastoli_end);
+              $new_anastoli_end = $anastoli_end_split[2].'-'.$anastoli_end_split[1].'-'.$anastoli_end_split[0];
+              
+              
+              echo '<td> ' . $first_name .' </td>';    
+              echo '<td> ' . $last_name .' </td>';           
+              if($tilergasia_start != NULL ){
+                  echo '<td> Ναι </td>';    
+              }else{
+                  echo '<td> Όχι </td>';    
+              }
+              if($anastoli_start != NULL ){
+                  echo '<td> Ναι </td>';    
+              }else{
+                  echo '<td> Όχι </td>';    
+              }
+              if($tilergasia_start != NULL ){
+                  echo '<td>' . $new_tilergasia_start . '</td>';    
+                  echo '<td>' . $new_tilergasia_end . '</td>';    
+              }else{
+                  echo '<td> - </td>';    
+                  echo '<td> - </td>';    
+              }
+              if($anastoli_start != NULL ){
+                  echo '<td>' . $new_anastoli_start . '</td>';    
+                  echo '<td>' . $new_anastoli_end . '</td>';   
+              }else{
+                  echo '<td> - </td>';    
+                  echo '<td> - </td>';   
+              }
+              
+              if($tilergasia_start != NULL ){
+                  echo '<td> <form action="actions/arsi_action.php?option=til&afm=' . $afm .'  " method="post">';
+                  echo '<div id="comments">';
+                  echo '<input style="padding:5px; min-width:70px" type="submit" name="arsi" id="arsi" value="Άρση" />';
+                  echo '</div>';
+                  echo '</form> </td>';
+              }else{
+                  echo '<td> - </td>';    
+              }
+              if($anastoli_start != NULL ){
+                  echo '<td> <form action="actions/arsi_action.php?option=anas&afm=' . $afm .'  " method="post">';
+                  echo '<div id="comments">';
+                  echo '<input style="padding:5px; min-width:70px" type="submit" name="arsi" id="arsi" value="Άρση" />';
+                  echo '</div>';
+                  echo '</form> </td>';
+              }else{
+                  echo '<td> - </td>';    
+              }
+              echo '<td><a href="anastoli_symvasis.php" ><span>Δήλωση</span></a></li> </td>';    
+
+              echo '</tr>';
+              
+          }
+          echo '</tbody>';
+          echo '</table>';
+        }    
         mysqli_close($conn);
     ?>
       
@@ -411,7 +421,7 @@ endif;
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<a id="backtotop" href="#top"><p style="display: none">Top</p><i class="fas fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
 <script src="../layout/scripts/jquery.min.js"></script>
 <script src="../layout/scripts/jquery.backtotop.js"></script>

@@ -22,9 +22,9 @@ File: Layout CSS
 .row5, .row5 a{}
 
 
-/* Top Bar
+/* Top Bar text-transform:uppercase;
 --------------------------------------------------------------------------------------------------------------- */
-#topbar{padding:15px 0; text-transform:uppercase;}
+#topbar{padding:15px 0; } 
 
 #topbar ul li{display:inline-block; margin-right:15px;}
 #topbar ul li:last-child{margin-right:0; padding-right:0; border-right:none;}
@@ -311,10 +311,10 @@ td{border-width:0 1px;}
 /* Colours
 --------------------------------------------------------------------------------------------------------------- */
 body{color:#474747; background-color:#FFFFFF;}
-a{color:#53D3DE;}
+a{color:#0026ff;}
 a:active, a:focus{background:transparent;}/* IE10 + 11 Bugfix - prevents grey background */
 hr, .borderedbox{border-color:#D7D7D7;}
-label span{color:#FF0000; background-color:inherit;}
+label span{color:rgb(125, 0, 0); background-color:inherit;}
 input:focus, textarea:focus, *:required:focus{border-color:#53D3DE;}
 
 .overlay{color:#FFFFFF; background-color:inherit;}
@@ -323,16 +323,16 @@ input:focus, textarea:focus, *:required:focus{border-color:#53D3DE;}
 .overlay.light{color:#474747;}
 .overlay.light::after{background-color:rgba(255,255,255,.7);}
 
-.btn, .btn.inverse:hover{color:#FFFFFF; background-color:#53D3DE; border-color:#53D3DE;}
+.btn, .btn.inverse:hover{color:#FFFFFF; background-color:#0026ff; border-color:#0026ff;}
 .btn:hover, .btn.inverse{color:inherit; background-color:transparent; border-color:inherit;}
 
 .imgover:hover::before{background:rgba(255,255,255,.7);}
 .imgover, .imgover:hover::after{color:#53D3DE;}
 
 
-/* Rows */
+/* Rows row1 original:#53D3DE, new: #0026ff  */
 .row0{color:#474747; background-color:#F4F4F4;}
-.row1{color:#FFFFFF; background-color:#53D3DE; border-color:#1D8B94;}
+.row1{color:#FFFFFF; background-color:#0026ff; border-color:#1D8B94;}
 .row2{color:#474747; background-color:#F4F4F4;}
 .row3{color:#474747; background-color:#FFFFFF;}
 .row4{color:#9FA7AF; background-color:#202020;}
@@ -385,10 +385,10 @@ input:focus, textarea:focus, *:required:focus{border-color:#53D3DE;}
 #footer button{color:#FFFFFF; background-color:#53D3DE;}
 
 
-/* Navigation */
+/* Navigation old: #1D8B94, new: #055b63*/
 #mainav{}
 #mainav li a{color:inherit; border-color:transparent;}
-#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#FFFFFF; background-color:#1D8B94; border-color:#FFFFFF;}
+#mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#FFFFFF; background-color:#055b63; border-color:#FFFFFF;}
 #mainav li li a, #mainav .active li a{color:#FFFFFF; background-color:rgba(83,211,222,.5);/* #53D3DE */ border-color:rgba(0,0,0,.6);}
 #mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#1D8B94; border-color:rgba(0,0,0,.6);}
 #mainav form select{color:#474747; background-color:#FFFFFF;}

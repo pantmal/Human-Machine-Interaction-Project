@@ -228,7 +228,7 @@ Licence URI: https://www.os-templates.com/template-terms
       
       <p> Email: <?php echo $email ?> </p> 
       <label for="email">Εισάγετε νέο e-mail αν το επιθυμείτε:  <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label> 
-      <input type="email" name="email" id="email" value="" size="22"  > <br>
+      <input type="text" name="email" id="email" value="" size="22"  > <br>
       
       <label for="pwd">Ανανεώστε τον κωδικό πρόσβασης σας αν το επιθυμείτε: <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label> 
       <input type="password" id="pwd" name="pwd" > <br>
@@ -374,7 +374,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<a id="backtotop" href="#top"><p style="display: none">Top</p><i class="fas fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
 <script src="../layout/scripts/jquery.min.js"></script>
 <script src="../layout/scripts/jquery.backtotop.js"></script>

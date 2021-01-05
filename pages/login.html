@@ -56,7 +56,7 @@
   padding-right: 15px;
   }
   span{
-    color: red;
+    color: darkred;
   }
   /* Change styles for span on extra small screens */
   @media screen and (max-width: 300px) {
@@ -68,6 +68,7 @@
 </style>
 </head>
 <body id="top">
+<main>
 <form name="login_form" action="actions/login_action.php" onsubmit="return validateLoginForm()" method="post">
   <h1>Σύνδεση</h1>
   <div class="formcontainer"></div>
@@ -75,17 +76,18 @@
   <div class="container">
     <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br> <br>
     
-    <label for="uname"><strong>Username: <span>*</span></strong></label><br>
+    <label for="uname"><strong>Όνομα Χρήστη: <span>*</span></strong></label><br>
     <input type="text" id="uname" name="uname" onchange="return validateEmpty(document.getElementById('uname'),document.getElementById('demo'))" ><br>
-    <p id='demo'></p>
+    <p style="color: darkred" id='demo'></p>
     
-    <label for="pwd"><strong>Password: <span>*</span></strong></label><br>
+    <label for="pwd"><strong>Κωδικός Πρόσβασης: <span>*</span></strong></label><br>
     <input type="password" id="pwd" name="pwd" onchange="return validateEmpty(document.getElementById('pwd'),document.getElementById('demo2'))"><br>
-    <p id='demo2'></p>
+    <p style="color: darkred" id='demo2'></p>
     
   </div>
   <button type="submit">Σύνδεση</button>
-</form> 
+</form>
+</main> 
 </body>
 </html>
 

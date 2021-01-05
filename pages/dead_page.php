@@ -164,7 +164,7 @@ Licence URI: https://www.os-templates.com/template-terms
   <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
-    <img src="../Page_Under_Construction.png" alt="" > <br> <br> <br> 
+    <img src="../images/Page_Under_Construction.png" alt="" > <br> <br> <br> 
     <h1> Η παρούσα σελίδα βρίσκεται υπό κατασκεύη και θα είναι σύντομα κοντά σας!</h1>
     
     <div class="clear"></div>
@@ -267,7 +267,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<a id="backtotop" href="#top"><p style="display: none">Top</p><i class="fas fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
 <script src="../layout/scripts/jquery.min.js"></script>
 <script src="../layout/scripts/jquery.backtotop.js"></script>

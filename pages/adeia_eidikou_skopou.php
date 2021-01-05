@@ -47,8 +47,8 @@ Licence URI: https://www.os-templates.com/template-terms
       <ul class="nospace">
         <li><a href="../index.html"><i class="fas fa-home"></i></a></li>
         <li><a href="#" title="Help Centre"><i class="far fa-life-ring"></i></a></li>
-        <li><a href="#" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
-        <li><a href="#" title="Sign Up"><i class="fas fa-edit"></i></a></li>
+        <li><a style="color: #0026ff" href="#" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
+        <li><a style="color: #0026ff" href="#" title="Sign Up"><i class="fas fa-edit"></i></a></li>
         <li id="searchform">
           <div>
             <form action="#" method="post">
@@ -208,10 +208,10 @@ Licence URI: https://www.os-templates.com/template-terms
       <p style="color: darkred" id='demo1'></p>
             
       <label for="email">Mail: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-      <input type="email" name="email" id="email" value="" size="22" onchange="return validateMail(document.getElementById('email'),document.getElementById('demo2'))">
+      <input type="text" name="email" id="email" value="" size="22" onchange="return validateMail(document.getElementById('email'),document.getElementById('demo2'))">
       <p style="color: darkred" id='demo2'></p>  
         
-      <label for="number">ΑΦΜ: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <label for="afm">ΑΦΜ: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
       <input type="text" name="afm" id="afm" pattern="\d*" size="9" maxlength="9" onchange="return validateNum(document.getElementById('afm'),document.getElementById('demo3'))" >	<!-- id="afm" size="9" maxlength="9" -->
       <p style="color: darkred" id='demo3'></p>
         
@@ -219,81 +219,87 @@ Licence URI: https://www.os-templates.com/template-terms
         name="meeting-time" value="2018-06-12T19:30"
         min="2018-06-07T00:00" max="2018-06-14T00:00">   -->
               
-      <label for="birthday">Από:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <label for="date_from">Από:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
       <input type="date" id="date_from" name="date_from" onchange="return validateEmpty(document.getElementById('date_from'),document.getElementById('demo4'))" >
       <p style="color: darkred" id='demo4' ></p>
       <br>  
-      <label for="birthday">Εώς:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <label for="date_to">Εώς:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
       <input type="date" id="date_to" name="date_to" onchange="return validateEmpty(document.getElementById('date_to'),document.getElementById('demo5'))" >
       <p style="color: darkred" id='demo5'></p>
         
         
       <label for="number_of_kids">Αριθμός Παιδιών:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-      <select name="number_of_kids" id="number_of_kids" onchange="show_func()" >
-        <option value="" selected disabled hidden>Επιλέξτε</option>
-        <option value="one">Ένα(1)</option>
-        <option value="two">Δύο(2)</option>
-        <option value="three">Τρία(3)</option>
-        <option value="four_or_more">Τέσσερα και πάνω(4+)</option>
+      <select name="number_of_kids" id="number_of_kids" >
+        <option value="" selected disabled hidden onclick="show_func()">Επιλέξτε</option>
+        <option value="one" onclick="show_func()">Ένα(1)</option>
+        <option value="two" onclick="show_func()">Δύο(2)</option>
+        <option value="three" onclick="show_func()">Τρία(3)</option>
+        <option value="four_or_more" onclick="show_func()">Τέσσερα και πάνω(4+)</option>
       </select>
+      <p style="color: darkred" id='demo6'></p>
       
       <br>
       <div id='hidden' style="display: none;">
         <label for="kids_4">Αριθμός Παιδιών(4+): <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-        <input type="text" name="kids_4" id="kids_4" pattern="\d*" maxlength="2" >
+        <input type="text" name="kids_4" id="kids_4" pattern="\d*" maxlength="2" onchange="return validateHiddenInput()" >
+        <p style="color: darkred" id='demo7'></p>
       </div>
       
       <br><br>
       <div id='hidden_paidi_1' style="display: none;">
         <h6>Εισάγετε την βαθμίδα των παιδιών σας <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></h6>
-        <h6>1ο παιδί</h6>
-      
-        <select name="paidi_1" id="paidi_1" onchange="return validateSelect()">
-          <option value="" selected disabled hidden>Επιλέξτε</option>
-          <option value="nipiagwgio">Νηπειαγωγείο</option>
-          <option value="dimotiko">Δημοτικό</option>
-          <option value="gymnasio">Γυμνάσιο</option>
-          <option value="lykeio">Λύκειο</option>
+        
+        <label for="paidi_1">1o παιδί </label>
+        <select name="paidi_1" id="paidi_1">
+          <option value="" selected disabled hidden onclick="return validateEmpty(document.getElementById('paidi_1'), document.getElementById('demo8'))">Επιλέξτε</option>
+          <option value="nipiagwgio" onclick="return validateEmpty(document.getElementById('paidi_1'), document.getElementById('demo8'))">Νηπειαγωγείο</option>
+          <option value="dimotiko" onclick="return validateEmpty(document.getElementById('paidi_1'), document.getElementById('demo8'))">Δημοτικό</option>
+          <option value="gymnasio" onclick="return validateEmpty(document.getElementById('paidi_1'), document.getElementById('demo8'))">Γυμνάσιο</option>
+          <option value="lykeio" onclick="return validateEmpty(document.getElementById('paidi_1'), document.getElementById('demo8'))">Λύκειο</option>
         </select>
+        <p style="color: darkred" id='demo8'></p>
       </div>
       <br>
           
       <div id='hidden_paidi_2' style="display: none;">	
-        <h6>2ο παιδί</h6>
         
-        <select name="paidi_2" id="paidi_2" onchange="return validateSelect()">
-          <option value="" selected disabled hidden>Επιλέξτε</option>
-          <option value="nipiagwgio">Νηπειαγωγείο</option>
-          <option value="dimotiko">Δημοτικό</option>
-          <option value="gymnasio">Γυμνάσιο</option>
-          <option value="lykeio">Λύκειο</option>
+        <label for="paidi_2">2o παιδί </label>
+        <select name="paidi_2" id="paidi_2">
+          <option value="" selected disabled hidden onclick="return validateEmpty(document.getElementById('paidi_2'), document.getElementById('demo9'))">Επιλέξτε</option>
+          <option value="nipiagwgio" onclick="return validateEmpty(document.getElementById('paidi_2'), document.getElementById('demo9'))">Νηπειαγωγείο</option>
+          <option value="dimotiko" onclick="return validateEmpty(document.getElementById('paidi_2'), document.getElementById('demo9'))">Δημοτικό</option>
+          <option value="gymnasio" onclick="return validateEmpty(document.getElementById('paidi_2'), document.getElementById('demo9'))">Γυμνάσιο</option>
+          <option value="lykeio" onclick="return validateEmpty(document.getElementById('paidi_2'), document.getElementById('demo9'))">Λύκειο</option>
         </select>
+        <p style="color: darkred" id='demo9'></p>
       </div>
       <br>
       
       <div id='hidden_paidi_3' style="display: none;">
-        <h6>3ο παιδί</h6>
         
-        <select name="paidi_3" id="paidi_3" onchange="return validateSelect()">
-          <option value="" selected disabled hidden>Επιλέξτε</option>
-          <option value="nipiagwgio">Νηπειαγωγείο</option>
-          <option value="dimotiko">Δημοτικό</option>
-          <option value="gymnasio">Γυμνάσιο</option>
-          <option value="lykeio">Λύκειο</option>
+        <label for="paidi_3">3o παιδί </label>
+        <select name="paidi_3" id="paidi_3">
+          <option value="" selected disabled hidden onclick="return validateEmpty(document.getElementById('paidi_3'), document.getElementById('demo10'))">Επιλέξτε</option>
+          <option value="nipiagwgio" onclick="return validateEmpty(document.getElementById('paidi_3'), document.getElementById('demo10'))">Νηπειαγωγείο</option>
+          <option value="dimotiko" onclick="return validateEmpty(document.getElementById('paidi_3'), document.getElementById('demo10'))">Δημοτικό</option>
+          <option value="gymnasio" onclick="return validateEmpty(document.getElementById('paidi_3'), document.getElementById('demo10'))">Γυμνάσιο</option>
+          <option value="lykeio" onclick="return validateEmpty(document.getElementById('paidi_3'), document.getElementById('demo10'))">Λύκειο</option>
         </select>
+        <p style="color: darkred" id='demo10'></p>
       </div>
       <br>
         
       <div id='hidden_paidi_4' style="display: none;">
-        <h6>4ο παιδί</h6>
         
-        <select name="paidi_4" id="paidi_4" onchange="return validateSelect()">
-          <option value="" selected disabled hidden>Επιλέξτε</option>
-          <option value="nipiagwgio">Νηπειαγωγείο</option>
-          <option value="dimotiko">Δημοτικό</option>
-          <option value="gymnasio">Γυμνάσιο</option>
-          <option value="lykeio">Λύκειο</option>
+        <label for="paidi_4">4o παιδί </label>
+        <select name="paidi_4" id="paidi_4" >
+          <option value="" selected disabled hidden onclick="return validateEmpty(document.getElementById('paidi_4'), document.getElementById('demo11'))">Επιλέξτε</option>
+          <option value="nipiagwgio" onclick="return validateEmpty(document.getElementById('paidi_4'), document.getElementById('demo11'))">Νηπειαγωγείο</option>
+          <option value="dimotiko" onclick="return validateEmpty(document.getElementById('paidi_4'), document.getElementById('demo11'))">Δημοτικό</option>
+          <option value="gymnasio" onclick="return validateEmpty(document.getElementById('paidi_4'), document.getElementById('demo11'))">Γυμνάσιο</option>
+          <option value="lykeio" onclick="return validateEmpty(document.getElementById('paidi_4'), document.getElementById('demo11'))">Λύκειο</option>
         </select>
+        <p style="color: darkred" id='demo11'></p>
       </div>
               
       <br> <br>
@@ -407,7 +413,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<a id="backtotop" href="#top"><p style="display: none">Top</p><i class="fas fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
 <script src="../layout/scripts/jquery.min.js"></script>
 <script src="../layout/scripts/jquery.backtotop.js"></script>

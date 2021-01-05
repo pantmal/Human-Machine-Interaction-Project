@@ -228,7 +228,7 @@ endif;
       <p style="color: darkred" id='demo5'></p>
               
       <br/>
-      <label for="comment">Πείτε μας τον λόγο που στέλνετε την αίτηση: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <label>Πείτε μας τον λόγο που στέλνετε την αίτηση: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
       <label for="tilergasia">Τηλεργασία</label> 
       <input type="checkbox" id="tilergasia" name="tilergasia" value="yes" onclick="show_options(document.getElementById('tilergasia'), document.getElementById('tilergasia_options'))">
       <br>
@@ -239,24 +239,24 @@ endif;
       <br/>
       <div id='tilergasia_options' style='display:none'>
         <label>Διάρκεια τηλεργασίας: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-        <label for="tilergasia">Από:<span>*</span></label>
-        <input type="date" id="date_from_til" name="date_from_til" > <br>
+        <label for="date_from_til">Από:<span>*</span></label>
+        <input type="date" id="date_from_til" name="date_from_til" onchange="return validateEmpty(document.getElementById('date_from_til'),document.getElementById('demo7'))"> <br>
         <p style="color: darkred" id='demo7'></p>
         
-        <label for="tilergasia">Εώς:<span>*</span></label>
-        <input type="date" id="date_to_til" name="date_to_til" >
+        <label for="date_to_til">Εώς:<span>*</span></label>
+        <input type="date" id="date_to_til" name="date_to_til" onchange="return validateEmpty(document.getElementById('date_to_til'),document.getElementById('demo8'))">
         <p style="color: darkred" id='demo8'></p>
       </div>
       
       <br/>
       <div id='anastoli_options' style='display:none'>
         <label>Διάρκεια αναστολής σύμβασης: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
-        <label for="anastoli">Από:<span>*</span></label>
-        <input type="date" id="date_from_anastoli" name="date_from_anastoli" > <br>
+        <label for="date_from_anastoli">Από:<span>*</span></label>
+        <input type="date" id="date_from_anastoli" name="date_from_anastoli" onchange="return validateEmpty(document.getElementById('date_from_anastoli'),document.getElementById('demo9'))"> <br>
         <p style="color: darkred" id='demo9'></p>
         
-        <label for="anastoli">Εώς:<span>*</span></label>
-        <input type="date" id="date_to_anastoli" name="date_to_anastoli">
+        <label for="date_to_anastoli">Εώς:<span>*</span></label>
+        <input type="date" id="date_to_anastoli" name="date_to_anastoli" onchange="return validateEmpty(document.getElementById('date_to_anastoli'),document.getElementById('demo10'))">
         <p style="color: darkred" id='demo10'></p>
       </div>
 
@@ -375,7 +375,7 @@ endif;
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+<a id="backtotop" href="#top"><p style="display: none">Top</p><i class="fas fa-chevron-up"></i></a>
 <!-- JAVASCRIPTS -->
 <script src="../layout/scripts/jquery.min.js"></script>
 <script src="../layout/scripts/jquery.backtotop.js"></script>

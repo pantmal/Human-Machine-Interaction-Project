@@ -113,34 +113,62 @@ function validateEmpty(id,demo){
 
 }
 
-// function validateOption(){ 
-//     var x = document.getElementById('anastoli');
-//     var y = document.getElementById('tilergasia');
+function validateOption(){ 
+    var x = document.getElementById('anastoli');
+    var y = document.getElementById('tilergasia');
     
-//     result = true;
-    
-//     if (x.checked == false && y.checked == false ) {
-//         document.getElementById("demo6").innerHTML = '\u2757not empty';
-//         result = false;
-//     }else{
-//         document.getElementById("demo6").innerHTML = '';
-//     }
+    var result = true;
+
+        
+    if (x.checked == false && y.checked == false ) {
+        document.getElementById("demo6").innerHTML = '\u2757 Πρέπει να διαλέξετε τουλάχιστον μία επιλογή.';
+        result = false;
+    }else{
+        document.getElementById("demo6").innerHTML = '';
+    }
 
    
-//     return result;
+    return result;
 
-// }
+}
 
+function validateAllOptions(){
 
-// function validateSelect(){
-//     var x = document.getElementsByName('rdb');
-  
-//     result = true;
-  
-//     //...
+    var x = document.getElementById('tilergasia');
+    var y = document.getElementById('anastoli');
 
-//     return result;
-// }
+    var result = true;
+        
+    if (x.checked == true ) {   
+        var check_one = validateEmpty(document.getElementById('date_from_til'),document.getElementById('demo7'))
+        var check_two = validateEmpty(document.getElementById('date_to_til'),document.getElementById('demo8'))
+        if (check_one == false || check_two == false){
+            result = false;
+        } 
+    }
+
+    if (y.checked == true ) {
+        var check_three = validateEmpty(document.getElementById('date_from_til'),document.getElementById('demo9'))
+        var check_four = validateEmpty(document.getElementById('date_from_til'),document.getElementById('demo10'))
+        if (check_three == false || check_four == false){
+            result = false;
+        } 
+    }
+
+    if (x.checked == true && y.checked == true ) {
+        var check_one = validateEmpty(document.getElementById('date_from_til'),document.getElementById('demo7'))
+        var check_two = validateEmpty(document.getElementById('date_to_til'),document.getElementById('demo8'))
+        var check_three = validateEmpty(document.getElementById('date_from_til'),document.getElementById('demo9'))
+        var check_four = validateEmpty(document.getElementById('date_from_til'),document.getElementById('demo10'))
+        if (check_one == false || check_two == false && check_three == false || check_four == false){
+            result = false;
+        } 
+    }
+
+   
+    return result;
+
+}
 
 function validateAnastoliForm() {
 
@@ -170,7 +198,14 @@ function validateAnastoliForm() {
   if (validateNum(document.getElementById('afm_worker'),document.getElementById('demo5'))==false){
       errors = true; 
   }
-      
+   
+  if (validateOption()==false){
+    errors = true; 
+  }
+
+  if (validateAllOptions()==false){
+    errors = true; 
+  }
   
   if (errors == true){
       result = false;
@@ -186,13 +221,12 @@ function validateAnastoliForm() {
 function show_options(checkBox, text) {
 
   
-  // If the checkbox is checked, display the output text
   if (checkBox.checked == true){
     text.style.display = "inline";
   } else {
     text.style.display = "none";
   }
 
-  //needs some more validations here
+  validateOption()
       
 }
