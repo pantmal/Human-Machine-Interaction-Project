@@ -47,8 +47,8 @@ File: Layout CSS
 --------------------------------------------------------------------------------------------------------------- */
 #header{}
 
-#header #logo{margin:30px 0 0 0;}
-#header #logo h1{margin:0; padding:0; font-size:40px;}
+#header #logo{margin:20px 0 0 0;}
+#header #logo h1{margin:0; padding:0; font-size:30px;}
 
 
 /* Page Intro
@@ -235,10 +235,10 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #mainav form select option{margin:5px; padding:0; border:none;}
 
 /* Breadcrumb */
-#breadcrumb{padding:150px 0 30px;}
+#breadcrumb{padding:50px 0 0px;}
 #breadcrumb ul{margin:0; padding:0; list-style:none; text-transform:uppercase;}
 #breadcrumb li{display:inline-block; margin:0 6px 0 0; padding:0;}
-#breadcrumb li a{display:block; position:relative; margin:0; padding:0 12px 0 0; font-size:12px;}
+#breadcrumb li a{color: #0026ff; display:block; position:relative; margin:0; padding:0 12px 0 0; font-size:12px;}
 #breadcrumb li a::after{top:4px; right:0; content:"\f0da";}
 #breadcrumb li:last-child a{margin:0; padding:0;}
 #breadcrumb li:last-child a::after{display:none;}
@@ -342,10 +342,10 @@ input:focus, textarea:focus, *:required:focus{border-color:#53D3DE;}
 
 
 /* Top Bar */
-#topbar #searchform{color:#53D3DE;}
+#topbar #searchform{color:#0026ff;}
 #topbar #searchform:hover{}
-#topbar #searchform input{color:#FFFFFF; background:#1D8B94;}
-#topbar #searchform button{color:#FFFFFF; background:transparent;}
+#topbar #searchform input{color:#FFFFFF; background:#055b63;}
+#topbar #searchform button{color:#FFFFFF;}
 
 
 /* Header */
@@ -389,12 +389,12 @@ input:focus, textarea:focus, *:required:focus{border-color:#53D3DE;}
 #mainav{}
 #mainav li a{color:inherit; border-color:transparent;}
 #mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#FFFFFF; background-color:#055b63; border-color:#FFFFFF;}
-#mainav li li a, #mainav .active li a{color:#FFFFFF; background-color:rgba(83,211,222,.5);/* #53D3DE */ border-color:rgba(0,0,0,.6);}
+#mainav li li a, #mainav .active li a{color:#FFFFFF; background-color: #055b63;/* #53D3DE */ border-color:rgba(0,0,0,.6);}
 #mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#1D8B94; border-color:rgba(0,0,0,.6);}
 #mainav form select{color:#474747; background-color:#FFFFFF;}
 
 #breadcrumb a{color:inherit; background-color:inherit;}
-#breadcrumb li:last-child a{color:#53D3DE;}
+#breadcrumb li:last-child a{color:#000000;}
 
 .container .sidebar nav a{color:inherit; border-color:#D7D7D7;}
 .container .sidebar nav a:hover{color:#53D3DE;}

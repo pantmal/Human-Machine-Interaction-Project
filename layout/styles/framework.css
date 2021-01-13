@@ -142,7 +142,7 @@ address, article, aside, figcaption, figure, footer, header, main, nav, section{
   
   .tooltip .tooltiptext {
     visibility: hidden;
-    width: 120px;
+    width: 200px;
     background-color: #555;
     color: #fff;
     text-align: center;
@@ -161,7 +161,7 @@ address, article, aside, figcaption, figure, footer, header, main, nav, section{
     content: "";
     position: absolute;
     top: 100%;
-    left: 50%;
+    left: 30%;
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;

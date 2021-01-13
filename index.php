@@ -63,35 +63,36 @@ Licence URI: https://www.os-templates.com/template-terms
   </div>
   <div id="logo" class="fl_left"> 
       <!-- ################################################################################################ -->
-      <h1><a href="index.php">Υπουργείο Εργασίας</a></h1>
+      <h1><a href="index.php">Υπουργείο Εργασίας <br>και Κοινωνικών Υποθέσεων</a></h1>
       <!-- ################################################################################################ -->
     </div>
     <nav id="mainav" class="fl_right"> 
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <li><a class="drop" href="#">COVID-19</a>
+        <li><a class="drop" href="pages/covid_19.php">COVID-19</a>
           <ul>
             <li><a href="pages/metra_prolipsis.php">Μέτρα προστασίας στον χώρο εργασίας</a></li>
             <li><a href="pages/antimetwpisi_krousmatos.php">Αντιμετώπιση κρούσματος στον χώρο εργασίας</a></li>    
             <li><a href="pages/tilergasia_info.php">Τηλεργασία-άδεια-ειδικού σκοπού-αναστολή σύμβαση</a></li>
           </ul>
         </li>
-        <li><a class="drop" href="#">Εργαζόμενος</a>
+        <li><a class="drop" href="pages/ergazomenos.php">Εργαζόμενος</a>
           <ul>
-            <li><a class="drop" href="#">COVID-19 και Εργασία</a>
+            <li><a class="drop" href="pages/dead_page.php">COVID-19 και Εργασία</a>
               <ul>
                 <li><a href="pages/adeia_eidikou_skopou.php"> Φόρμα για άδεια ειδικού σκοπού </a></li>
                 <li><a href="pages/dead_page.php">Μετακινήσεις και απαραίτητα έγγραφα</a></li>
               </ul>
             </li>
+            <li><a href="pages/lista_adeiwn.php">Λίστα αδειών ειδικού σκοπού</a></li>
             <li><a href="pages/dead_page.php">Εργασιακά δικαιώματα</a></li>
             <li><a href="pages/dead_page.php">Κατάρτιση και σεμινάρια</a></li>
             <li><a href="pages/dead_page.php">Προκυρήξεις</a></li>
           </ul>
         </li>
-        <li><a class="drop" href="#">Εργοδότης</a>
+        <li><a class="drop" href="pages/ergodotis.php">Εργοδότης</a>
           <ul>
-            <li><a class="drop" href="#">COVID-19 και Εργασία</a>
+            <li><a class="drop" href="pages/dead_page.php">COVID-19 και Εργασία</a>
               <ul>
                 <li><a href="pages/anastoli_symvasis.php"> Φόρμα για δήλωση εξ αποστάσεως εργασίας-αναστολή σύμβασης</a></li>    
                 <li><a href="pages/dead_page.php">Διαθέσιμες θέσεις εργασίας (COVID-19)</a></li>
@@ -103,14 +104,14 @@ Licence URI: https://www.os-templates.com/template-terms
             <li><a href="pages/dead_page.php">Απασχόληση αλλοδαπων-ανηλίκων</a></li>
           </ul>
         </li>
-        <li><a class="drop" href="#">Επικοινωνία</a>
+        <li><a class="drop" href="pages/dead_page.php">Επικοινωνία</a>
           <ul>
-            <li><a href="pages/epikoinwnia.php">Πληροφορίες για τις υπερησίες του Υπουργείου</a></li>
-            <li><a href="pages/kleisimo_rantevou.php">Κλεισιμό Ραντεβού</a></li>
-            <li><a href="pages/dead_page.php">Αποστολή emai ερωτησέων</a></li>
+            <li><a href="pages/epikoinwnia.php">Πληροφορίες για τις υπηρεσίες του Υπουργείου</a></li>
+            <li><a href="pages/kleisimo_rantevou.php">Κλείσιμο Ραντεβού</a></li>
+            <li><a href="pages/dead_page.php">Αποστολή email ερωτησέων</a></li>
           </ul>
         </li>
-        <li><a href="#">Ανακοινώσεις</a></li>
+        <li><a href="pages/dead_page.php">Ανακοινώσεις</a></li>
       </ul>
 	  </nav>
 	  </header>
@@ -126,29 +127,31 @@ Licence URI: https://www.os-templates.com/template-terms
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
     <div class="item active">
-      <img style="position: relative; left: 137px; width: 1000px; height: 500px" src="images/giousef.jpg"  alt="Chania">
+      <img style="position: relative; left: 137px; width: 1000px; height: 500px" src="images/gkise.jpeg"  alt="Chania">
       <div class="carousel-caption">
-        <h2>Los Angeles</h2>
-        <p>LA is always so much fun!</p>
+      <a href="pages/kleisimo_rantevou.php"><h2>Κλείσιμο ραντεβού</h2></a>
+        <!-- <p style="color: darkblue">LA is always so much fun!</p> -->
       </div>
     </div>
 
     <div class="item">
-      <img style="position: relative; left: 137px; width: 1000px; height: 500px" src="images/covid.jpg" alt="Chicago">
+      <img style="position: relative; left: 137px; width: 1000px; height: 500px" src="images/tilergasia.jpeg" alt="New York">
       <div class="carousel-caption">
-        <h3>Chicago</h3>
-        <p>Thank you, Chicago!</p>
+      <a href="pages/tilergasia_info.php"><h3>Εργασία εξ' αποστάσεως</h3></a>
+        <!-- <p style="color: darkblue">We love the Big Apple!</p> -->
       </div>
     </div>
+       
 
     <div class="item">
-      <img style="position: relative; left: 137px; width: 1000px; height: 500px" src="images/asteri.jpg" alt="New York">
+      <img style="position: relative; left: 137px; width: 1000px; height: 500px" src="images/quarantine.jpeg" alt="Chicago">
       <div class="carousel-caption">
-        <h3>New York</h3>
-        <p>We love the Big Apple!</p>
+      <a href="pages/dead_page.php"><h3>Μετακινήσεις και εργασία</h3></a>
+        <!-- <p style="color: darkblue">Thank you, Chicago!</p> -->
       </div>
     </div>
-  </div>
+    </div>
+  
 
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -169,38 +172,32 @@ Licence URI: https://www.os-templates.com/template-terms
     <!-- main body -->
     <!-- ################################################################################################ -->
     <section id="introblocks">
-      <div class="sectiontitle">
-        <h4 class="heading">Γρήγορη Πρόσβαση</h4>
-      </div>
       <ul class="nospace group">
         <li class="one_third first">
-          <article><a href="#"><i class="#"></i></a>
-		  <img style="width: 100%;" src="images/asteri.jpg" alt="" />
-            <h5 class="heading">Covid-19</h5>
-            <a href="https://www.w3schools.com/">BALE KATI ALLO</a><br>
-			<a href="https://www.w3schools.com/">BALE KATI ALLO</a><br>	
-			<a href="https://www.w3schools.com/">BALE KATI ALLO</a>
-            <footer><a class="btn" href="pages/kleisimo_rantevou.php">BALE KATI ALLO</a></footer>
+          <article>
+          <a href="pages/covid_19.php"><img style="position: relative; left: width: 100px; height: 100px" src="images/ergasia-covid.jpg" alt="" /></a>
+      <a href="pages/covid_19.php"><h5 class="heading">Covid-19</h5></a>
+            <a href="pages/metra_prolipsis.php">Μέτρα προστασίας</a><br>
+			      <a href="pages/antimetwpisi_krousmatos.php">Αντιμετώπιση κρούσματος</a><br>	
+			      <a href="pages/tilergasia_info.php">Τηλεργασία-άδεια-ειδικού σκοπού-αναστολή σύμβαση</a>
           </article>
         </li>
         <li class="one_third">
-          <article><a href="#"><i class="#"></i></a>
-		  <img style="width: 100%;" src="images/asteri.jpg" alt="" />
-            <h5 class="heading">Εργαζόμενος</h5>
-            <a href="pages/kleisimo_rantevou.php">Μέτρα Προστασίας</a><br>
-			<a href="https://www.w3schools.com/">Εξ' αποστάσεως εργασία</a><br>	
-			<a href="https://www.w3schools.com/">Μετακινήσεις</a>
-            <footer><a class="btn" href="pages/kleisimo_rantevou.php">BALE KATI ALLO</a></footer>
+          <article>
+          <a href="pages/ergazomenos.php"><img style="position: relative; left: width: 100px; height: 100px" src="images/ergazomenos.png" alt="" /></a>
+      <a href="pages/ergazomenos.php"><h5 class="heading">Εργαζόμενος</h5></a>
+            <a href="pages/adeia_eidikou_skopou.php">Άδεια ειδικού σκοπού</a><br>
+            <a href="pages/lista_adeiwn.php">Λίστα αδειών ειδικού σκοπού</a><br>	
+			      <a href="pages/dead_page.php">Μετακινήσεις και απαραίτητα έγγραφα</a><br>	
           </article>
         </li>
         <li class="one_third">
-          <article><a href="#"><i class="#"></i></a>
-		  <img style="width: 100%;" src="images/asteri.jpg" alt="" />
-            <h5 class="heading">Εργοδότης</h5>
-            <a href="https://www.w3schools.com/">Διαθέσιμες θέσεις εργάσιας</a><br>
-			<a href="https://www.w3schools.com/">Αντιμετώπιση κρούσματος</a><br>	
-			<a href="https://www.w3schools.com/">Υποχρεώσεις εργοδότη</a>
-            <footer><a class="btn" href="pages/kleisimo_rantevou.php">BALE KATI ALLO</a></footer>
+          <article> 
+		      <a href="pages/ergodotis.php"><img style="position: relative; left: width: 100px; height: 100px" src="images/ergodotis.png" alt="" /></a>
+            <a href="pages/ergodotis.php"><h5 class="heading">Εργοδότης</h5></a>
+            <a href="pages/anastoli_symvasis.php">Φόρμα για δήλωση εξ αποστάσεως εργασίας-αναστολή σύμβασης</a><br>
+			      <a href="pages/lista_ergazomenwn.php">Λίστα Εργαζομένων</a><br>	
+			      <a href="pages/dead_page.php">Υποχρεώσεις προς εργαζομένους</a>
           </article>
         </li>
       </ul>
@@ -223,19 +220,31 @@ Licence URI: https://www.os-templates.com/template-terms
     
     <ul class="nospace group">
       <li class="one_third">
-        <figure><a class="imgover" href="#"><img style="width: 100%;" src="images/giousef.jpg" alt=""></a>
-          <figcaption>Porta facilisis</figcaption>
-        </figure>
+      <div style="border: 1px solid darkblue; padding: 10px; padding-bottom: 30px">
+        <figure ><a class="imgover" href="pages/dead_page.php"><img style="position: relative; left: 20px; width: 100%; " src="images/anakoinosi.jpg" alt=""></a>
+          <figcaption style="color:blue"><a href="pages/dead_page.php">Παράταση της προθεσμίας καταβολής φορολογικών οφειλών.</a></figcaption>
+            <figcaption style="color:black">Η Κυβέρνηση προχωράει σε ένα ουσιαστικό μέτρο ελάφρυνσης, αλλά και διευκόλυνσης, πολιτών και επιχειρήσεων που έχουν υποστεί τις αρνητικές συνέπειες της πανδημίας στην επαγγελματική και επιχειρηματική δραστηριότητά τους. Συγκεκριμένα, αναστέλλεται μέχρι και τις 30/04/2021</figcaption>
+            <a style="position: relative; left: 80px;" href="pages/dead_page.php">Συνεχίστε την ανάγνωση</a>
+       </figure>
+       </div>
       </li>
       <li class="one_third">
-        <figure><a class="imgover" href="#"><img style="width: 100%;" src="images/giousef.jpg" alt=""></a>
-          <figcaption>Tellus lectus nec</figcaption>
+      <div style="border: 1px solid darkblue; padding: 10px; padding-bottom: 70px">
+        <figure><a class="imgover" href="pages/dead_page.php"><img style="position: relative; left: 40px; width: 100%;" src="images/anakoinosi.jpg" alt=""></a>
+          <figcaption style="color:blue"><a href="pages/dead_page.php">Μέριμνα για τις ευπαθείς ομάδες στον ιδιωτικό τομέα.</a></figcaption>
+        <figcaption style="color:black">Με την ΠΝΠ η οποία δημοσιεύτηκε στις 22/8/2020, καθορίζονται οι όροι για την τηλεργασία στον ιδιωτικό Τομέα και ιδίως τι ισχύει για τους εργαζόμενους που ανήκουν σε ευπαθείς ομάδες. Συγκεκριμένα προβλέπεται ότι: </figcaption>
+        <a style="position: relative; left: 80px;" href="pages/dead_page.php">Συνεχίστε την ανάγνωση</a>
         </figure>
+        </div>
       </li>
       <li class="one_third">
-        <figure><a class="imgover" href="#"><img style="width: 100%;" src="images/giousef.jpg" alt=""></a>
-          <figcaption>Pede suspendisse</figcaption>
+      <div style="border: 1px solid darkblue; padding: 10px;">
+         <figure><a class="imgover" href="pages/dead_page.php"><img style="position: relative; left: 40px; width: 100%;" src="images/anakoinosi.jpg" alt=""></a>
+          <figcaption style="color:blue"><a href="pages/dead_page.php">Ρύθμιση ειδικών θεμάτων με ειδικότερους όρους και προϋποθέσεις.</a></figcaption>
+          <figcaption style="color:black">Δικαιούχοι μερικής απαλλαγής από την καταβολή επαγγελματικών μισθώσεων : Οι μισθωτές επαγγελματικής μίσθωσης προς εγκατάσταση επιχειρήσεων, για τις οποίες έχουν ληφθεί ειδικά και έκτακτα μέτρα περί αναστολής ή προσωρινής απαγόρευσης λειτουργίας για προληπτικούς ή κατασταλτικούς λόγους</figcaption>
+          <a style="position: relative; left: 80px;" href="pages/dead_page.php">Συνεχίστε την ανάγνωση</a>
         </figure>
+        </div>
       </li>
     </ul>
     <!-- ################################################################################################ -->
@@ -244,10 +253,10 @@ Licence URI: https://www.os-templates.com/template-terms
   
   
 </div>
-
+<!--
 <div class="announcements row2">
   <section id="latest" class="hoc container clear"> 
-    <!-- ################################################################################################ -->
+    
     
     <ul class="nospace group">
       <li class="one_third">
@@ -267,10 +276,10 @@ Licence URI: https://www.os-templates.com/template-terms
       </li>
     </ul>
     <footer class="block center"><a class="btn" href="#">ΌΛΕΣ ΟΙ ΑΝΑΚΟΙΝΏΣΕΙΣ</a></footer>
-    <!-- ################################################################################################ -->
+   
   </section>
 </div>
-
+-->
 
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -283,7 +292,7 @@ Licence URI: https://www.os-templates.com/template-terms
       <!-- ################################################################################################ -->
         <ul class="nospace clear">
           <li class="one_quarter first">
-            <div class="block clear"><a href="pages/dead_page.php"><i class="fas fa-phone"></i></a> <span><strong>Τηλεφωνήστε μαζίμας:</strong> +00 (111) 111 1111</span></div>
+            <div class="block clear"><a href="pages/dead_page.php"><i class="fas fa-phone"></i></a> <span><strong>Τηλεφωνήστε μαζί μας:</strong> +00 (111) 111 1111</span></div>
           </li>
           <li class="one_quarter">
             <div class="block clear"><a href="pages/dead_page.php"><i class="fas fa-envelope"></i></a> <span><strong>Επικοινωνήστε με e-mail:</strong> user1@gmail.com</span></div>
@@ -307,7 +316,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved</p>
     <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
     <!-- ################################################################################################ -->
   </div>

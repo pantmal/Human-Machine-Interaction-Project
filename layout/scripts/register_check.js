@@ -9,7 +9,7 @@ function validateEmpty(id,demo){
         result = false;
     }else{
        demo.innerHTML = '';
-       id.style.borderColor = "#ccc";
+       id.style.borderColor = "black";
     }
     
     return result;

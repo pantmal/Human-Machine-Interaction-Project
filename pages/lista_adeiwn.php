@@ -10,11 +10,10 @@ Licence URI: https://www.os-templates.com/template-terms
 <html lang="">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
-<title>Αντιμετώπιση κρούσματος</title>
+<title>Λίστα Αδειών</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="../layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
-<link href="../layout/styles/framework.css" rel="stylesheet" type="text/css" media="all">
 <style type="text/css">
 /* DEMO ONLY */
 .container .demo{text-align:center;}
@@ -24,6 +23,7 @@ Licence URI: https://www.os-templates.com/template-terms
 @media screen and (max-width:900px){.container .demo div{margin-bottom:0;}}
 /* DEMO ONLY */
 </style>
+<script type="text/javascript" src='anastoli_check.js'></script>
 </head>
 <body id="top">
 <!-- ################################################################################################ -->
@@ -38,8 +38,8 @@ Licence URI: https://www.os-templates.com/template-terms
         <?php 
           $cookie_name = 'user';
           if(!isset($_COOKIE[$cookie_name])) {        
-              echo '<li><a style="color: #0026ff" href="login.html?header=antimetwpisi_krousmatos.php" title="Σύνδεση">Σύνδεση <i class="fas fa-sign-in-alt"></i></a></li>';
-              echo '<li><a style="color: #0026ff" href="register.html?header=antimetwpisi_krousmatos.php" title="Εγγραφή">Εγγραφή <i class="fas fa-edit"></i></a></li>';
+              echo '<li><a style="color: #0026ff" href="login.html?header=lista_adeiwn.php" title="Σύνδεση">Σύνδεση <i class="fas fa-sign-in-alt"></i></a></li>';
+              echo '<li><a style="color: #0026ff" href="register.html?header=lista_adeiwn.php" title="Εγγραφή">Εγγραφή <i class="fas fa-edit"></i></a></li>';
           } else {
               echo '<li><a style="color: #0026ff" href="edit_profile.php" title="Προφίλ Χρήστη">Προφίλ Χρήστη <i class="fas fa-user"></i></a></li>';
               echo '<li><a style="color: #0026ff" href="actions/logout.php" title="Αποσύνδεση">Αποσύνδεση <i class="fas fa-sign-out-alt"></i></a></li>';
@@ -75,14 +75,14 @@ Licence URI: https://www.os-templates.com/template-terms
     <nav id="mainav" class="fl_right"> 
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <li class="active"><a class="drop" href="covid_19.php">COVID-19</a>
+        <li><a class="drop" href="covid_19.php">COVID-19</a>
           <ul>
             <li><a href="metra_prolipsis.php">Μέτρα προστασίας στον χώρο εργασίας</a></li>
-            <li class="active"><a href="antimetwpisi_krousmatos.php">Αντιμετώπιση κρούσματος στον χώρο εργασίας</a></li>    
+            <li><a href="antimetwpisi_krousmatos.php">Αντιμετώπιση κρούσματος στον χώρο εργασίας</a></li>    
             <li><a href="tilergasia_info.php">Τηλεργασία-άδεια-ειδικού σκοπού-αναστολή σύμβαση</a></li>
           </ul>
         </li>
-        <li><a class="drop" href="ergazomenos.php">Εργαζόμενος</a>
+        <li class="active"><a class="drop" href="ergazomenos.php">Εργαζόμενος</a>
           <ul>
             <li><a class="drop" href="dead_page.php">COVID-19 και Εργασία</a>
               <ul>
@@ -90,7 +90,7 @@ Licence URI: https://www.os-templates.com/template-terms
                 <li><a href="dead_page.php">Μετακινήσεις και απαραίτητα έγγραφα</a></li>
               </ul>
             </li>
-            <li><a href="lista_adeiwn.php">Λίστα αδειών ειδικού σκοπού</a></li>
+            <li class="active"><a href="pages/lista_adeiwn.php">Λίστα αδειών ειδικού σκοπού</a></li>
             <li><a href="dead_page.php">Εργασιακά δικαιώματα</a></li>
             <li><a href="dead_page.php">Κατάρτιση και σεμινάρια</a></li>
             <li><a href="dead_page.php">Προκυρήξεις</a></li>
@@ -98,7 +98,7 @@ Licence URI: https://www.os-templates.com/template-terms
         </li>
         <li><a class="drop" href="ergodotis.php">Εργοδότης</a>
           <ul>
-            <li ><a class="drop" href="dead_page.php">COVID-19 και Εργασία</a>
+            <li><a class="drop" href="dead_page.php">COVID-19 και Εργασία</a>
               <ul>
                 <li><a href="anastoli_symvasis.php"> Φόρμα για δήλωση εξ αποστάσεως εργασίας-αναστολή σύμβασης</a></li>    
                 <li><a href="dead_page.php">Διαθέσιμες θέσεις εργασίας (COVID-19)</a></li>
@@ -125,17 +125,38 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-
 <div id="breadcrumb" class="hoc clear"> 
   <!-- ################################################################################################ -->
   <ul>
     <li><a href="../index.php">Αρχική</a></li>
-    <li><a href="covid_19.php">COVID-19</a></li>
-    <li><a >Αντιμετώπιση κρούσματος</a></li>
+    <li><a href="ergazomenos.php">Εργαζόμενος</a></li>
+    <li><a >Λίστα Αδειών</a></li>
   </ul>
   <!-- ################################################################################################ -->
 </div>
 
+<?php
+if(isset($_GET['status'])):
+    if( $_GET['status'] == 'success'):
+      echo '<script language="javascript">';
+      echo 'alert("Η άδεια ειδικού σκοπού που επιλέξατε διακόπηκε.")';
+      echo '</script>';
+    endif;
+    
+    if( $_GET['status'] == 'not_user'):
+      echo '<script language="javascript">';
+      echo 'alert("Δεν έχετε κάνει εγγραφή στην εφαρμογή")';
+      echo '</script>';
+    endif;
+
+    if( $_GET['status'] == 'not_parent'):
+      echo '<script language="javascript">';
+      echo 'alert("Δεν μπορείτε να επεξεργαστείτε μια άδεια ειδικού σκοπού αν δεν είστε γονέας.")';
+      echo '</script>';
+    endif;
+endif;
+?>
+	
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
@@ -143,85 +164,200 @@ Licence URI: https://www.os-templates.com/template-terms
   <main class="hoc container clear"> 
     <!-- main body -->
     <!-- ################################################################################################ -->
-    <div id="toc_container">
-      <p class="toc_title">Περιεχόμενα</p>
+        
+    <?php
+        require_once "../settings.php";
+
+        $cookie_name = 'user';
+        $query = "SELECT * FROM users WHERE username='$_COOKIE[$cookie_name]'";
+        $result = $conn->query($query);
+        $row = $result->fetch_array(MYSQLI_ASSOC);
+        $parent = $row['parent'];
+
+        if ($parent != 'yes'){
+          echo '<p>Πρέπει να είστε γονέας για να έχετε πρόσβαση σε αυτήν την σελίδα.</p>';
+        }else{
+
+          
+          echo '<form action="adeia_eidikou_skopou.php">';
+          echo '<div id="comments">';
+          echo '<input style="padding:5px; min-width:70px" type="submit" value="Δήλωση νέας άδειας ειδικού σκοπού" />';
+          echo '</div>';
+          echo '</form>';
+          echo '<br/>';
+
+          $cookie_name = 'user';
+          $query = "SELECT * FROM users WHERE username='$_COOKIE[$cookie_name]'";
+          $result = $conn->query($query);
+          $row = $result->fetch_array(MYSQLI_ASSOC);
+          $afm = $row['afm'];
       
-      <li><a href="#Table1">1. Διαχείριση περιστατικών στον χώρο εργασίας</a></li>
+          $query = "SELECT * FROM adeia_eidikou_skopou WHERE afm = '$afm' ";
+          $result = $conn->query($query);
+          $rows = $result->num_rows;
+        
+          
+          if($rows == 0){
+            echo '<p>Δεν έχετε δηλώσει άδεια ειδικού σκοπού μέχρι τώρα.</p>';
+          }else{
+            echo '<table>';
+            echo '<thead>';
+            echo '<tr>';
+            echo '<th>Όνομα</th>';
+            echo '<th>Επώνυμο</th>';
+            echo '<th>E-mail</th>';
+            echo '<th>ΑΦΜ</th>';
+            echo '<th>Άδεια από</th>';
+            echo '<th>Άδεια μέχρι</th>';
+            echo '<th>Αριθμός παιδιών</th>';
+            echo '<th>Βαθμίδα πρώτου παιδιού</th>';
+            echo '<th>Βαθμίδα δεύτερου παιδιού</th>';
+            echo '<th>Βαθμίδα τρίτου παιδιού</th>';
+            echo '<th>Βαθμίδα τέταρτου παιδιού</th>';
+            echo '<th>Διακοπή άδειας</th>';
+            echo '</tr>';
+            echo '</thead>';
+
+            echo '<tbody>';
+            for ($i = 0; $i < $rows; ++$i){
+                echo '<tr>';
+                $result->data_seek($i);
+                $name = $result->fetch_assoc()['name'];
+                $result->data_seek($i);
+                $surname = $result->fetch_assoc()['surname'];
+                $result->data_seek($i);
+                $email = $result->fetch_assoc()['mail'];
+                $result->data_seek($i);
+                $afm = $result->fetch_assoc()['afm'];
+                $result->data_seek($i);
+                $date_start = $result->fetch_assoc()['date_start'];
+                $result->data_seek($i);
+                $date_end = $result->fetch_assoc()['date_end'];
+                $result->data_seek($i);
+                $num_of_kids = $result->fetch_assoc()['num_of_kids'];
+                $result->data_seek($i);
+                $first_kid_rank = $result->fetch_assoc()['first_kid_rank'];
+                $result->data_seek($i);
+                $second_kid_rank = $result->fetch_assoc()['second_kid_rank'];
+                $result->data_seek($i);
+                $third_kid_rank = $result->fetch_assoc()['third_kid_rank'];
+                $result->data_seek($i);
+                $fourth_kid_rank = $result->fetch_assoc()['fourth_kid_rank'];
+                $result->data_seek($i);
+                $id = $result->fetch_assoc()['id'];
+
+                $date_start_split = explode('-',$date_start);
+                $new_date_start = $date_start_split[2].'-'.$date_start_split[1].'-'.$date_start_split[0];
+
+                $date_end_split = explode('-',$date_end);
+                $new_date_end = $date_end_split[2].'-'.$date_end_split[1].'-'.$date_end_split[0];
+        
+                
+                echo '<td> ' . $name .' </td>';    
+                echo '<td> ' . $surname .' </td>'; 
+                echo '<td> ' . $email .' </td>';    
+                echo '<td> ' . $afm .' </td>'; 
+                echo '<td> ' . $new_date_start .' </td>';    
+                echo '<td> ' . $new_date_end .' </td>'; 
+              
+                if($num_of_kids == 'one' ){
+                  echo '<td> 1 </td>';
+                }   
+                else if($num_of_kids == 'two' ){
+                  echo '<td> 2 </td>';
+                }   
+                else if($num_of_kids == 'three' ){
+                  echo '<td> 3 </td>';
+                }
+                else{
+                  echo '<td> ' . $num_of_kids .' </td>';
+                }   
+
+                if($first_kid_rank == 'nipiagwgio' ){
+                  echo '<td> Νηπιαγωγείο </td>';
+                }   
+                if($first_kid_rank == 'dimotiko' ){
+                  echo '<td> Δημοτικό </td>';
+                }   
+                if($first_kid_rank == 'gymnasio' ){
+                  echo '<td> Γυμνάσιο </td>';
+                }   
+                if($first_kid_rank == 'lykeio' ){
+                  echo '<td> Λύκειο </td>';
+                }   
+                
+                
+                if($second_kid_rank != 'NULL' ){
+                  if($second_kid_rank == 'nipiagwgio' ){
+                      echo '<td> Νηπιαγωγείο </td>';
+                    }   
+                    if($second_kid_rank == 'dimotiko' ){
+                      echo '<td> Δημοτικό </td>';
+                    }   
+                    if($second_kid_rank == 'gymnasio' ){
+                      echo '<td> Γυμνάσιο </td>';
+                    }   
+                    if($second_kid_rank == 'lykeio' ){
+                      echo '<td> Λύκειο </td>';
+                    }   
+                }else{
+                  echo '<td> - </td>';    
+                }
+
+                if($third_kid_rank != 'NULL' ){
+                  if($third_kid_rank == 'nipiagwgio' ){
+                      echo '<td> Νηπιαγωγείο </td>';
+                    }   
+                    if($third_kid_rank == 'dimotiko' ){
+                      echo '<td> Δημοτικό </td>';
+                    }   
+                    if($third_kid_rank == 'gymnasio' ){
+                      echo '<td> Γυμνάσιο </td>';
+                    }   
+                    if($third_kid_rank == 'lykeio' ){
+                      echo '<td> Λύκειο </td>';
+                    }   
+                }else{
+                  echo '<td> - </td>';    
+                }
+
+                if($fourth_kid_rank != 'NULL' ){
+                  if($fourth_kid_rank == 'nipiagwgio' ){
+                      echo '<td> Νηπιαγωγείο </td>';
+                    }   
+                    if($fourth_kid_rank == 'dimotiko' ){
+                      echo '<td> Δημοτικό </td>';
+                    }   
+                    if($fourth_kid_rank == 'gymnasio' ){
+                      echo '<td> Γυμνάσιο </td>';
+                    }   
+                    if($fourth_kid_rank == 'lykeio' ){
+                      echo '<td> Λύκειο </td>';
+                    }   
+                }else{
+                  echo '<td> - </td>';    
+                }
+
+              
+                echo '<td> <form action="actions/diakopi_action.php?id=' . $id .'  " method="post">';
+                echo '<div id="comments">';
+                echo '<input style="padding:5px; min-width:70px" type="submit" name="diakopi" id="diakopi" value="Διακοπή άδειας" />';
+                echo '</div>';
+                echo '</form> </td>';
+                
+
+                echo '</tr>';
+                
+            }
+            echo '</tbody>';
+            echo '</table>';
+          }
+        }    
+        mysqli_close($conn);
+    ?>
       
-      <li><a href="#Table2">2. Πιθανά σενάρια και αντίστοιχες δράσεις από τους εργαζομένους</a>
-        <ul>
-          <li><a href="#Table2.1">2.1 Παρουσίαση σύμπτωματος</a></li>
-          <li><a href="#Table2.2">2.2 Παρουσίαση σύμπτωματος με ιστορικό στενής επαφής </a></li>
-          <li><a href="#Table2.3">2.3 Απουσία σύμπτωματος αλλά με ιστορικό στενής επαφής </a></li>
-          <li><a href="#Table2.4">2.4 Απουσία σύμπτωματος αλλά με ιστορικό περιστασιακής επαφής </a></li>
-        </ul>
-      </li>
+</div>
     
-      <li><a href="#Table3">3. Επιπλέον σύνδεσμοι </a></li>
-      
-    </div>
-
-
-    <h1 id="Table1"><b>1.</b> Διαχείριση περιστατικών στον χώρο εργασίας</h1>
-    <p>Συμβουλευτείτε τον παρακάτω σύνδεσμο (link) του ΕΟΔΥ, σχετικά με τα είδη των κρουσμάτων και τα είδη των επαφών.</p>
-    <ul>
-    <li> υπάρχουν 3 είδη κρούσματος (ενδεχόμενο - πιθανό - επιβεβαιωμένο) και </li>
-    <li> 2 είδη επαφών (στενή υψηλού κινδύνου - απλή χαμηλού κινδύνου) </li>
-    </ul>
-    <p>Περισσότερες πληροφορίες:
-    <a href="https://eody.gov.gr/orismoi-kroysmatos-covid-19-kai-epafon-kroysmatos-covid-19/">https://eody.gov.gr/orismoi-kroysmatos-covid-19-kai-epafon-kroysmatos-covid-19/</a> 
-    </p>
-
-    <h1 id="Table2"><b>2.</b> Πιθανά σενάρια και αντίστοιχες δράσεις από τους εργαζομένους</h1>
-    
-    <h2 id="Table2.1"> <b>2.1</b> Παρουσίαση σύμπτωματος </h2>
-    <p> Αν ο εργαζόμενος παρουσιάσει συμπτωματολογία ίωσης (πυρετό, βήχα, δυσκολία στην αναπνοή, 
-        αγευσία ή ανοσμία, πονοκέφαλο, ρίγος, μυαλγίες, καταβολή, έμετο ή διάρροια)
-        <b>τότε δεν έρχεται στην εργασία του, μένει στο σπίτι του,</b> επικοινωνεί με τον
-        θεράποντα ιατρό του και παραμένει εκτός εργασίας για όσο χρονικό διάστημα
-        απαιτηθεί, προσκομίζοντας ιατρική βεβαίωση ή άδεια απουσίας λόγω ασθενείας
-        από τον ασφαλιστικό του φορέα.
-    </p>
-    
-    <h2 id="Table2.2"> <b>2.2 </b> Παρουσίαση σύμπτωματος με ιστορικό στενής επαφής</h2>
-    <p> Αν ο εργαζόμενος παρουσιάσει συμπτωματολογία ίωσης όπως παραπάνω, <b>και
-        έχει ιστορικό στενής επαφής</b> (= έκθεση υψηλού κινδύνου, < 1,5 μέτρα και > 15
-        min) με επιβεβαιωμένο κρούσμα ιού SARS-CoV-2, τις προηγούμενες 14 μέρες
-        <b>τότε δεν έρχεται στην εργασία του, μένει στο σπίτι του,</b> επικοινωνεί με
-        <ol>
-          <li>τον θεράποντα ιατρό του,</li>
-          <li>με τον ΕΟΔΥ (τηλ. 1135 για λήψη οδηγιών),</li>
-          <li>με τον Προϊστάμενο του και μέσω αυτού με την Εταιρεία</li>
-          <li>υποβάλλεται σε τεστ ανίχνευσης του ιού</li>
-        </ol> 
-    </p>
-    
-    <h2 id="Table2.3"> <b>2.3</b> Απουσία σύμπτωματος αλλά με ιστορικό στενής επαφής </h2>
-    <p> Αν εργαζόμενος δεν έχει κανένα σύμπτωμα, <b> αλλά
-        έχει ιστορικό στενής επαφής</b> = έκθεση υψηλού κινδύνου, < 1,5 μέτρα και > 15
-        min) με ύποπτο ή επιβεβαιωμένο κρούσμα ιού SARS-CoV-2 (π.χ. μέλος της
-        οικογένειας του, συνοδηγός σε αυτοκίνητο),
-        <b>τότε δεν έρχεται στην εργασία του, μένει στο σπίτι του,</b> επικοινωνεί με
-        <ol>
-          <li>τον θεράποντα ιατρό του,</li>
-          <li>με τον ΕΟΔΥ (τηλ. 1135 για λήψη οδηγιών),</li>
-          <li>με τον Προϊστάμενο του και μέσω αυτού με την Εταιρεία</li>
-          <li>υποβάλλεται σε τεστ ανίχνευσης του ιού</li>
-        </ol> 
-    </p>
-
-    <h2 id="Table2.4"> <b>2.4</b> Απουσία σύμπτωματος αλλά με ιστορικό περιστασιακής επαφής </h2> 
-    <p> Αν εργαζόμενος δεν έχει κανένα σύμπτωμα
-        <b>αλλά έχει ιστορικό απλής περιστασιακής επαφής </b> (= έκθεση χαμηλού κινδύνου, >1,5
-        μέτρα και < 15 min) με ύποπτο ή επιβεβαιωμένο κρούσμα ιού SARS-CoV-2
-        <b>τότε έρχεται</b> μεν στην εργασία του, παρακολουθώντας στενά τον εαυτό του για πιθανά
-        συμπτώματα, ακολουθώντας πιστά τις οδηγίες ατομικής υγιεινής.
-    </p>
-
-    <h1 id="Table3"><b>3.</b> Επιπλέον σύνδεσμοι </h1>
-    <p> Όλα τα παραπάνω υπόκεινται σε αλλαγές σύμφωνα με τις οδηγίες των: </p>
-    <p> Εθνικός Οργανισμός Δημόσιας Υγείας <a href="https://eody.gov.gr"> https://eody.gov.gr </a> </p>
-    <p> Ευρωπαικό Κέντρο Πρόληψης Νοσημάτων <a href="https://ecdc.europa.eu"> https://ecdc.europa.eu </a> </p>
     <!-- ################################################################################################ -->
     <!-- / main body -->
     <div class="clear"></div>

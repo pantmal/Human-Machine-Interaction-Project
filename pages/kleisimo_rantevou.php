@@ -32,29 +32,26 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <div class="wrapper row0">
   <div id="topbar" class="hoc clear">
-    <div class="fl_left"> 
-      <!-- ################################################################################################ -->
-      <ul class="nospace">
-        <li><i class="fas fa-phone rgtspace-5"></i> +00 (123) 456 7890</li>
-        <li><i class="far fa-envelope rgtspace-5"></i> info@domain.com</li>
-      </ul>
-      <!-- ################################################################################################ -->
-    </div>
     <div class="fl_right"> 
       <!-- ################################################################################################ -->
+      
       <ul class="nospace">
-        <li><a href="../index.html"><i class="fas fa-home"></i></a></li>
-        <li><a href="#" title="Help Centre"><i class="far fa-life-ring"></i></a></li>
-        <li><a href="#" title="Login"><i class="fas fa-sign-in-alt"></i></a></li>
-        <li><a href="#" title="Sign Up"><i class="fas fa-edit"></i></a></li>
+        <?php 
+          $cookie_name = 'user';
+          if(!isset($_COOKIE[$cookie_name])) {        
+              echo '<li><a style="color: #0026ff" href="login.html?header=kleisimo_rantevou.php" title="Σύνδεση">Σύνδεση <i class="fas fa-sign-in-alt"></i></a></li>';
+              echo '<li><a style="color: #0026ff" href="register.html?header=kleisimo_rantevou.php" title="Εγγραφή">Εγγραφή <i class="fas fa-edit"></i></a></li>';
+          } else {
+              echo '<li><a style="color: #0026ff" href="edit_profile.php" title="Προφίλ Χρήστη">Προφίλ Χρήστη <i class="fas fa-user"></i></a></li>';
+              echo '<li><a style="color: #0026ff" href="actions/logout.php" title="Αποσύνδεση">Αποσύνδεση <i class="fas fa-sign-out-alt"></i></a></li>';
+          }
+        ?>
+        
         <li id="searchform">
           <div>
-            <form action="#" method="post">
-              <fieldset>
-                <legend>Quick Search:</legend>
-                <input type="text" placeholder="Enter search term&hellip;">
-                <button type="submit"><i class="fas fa-search"></i></button>
-              </fieldset>
+            <form action="dead_page.php" method="post">
+              <label for="search_term">Aναζητήστε: </label>
+              <input type="text" id="search_term" name="search_term">
             </form>
           </div>
         </li>
@@ -68,97 +65,78 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <div class="wrapper row1">
   <header id="header" class="hoc clear">
-    <div id="logo" class="fl_left"> 
+  <div style="float: left; position: relative; left: -30px; top: 20px">
+  <a href="../index.php"><img src="../images/logo.jpeg"></a>
+  </div>
+  <div id="logo" class="fl_left"> 
       <!-- ################################################################################################ -->
-      <h1><a href="../index.html">Υπουργείο Εργασίας</a></h1>
+      <h1><a href="../index.php">Υπουργείο Εργασίας <br>και Κοινωνικών Υποθέσεων</a></h1>
       <!-- ################################################################################################ -->
     </div>
     <nav id="mainav" class="fl_right"> 
       <!-- ################################################################################################ -->
       <ul class="clear">
-        <li><a href="../index.html">Αρχική</a></li>
-        <li><a class="drop" href="#">Εργαζόμενος</a>
+        <li><a class="drop" href="covid_19.php">COVID-19</a>
           <ul>
-            <li><a class="drop" href="#">COVID-19 και Εργασία</a>
-              <ul>
-                <li><a href="prev-measures.html">Μέτρα προστασίας στον χώρο εργασίας</a></li>
-                <li class="active"><a href="case-handling.html">Αντιμετώπιση κρούσματος στον χώρο εργασίας</a></li>
-                <li><a href="#">Μετακινήσεις και απαραίτητα έγγραφα</a></li>
-                <li><a href="#">Τηλεργασία-άδεια-ειδικού σκοπού-αναστολή σύμβαση</a></li>
-                <li><a href="#">Καρτέλα εργαζομένου</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Εργασιακα Δικαιώματα</a></li>
-            <li><a href="#">Κατάρτιση και σεμινάρια</a></li>
-            <li><a href="#">Προκυρήξεις</a></li>
+            <li><a href="metra_prolipsis.php">Μέτρα προστασίας στον χώρο εργασίας</a></li>
+            <li><a href="antimetwpisi_krousmatos.php">Αντιμετώπιση κρούσματος στον χώρο εργασίας</a></li>    
+            <li><a href="tilergasia_info.php">Τηλεργασία-άδεια-ειδικού σκοπού-αναστολή σύμβαση</a></li>
           </ul>
         </li>
-        <li><a class="drop" href="#">Εργοδότης</a>
+        <li><a class="drop" href="ergazomenos.php">Εργαζόμενος</a>
           <ul>
-            <li><a class="drop" href="#">COVID-19 και Εργασία</a>
+            <li><a class="drop" href="dead_page.php">COVID-19 και Εργασία</a>
               <ul>
-                <li><a href="#">Διαθέσιμες θέσεις εργασίας (COVID-19)</a></li>
-                <li><a href="#">Εργασία εξ αποστάσεως-αναστολή σύμβασης</a></li>
-                <li><a href="prev-measures.html">Μέτρα προστασίας COVID-19</a></li>
-                <li class="active"><a href="case-handling.html">Αντιμετώπιση κρούσματος</a></li>
+                <li><a href="adeia_eidikou_skopou.php"> Φόρμα για άδεια ειδικού σκοπού </a></li>
+                <li><a href="dead_page.php">Μετακινήσεις και απαραίτητα έγγραφα</a></li>
               </ul>
             </li>
-            <li><a href="#">Υποχρεώσεις προς εργαζομένους</a></li>
-            <li><a class="drop" href="#">Υποχρεώσεις προς το κράτος</a>
+            <li><a href="lista_adeiwn.php">Λίστα αδειών ειδικού σκοπού</a></li>
+            <li><a href="dead_page.php">Εργασιακά δικαιώματα</a></li>
+            <li><a href="dead_page.php">Κατάρτιση και σεμινάρια</a></li>
+            <li><a href="dead_page.php">Προκυρήξεις</a></li>
+          </ul>
+        </li>
+        <li><a class="drop" href="ergodotis.php">Εργοδότης</a>
+          <ul>
+            <li ><a class="drop" href="dead_page.php">COVID-19 και Εργασία</a>
               <ul>
-                <li><a href="#">Έκπτωση ασφαλιστικών εισφορών</a></li>  
-                <li><a href="#">Φόροι</a></li>  
-                <li><a href="#">Δήλωση εισόδων-εξόδων</a></li>
-                <li><a href="#">Δήλωση εργαζομένων</a></li>
+                <li><a href="anastoli_symvasis.php"> Φόρμα για δήλωση εξ αποστάσεως εργασίας-αναστολή σύμβασης</a></li>    
+                <li><a href="dead_page.php">Διαθέσιμες θέσεις εργασίας (COVID-19)</a></li>
               </ul>
             </li>
-            <li><a href="#">Απασχόληση αλλοδαπων-ανηλίκων</a></li>
+            <li><a href="lista_ergazomenwn.php">Λίστα Εργαζομένων</a></li>
+            <li><a href="dead_page.php">Υποχρεώσεις προς εργαζομένους</a></li>
+            <li><a href="dead_page.php">Υποχρεώσεις προς το κράτος</a></li>
+            <li><a href="dead_page.php">Απασχόληση αλλοδαπων-ανηλίκων</a></li>
           </ul>
         </li>
-        <li><a class="drop" href="#">Επικοινωνία</a>
+        <li class="active"><a class="drop" href="dead_page.php">Επικοινωνία</a>
           <ul>
-            <li><a href="#">Πληροφορίες για τις υπερησίες του Υπουργείου</a></li>
-            <li><a href="#">Αποστολή emai ερωτησέων</a></li>
-            <li><a href="#">Τηλεφωνική επικοινωνία με υπάλληλο</a></li>
-            <li><a href="#">Χάρτης συμβεβλημένων υπηρεσιών</a></li>
+            <li><a href="epikoinwnia.php">Πληροφορίες για τις υπερησίες του Υπουργείου</a></li>
+            <li class="active"><a href="kleisimo_rantevou.php">Κλεισιμό Ραντεβού</a></li>
+            <li><a href="dead_page.php">Αποστολή emai ερωτησέων</a></li>
           </ul>
         </li>
-        <li><a class="drop" href="#">Dropdown</a>
-          <ul>
-            <li><a href="#">Level 2</a></li>
-            <li><a class="drop" href="#">Level 2 + Drop</a>
-              <ul>
-                <li><a href="#">Level 3</a></li>
-                <li><a href="#">Level 3</a></li>
-                <li><a href="#">Level 3</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Level 2</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Link Text</a></li>
+        <li><a href="dead_page.php">Ανακοινώσεις</a></li>
       </ul>
-      <!-- ################################################################################################ -->
-    </nav>
-  </header>
+	  </nav>
+	  </header>
 </div>
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper bgded overlay gradient" style="background-image:url('../images/demo/backgrounds/01.png');">
-  <div id="breadcrumb" class="hoc clear"> 
-    <!-- ################################################################################################ -->
-    <h6 class="heading"> Κλείσιμο ραντεβού</h6>
-    <ul>
-      <li><a href="../index.html">Home</a></li>
-      <li><a href="#">Lorem</a></li>
-      <li><a href="#">Ipsum</a></li>
-      <li><a href="#">Dolor</a></li>
-    </ul>
-    <!-- ################################################################################################ -->
-  </div>
+
+<div id="breadcrumb" class="hoc clear"> 
+  <!-- ################################################################################################ -->
+  <ul>
+    <li><a href="../index.php">Αρχική</a></li>
+    <li><a href="dead_page.php">Επικοινωνία</a></li>
+    <li><a >Κλεισιμό Ραντεβού</a></li>
+  </ul>
+  <!-- ################################################################################################ -->
 </div>
-	
+
 
 <div class="wrapper row3">
   <main class="hoc container clear"> 
@@ -182,32 +160,32 @@ Licence URI: https://www.os-templates.com/template-terms
     <form name="rantevou_form" action="actions/rantevou_action.php" onsubmit="return validateRantevouForm()" method="post">
 	
       <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br>
-      <label for="name1">Όνομα: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <label for="name1">Όνομα: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το όνομα σας.</span> </div></label>
       <input type="text" name="name1" id="name1"  size="22" onchange="return validateName(document.getElementById('name1'),document.getElementById('demo'))" >
       <p style="color: darkred" id='demo'></p>
 			
-			<label for="surname">Επώνυμο: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+			<label for="surname">Επώνυμο: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το επώνυμο σας.</span> </div></label>
 			<input type="text" name="surname" id="surname" value="" size="22" onchange="return validateName(document.getElementById('surname'),document.getElementById('demo1'))">
       <p style="color: darkred" id='demo1'></p>
           
-      <label for="email">Mail: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <label for="email">Mail: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το email σας.</span> </div></label>
       <input type="text" name="email" id="email" value="" size="22" onchange="return validateMail(document.getElementById('email'),document.getElementById('demo2'))">
 			<p style="color: darkred" id='demo2'></p>
 			
-      <label for="afm">ΑΦΜ: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <label for="afm">ΑΦΜ: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το ΑΦΜ σας.</span> </div></label>
       <input type="text" name="afm" id="afm" pattern="\d*" size="9" maxlength="9" onchange="return validateNum(document.getElementById('afm'),document.getElementById('demo3'))" >
       <p style="color: darkred" id='demo3'></p>
 
-			<label for="date_from">Ποιά ημερομηνία επιθυμείτε να κλείσετε το ραντεβού: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+			<label for="date_from">Ποιά ημερομηνία επιθυμείτε να κλείσετε το ραντεβού: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Επιλέξτε την ημερομηνία που θέλετε. (Προσοχή: Πρώτα είναι ο μήνας και μετά η μέρα!)</span> </div></label>
 			<input type="date" id="date_from" name="date_from" onchange="return validateEmpty(document.getElementById('date_from'),document.getElementById('demo4'))" >
       <p style="color: darkred" id='demo4'></p>
 
-      <label for="time"> Ποιά ώρα επιθυμείτε να κλείσετε το ραντεβού:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <label for="time"> Ποιά ώρα επιθυμείτε να κλείσετε το ραντεβού:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Επίλεξτε την ώρα που θέλετε. (ΑΜ αντιστοιχεί σε πμ και PM αντιστοιχεί σε μμ)</span> </div></label>
       <input id="time" type="time" name="time"  onchange="return validateEmpty(document.getElementById('time'),document.getElementById('demo5'))">
       <p style="color: darkred" id='demo5'></p>
 			<br>
 			
-      <label>Πείτε μας τον λόγο που κλείνετε αυτό το ραντεβού: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+      <label>Πείτε μας τον λόγο που κλείνετε αυτό το ραντεβού: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Επιλέξτε έναν λόγο από τους παρακάτω.</span></div></label>
       <p style="color: darkred" id='demo6'></p>
       <fieldset>
         <legend> Επιλέξτε έναν από τους παρακάτω λόγους </legend> <!--????-->
@@ -223,7 +201,7 @@ Licence URI: https://www.os-templates.com/template-terms
       <br>
       
       <div id="hidden_text" style="display: none"> 
-        <label for="comment_text">Πείτε μας τον λόγο που επιθυμείτε δια ζώσης εξυπηρέτηση: <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Tooltip text</span> </div></label>
+        <label for="comment_text">Πείτε μας τον λόγο που επιθυμείτε δια ζώσης εξυπηρέτηση: <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Γράψτε τον λόγο σε περίπτωση που δεν αντιστοιχεί με τις προηγούμενες επιλογές.</span> </div></label>
         <textarea name="comment_text" id="comment_text" cols="100" rows="10" onchange="return validateTextArea()"></textarea>
         <p style="color: darkred" id='demo7'></p>
       </div>
@@ -246,83 +224,29 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
-<div class="wrapper row3">
-  <section id="cta" class="hoc container clear"> 
-    <!-- ################################################################################################ -->
-    <ul class="nospace clear">
-      <li class="one_quarter first">
-        <div class="block clear"><a href="#"><i class="fas fa-phone"></i></a> <span><strong>Give us a call:</strong> +00 (123) 456 7890</span></div>
-      </li>
-      <li class="one_quarter">
-        <div class="block clear"><a href="#"><i class="fas fa-envelope"></i></a> <span><strong>Send us a mail:</strong> support@domain.com</span></div>
-      </li>
-      <li class="one_quarter">
-        <div class="block clear"><a href="#"><i class="fas fa-clock"></i></a> <span><strong> Monday - Saturday:</strong> 08.00am - 18.00pm</span></div>
-      </li>
-      <li class="one_quarter">
-        <div class="block clear"><a href="#"><i class="fas fa-map-marker-alt"></i></a> <span><strong>Come visit us:</strong> Directions to <a href="#">our location</a></span></div>
-      </li>
-    </ul>
-    <!-- ################################################################################################ -->
-  </section>
-</div>
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
-<!-- ################################################################################################ -->
 <div class="wrapper row4">
   <footer id="footer" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <div class="one_quarter first">
-      <h6 class="heading">A convallis ultricies</h6>
-      <p>Luctus et dolor nulla facilisi fusce sit amet magna non odio molestie egestas nullam id odio.</p>
-      <p class="btmspace-30">Quis risus placerat aliquam nunc nec nunc morbi vel nisi sit amet orci adipiscing pharetra [<a href="#"><i class="fas fa-arrow-right"></i></a>]</p>
-      <ul class="faico clear">
-        <li><a class="faicon-facebook" href="#"><i class="fab fa-facebook"></i></a></li>
-        <li><a class="faicon-google-plus" href="#"><i class="fab fa-google-plus-g"></i></a></li>
-        <li><a class="faicon-linkedin" href="#"><i class="fab fa-linkedin"></i></a></li>
-        <li><a class="faicon-twitter" href="#"><i class="fab fa-twitter"></i></a></li>
-        <li><a class="faicon-vk" href="#"><i class="fab fa-vk"></i></a></li>
-      </ul>
-    </div>
-    <div class="one_quarter">
-      <h6 class="heading">Mauris lorem curabitur</h6>
-      <ul class="nospace linklist">
-        <li>
-          <article>
-            <p class="nospace btmspace-10"><a href="#">Semper lacus id nibh etiam iaculis viverra pede proin laoreet dolor ut nunc&hellip;</a></p>
-            <time class="block font-xs" datetime="2045-04-06">Friday, 6<sup>th</sup> April 2045</time>
-          </article>
-        </li>
-        <li>
-          <article>
-            <p class="nospace btmspace-10"><a href="#">Donec turpis aliquam sapien est sodales id elementum at molestie in felis class&hellip;</a></p>
-            <time class="block font-xs" datetime="2045-04-05">Thursday, 5<sup>th</sup> April 2045</time>
-          </article>
-        </li>
-      </ul>
-    </div>
-    <div class="one_quarter">
-      <h6 class="heading">Eget mauris egestas</h6>
-      <ul class="nospace linklist">
-        <li><a href="#">Aptent taciti sociosqu ad</a></li>
-        <li><a href="#">Litora torquent per conubia</a></li>
-        <li><a href="#">Nostra per inceptos himenaeos</a></li>
-        <li><a href="#">Nam semper ipsum et purus</a></li>
-        <li><a href="#">Suspendisse sed quam aliquam</a></li>
-      </ul>
-    </div>
-    <div class="one_quarter">
-      <h6 class="heading">Volutpat quisque mauris</h6>
-      <p class="nospace btmspace-15">Viverra etiam dictum euismod lectus vestibulum tincidunt erat vel molestie.</p>
-      <form method="post" action="#">
-        <fieldset>
-          <legend>Newsletter:</legend>
-          <input class="btmspace-15" type="text" value="" placeholder="Name">
-          <input class="btmspace-15" type="text" value="" placeholder="Email">
-          <button type="submit" value="submit">Submit</button>
-        </fieldset>
-      </form>
-    </div>
+    <div >
+      <section id="cta" class="hoc container clear"> 
+      <!-- ################################################################################################ -->
+        <ul class="nospace clear">
+          <li class="one_quarter first">
+            <div class="block clear"><a href="dead_page.php"><i class="fas fa-phone"></i></a> <span><strong>Τηλεφωνήστε μαζί μας:</strong> +00 (111) 111 1111</span></div>
+          </li>
+          <li class="one_quarter">
+            <div class="block clear"><a href="dead_page.php"><i class="fas fa-envelope"></i></a> <span><strong>Επικοινωνήστε με e-mail:</strong> user1@gmail.com</span></div>
+          </li>
+          <li class="one_quarter">
+            <div class="block clear"><a href="dead_page.php"><i class="fas fa-clock"></i></a> <span><strong> Δευτερά - Παρασκευή:</strong> 08.00πμ - 18.00μμ</span></div>
+          </li>
+          <li class="one_quarter">
+            <div class="block clear"><a href="dead_page.php"><i class="fas fa-map-marker-alt"></i></a> <span><strong>Βρείτε μας:</strong> Οδηγιές για <a href="dead_page.php">την περιοχή μας.</a></span></div>
+          </li>
+        </ul>
+      <!-- ################################################################################################ -->
+      </section>
+  </div>
     <!-- ################################################################################################ -->
   </footer>
 </div>
@@ -332,7 +256,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <div class="wrapper row5">
   <div id="copyright" class="hoc clear"> 
     <!-- ################################################################################################ -->
-    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved - <a href="#">Domain Name</a></p>
+    <p class="fl_left">Copyright &copy; 2018 - All Rights Reserved </p>
     <p class="fl_right">Template by <a target="_blank" href="https://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
     <!-- ################################################################################################ -->
   </div>
