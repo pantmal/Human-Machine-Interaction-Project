@@ -7,7 +7,7 @@ Copyright: OS-Templates.com
 Licence: Free to use under our free template licence terms
 Licence URI: https://www.os-templates.com/template-terms
 -->
-<html lang="">
+<html lang="el">
 <!-- To declare your language - read more here: https://www.w3.org/International/questions/qa-html-language-declarations -->
 <head>
 <title>Κλείσιμο Ραντεβού</title>
@@ -66,11 +66,11 @@ Licence URI: https://www.os-templates.com/template-terms
 <div class="wrapper row1">
   <header id="header" class="hoc clear">
   <div style="float: left; position: relative; left: -30px; top: 20px">
-  <a href="../index.php"><img src="../images/logo.jpeg"></a>
+  <a href="../index.php"><img src="../images/logo.jpeg" alt="Ypourgeio-Logo"></a>
   </div>
   <div id="logo" class="fl_left"> 
       <!-- ################################################################################################ -->
-      <h1><a href="../index.php">Υπουργείο Εργασίας <br>και Κοινωνικών Υποθέσεων</a></h1>
+      <h1><a href="../index.php?ref=title">Υπουργείο Εργασίας <br>και Κοινωνικών Υποθέσεων</a></h1>
       <!-- ################################################################################################ -->
     </div>
     <nav id="mainav" class="fl_right"> 
@@ -80,45 +80,45 @@ Licence URI: https://www.os-templates.com/template-terms
           <ul>
             <li><a href="metra_prolipsis.php">Μέτρα προστασίας στον χώρο εργασίας</a></li>
             <li><a href="antimetwpisi_krousmatos.php">Αντιμετώπιση κρούσματος στον χώρο εργασίας</a></li>    
-            <li><a href="tilergasia_info.php">Τηλεργασία-άδεια-ειδικού σκοπού-αναστολή σύμβαση</a></li>
+            <li><a href="tilergasia_info.php">Τηλεργασία-άδεια ειδικού σκοπού-αναστολή σύμβασης</a></li>
           </ul>
         </li>
         <li><a class="drop" href="ergazomenos.php">Εργαζόμενος</a>
           <ul>
-            <li><a class="drop" href="dead_page.php">COVID-19 και Εργασία</a>
+            <li><a class="drop" href="dead_page.php?ref=1">COVID-19 και Εργασία</a>
               <ul>
                 <li><a href="adeia_eidikou_skopou.php"> Φόρμα για άδεια ειδικού σκοπού </a></li>
-                <li><a href="dead_page.php">Μετακινήσεις και απαραίτητα έγγραφα</a></li>
+                <li><a href="dead_page.php?ref=2">Μετακινήσεις και απαραίτητα έγγραφα</a></li>
               </ul>
             </li>
             <li><a href="lista_adeiwn.php">Λίστα αδειών ειδικού σκοπού</a></li>
-            <li><a href="dead_page.php">Εργασιακά δικαιώματα</a></li>
-            <li><a href="dead_page.php">Κατάρτιση και σεμινάρια</a></li>
-            <li><a href="dead_page.php">Προκυρήξεις</a></li>
+            <li><a href="dead_page.php?ref=3">Εργασιακά δικαιώματα</a></li>
+            <li><a href="dead_page.php?ref=4">Κατάρτιση και σεμινάρια</a></li>
+            <li><a href="dead_page.php?ref=5">Προκυρήξεις</a></li>
           </ul>
         </li>
         <li><a class="drop" href="ergodotis.php">Εργοδότης</a>
           <ul>
-            <li ><a class="drop" href="dead_page.php">COVID-19 και Εργασία</a>
+            <li ><a class="drop" href="dead_page.php?ref=6">COVID-19 και Εργασία</a>
               <ul>
                 <li><a href="anastoli_symvasis.php"> Φόρμα για δήλωση εξ αποστάσεως εργασίας-αναστολή σύμβασης</a></li>    
-                <li><a href="dead_page.php">Διαθέσιμες θέσεις εργασίας (COVID-19)</a></li>
+                <li><a href="dead_page.php?ref=7">Διαθέσιμες θέσεις εργασίας (COVID-19)</a></li>
               </ul>
             </li>
             <li><a href="lista_ergazomenwn.php">Λίστα Εργαζομένων</a></li>
-            <li><a href="dead_page.php">Υποχρεώσεις προς εργαζομένους</a></li>
-            <li><a href="dead_page.php">Υποχρεώσεις προς το κράτος</a></li>
-            <li><a href="dead_page.php">Απασχόληση αλλοδαπων-ανηλίκων</a></li>
+            <li><a href="dead_page.php?ref=8">Υποχρεώσεις προς εργαζομένους</a></li>
+            <li><a href="dead_page.php?ref=9">Υποχρεώσεις προς το κράτος</a></li>
+            <li><a href="dead_page.php?ref=10">Απασχόληση αλλοδαπών-ανηλίκων</a></li>
           </ul>
         </li>
-        <li class="active"><a class="drop" href="dead_page.php">Επικοινωνία</a>
+        <li class="active"><a class="drop" href="dead_page.php?ref=11">Επικοινωνία</a>
           <ul>
-            <li><a href="epikoinwnia.php">Πληροφορίες για τις υπερησίες του Υπουργείου</a></li>
-            <li class="active"><a href="kleisimo_rantevou.php">Κλεισιμό Ραντεβού</a></li>
-            <li><a href="dead_page.php">Αποστολή emai ερωτησέων</a></li>
+            <li><a href="epikoinwnia.php">Πληροφορίες για τις υπηρεσίες του Υπουργείου</a></li>
+            <li class="active"><a href="kleisimo_rantevou.php">Κλείσιμο Ραντεβού</a></li>
+            <li><a href="dead_page.php?ref=12">Αποστολή email ερωτησέων</a></li>
           </ul>
         </li>
-        <li><a href="dead_page.php">Ανακοινώσεις</a></li>
+        <li><a href="dead_page.php?ref=13">Ανακοινώσεις</a></li>
       </ul>
 	  </nav>
 	  </header>
@@ -132,7 +132,7 @@ Licence URI: https://www.os-templates.com/template-terms
   <ul>
     <li><a href="../index.php">Αρχική</a></li>
     <li><a href="dead_page.php">Επικοινωνία</a></li>
-    <li><a >Κλεισιμό Ραντεβού</a></li>
+    <li><a >Κλείσιμο Ραντεβού</a></li>
   </ul>
   <!-- ################################################################################################ -->
 </div>
@@ -210,7 +210,7 @@ Licence URI: https://www.os-templates.com/template-terms
       <div style="text-align:center">
         <input type="submit" name="submit" value="Κατάθεση αίτησης">
         &nbsp;
-        <input type="reset" name="reset" value="Καθαρισμός πεδίων">
+        <input style="border: solid white; text-decoration: underline;" type="reset" name="reset" value="Καθαρισμός πεδίων">
       </div>
     </form> 
     </div>
@@ -231,17 +231,17 @@ Licence URI: https://www.os-templates.com/template-terms
       <section id="cta" class="hoc container clear"> 
       <!-- ################################################################################################ -->
         <ul class="nospace clear">
-          <li class="one_quarter first">
-            <div class="block clear"><a href="dead_page.php"><i class="fas fa-phone"></i></a> <span><strong>Τηλεφωνήστε μαζί μας:</strong> +00 (111) 111 1111</span></div>
+        <li class="one_quarter first">
+            <div class="block clear"><a href="dead_page.php?end=1"><i class="fas fa-phone"><h style="display: none">Tilefwno</h></i></a> <span><strong>Τηλεφωνήστε μαζί μας:</strong> +00 (111) 111 1111</span></div>
           </li>
           <li class="one_quarter">
-            <div class="block clear"><a href="dead_page.php"><i class="fas fa-envelope"></i></a> <span><strong>Επικοινωνήστε με e-mail:</strong> user1@gmail.com</span></div>
+            <div class="block clear"><a href="dead_page.php?end=2"><i class="fas fa-envelope"><h style="display: none">Epikoinwnia</h></i></a> <span><strong>Επικοινωνήστε με e-mail:</strong> user1@gmail.com</span></div>
           </li>
           <li class="one_quarter">
-            <div class="block clear"><a href="dead_page.php"><i class="fas fa-clock"></i></a> <span><strong> Δευτερά - Παρασκευή:</strong> 08.00πμ - 18.00μμ</span></div>
+            <div class="block clear"><a href="dead_page.php?end=3"><i class="fas fa-clock"><h style="display: none">Wraria</h></i></a> <span><strong> Δευτερά - Παρασκευή:</strong> 08.00πμ - 18.00μμ</span></div>
           </li>
           <li class="one_quarter">
-            <div class="block clear"><a href="dead_page.php"><i class="fas fa-map-marker-alt"></i></a> <span><strong>Βρείτε μας:</strong> Οδηγιές για <a href="dead_page.php">την περιοχή μας.</a></span></div>
+            <div class="block clear"><a href="dead_page.php?end=4"><i class="fas fa-map-marker-alt"><h style="display: none">Topothesia</h></i></a> <span><strong>Βρείτε μας:</strong> Οδηγιές για <a style="color: lightblue" href="dead_page.php">την περιοχή μας.</a></span></div>
           </li>
         </ul>
       <!-- ################################################################################################ -->

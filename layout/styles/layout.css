@@ -390,7 +390,7 @@ input:focus, textarea:focus, *:required:focus{border-color:#53D3DE;}
 #mainav li a{color:inherit; border-color:transparent;}
 #mainav .active a, #mainav a:hover, #mainav li:hover > a{color:#FFFFFF; background-color:#055b63; border-color:#FFFFFF;}
 #mainav li li a, #mainav .active li a{color:#FFFFFF; background-color: #055b63;/* #53D3DE */ border-color:rgba(0,0,0,.6);}
-#mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#1D8B94; border-color:rgba(0,0,0,.6);}
+#mainav li li:hover > a, #mainav .active .active > a{color:#FFFFFF; background-color:#197c85; border-color:rgba(0,0,0,.6);}
 #mainav form select{color:#474747; background-color:#FFFFFF;}
 
 #breadcrumb a{color:inherit; background-color:inherit;}
