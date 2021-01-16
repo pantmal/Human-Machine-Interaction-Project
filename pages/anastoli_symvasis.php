@@ -174,36 +174,35 @@ endif;
     <h1 style="text-align:center">Αίτηση αναστολής σύμβασης ή εξ' αποστάσεως εργασίας (από εργοδότη)</h1>
     
     <p>Παρακαλούμε συμπληρώστε την παρακάτω φόρμα αίτησης τηλεργασίας ή εξ' αποστάσεως εργασίας: </p>
-      <!-- TAXIS???-->
     <div id="comments">
     <div style="border: 1px solid black; padding: 10px; margin-right: 400px">  
     <form action="actions/anastoli_action.php" onsubmit="return validateAnastoliForm()" method="post">
     
       <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br>  
     
-      <label for="name">Όνομα Εργοδότη: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το όνομα σας.</span> </div></label>
+      <label for="name">Όνομα Εργοδότη: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Ελληνικοί χαρακτήρες.</span> </div></label>
       <input type="text" name="name" id="name" value="" size="22" onchange="return validateName(document.getElementById('name'),document.getElementById('demo'))" > <br>
       <p style="color: darkred" id='demo'></p>
         
-      <label for="surname">Επώνυμο Εργοδότη: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το επώνυμο σας.</span> </div></label>
+      <label for="surname">Επώνυμο Εργοδότη: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Ελληνικοί χαρακτήρες.</span> </div></label>
       <input type="text" name="surname" id="surname" value="" size="22" onchange="return validateName(document.getElementById('surname'),document.getElementById('demo1'))"> <br>
       <p style="color: darkred" id='demo1'></p>
             
-      <label for="afm">ΑΦΜ Εργοδότη: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το ΑΦΜ σας.</span> </div></label>
+      <label for="afm">ΑΦΜ Εργοδότη: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Αριθμός (ακριβώς 9 χαρακτήρες).</span> </div></label>
       <input type="text" name="afm" id="afm" pattern="\d*" size="9" maxlength="9" onchange="return validateNum(document.getElementById('afm'),document.getElementById('demo2'))"> <br>	<!-- id="afm" size="9" maxlength="9" -->
       <p style="color: darkred" id='demo2'></p>
               
       <br/>
         
-      <label for="name_worker">Όνομα Εργαζόμενου: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το όνομα του εργαζόμενου σας.</span> </div></label>
+      <label for="name_worker">Όνομα Εργαζόμενου: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Ελληνικοί χαρακτήρες.</span> </div></label>
       <input type="text" name="name_worker" id="name_worker" value="" size="22"  onchange="return validateName(document.getElementById('name_worker'),document.getElementById('demo3'))"> <br>
       <p style="color: darkred" id='demo3'></p>
         
-      <label for="surname_worker">Επώνυμο Εργαζόμενου: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το επώνυμο του εργαζόμενου σας.</span> </div></label>
+      <label for="surname_worker">Επώνυμο Εργαζόμενου: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Ελληνικοί χαρακτήρες.</span> </div></label>
       <input type="text" name="name_worker" id="surname_worker" value="" size="22"  onchange="return validateName(document.getElementById('surname_worker'),document.getElementById('demo4'))"> <br>
       <p style="color: darkred" id='demo4'></p>
             
-      <label for="afm_worker">ΑΦΜ Εργαζόμενου: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το ΑΦΜ του εργαζόμενου σας.</span> </div></label>
+      <label for="afm_worker">ΑΦΜ Εργαζόμενου: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Αριθμός (ακριβώς 9 χαρακτήρες).</span> </div></label>
       <input type="text" name="afm_worker" id="afm_worker" pattern="\d*" size="9" maxlength="9"  onchange="return validateNum(document.getElementById('afm_worker'),document.getElementById('demo5'))"> <br>
       <p style="color: darkred" id='demo5'></p>
               
@@ -218,7 +217,7 @@ endif;
               
       <br/>
       <div id='tilergasia_options' style='display:none'>
-        <label>Διάρκεια τηλεργασίας: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Διαρκεία περιόδου τηλεργασίας. (Προσοχή: Πρώτα είναι ο μήνας και μετά η μέρα!)</span> </div></label>
+        <label>Διάρκεια τηλεργασίας: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Μήνας/Ημέρα/Έτος</span> </div></label>
         <label for="date_from_til">Από:<span>*</span></label>
         <input type="date" id="date_from_til" name="date_from_til" onchange="return validateEmpty(document.getElementById('date_from_til'),document.getElementById('demo7'))"> <br>
         <p style="color: darkred" id='demo7'></p>
@@ -230,7 +229,7 @@ endif;
       
       <br/>
       <div id='anastoli_options' style='display:none'>
-        <label>Διάρκεια αναστολής σύμβασης: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Διαρκεία περιόδου αναστολής σύμβασης. (Προσοχή: Πρώτα είναι ο μήνας και μετά η μέρα!)</span> </div></label>
+        <label>Διάρκεια αναστολής σύμβασης: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Μήνας/Ημέρα/Έτος</span> </div></label>
         <label for="date_from_anastoli">Από:<span>*</span></label>
         <input type="date" id="date_from_anastoli" name="date_from_anastoli" onchange="return validateEmpty(document.getElementById('date_from_anastoli'),document.getElementById('demo9'))"> <br>
         <p style="color: darkred" id='demo9'></p>

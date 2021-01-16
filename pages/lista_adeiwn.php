@@ -274,7 +274,7 @@ endif;
                 }   
 
                 if($first_kid_rank == 'nipiagwgio' ){
-                  echo '<td> Νηπιαγωγείο </td>';
+                  echo '<td> Νηπιαγ. </td>';
                 }   
                 if($first_kid_rank == 'dimotiko' ){
                   echo '<td> Δημοτικό </td>';
@@ -289,7 +289,7 @@ endif;
                 
                 if($second_kid_rank != 'NULL' ){
                   if($second_kid_rank == 'nipiagwgio' ){
-                      echo '<td> Νηπιαγωγείο </td>';
+                      echo '<td> Νηπιαγ. </td>';
                     }   
                     if($second_kid_rank == 'dimotiko' ){
                       echo '<td> Δημοτικό </td>';
@@ -306,7 +306,7 @@ endif;
 
                 if($third_kid_rank != 'NULL' ){
                   if($third_kid_rank == 'nipiagwgio' ){
-                      echo '<td> Νηπιαγωγείο </td>';
+                      echo '<td> Νηπιαγ. </td>';
                     }   
                     if($third_kid_rank == 'dimotiko' ){
                       echo '<td> Δημοτικό </td>';
@@ -323,7 +323,7 @@ endif;
 
                 if($fourth_kid_rank != 'NULL' ){
                   if($fourth_kid_rank == 'nipiagwgio' ){
-                      echo '<td> Νηπιαγωγείο </td>';
+                      echo '<td> Νηπιαγ. </td>';
                     }   
                     if($fourth_kid_rank == 'dimotiko' ){
                       echo '<td> Δημοτικό </td>';

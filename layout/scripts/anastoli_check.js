@@ -148,8 +148,8 @@ function validateAllOptions(){
     }
 
     if (y.checked == true ) {
-        var check_three = validateEmpty(document.getElementById('date_from_til'),document.getElementById('demo9'))
-        var check_four = validateEmpty(document.getElementById('date_from_til'),document.getElementById('demo10'))
+        var check_three = validateEmpty(document.getElementById('date_from_anastoli'),document.getElementById('demo9'))
+        var check_four = validateEmpty(document.getElementById('date_to_anastoli'),document.getElementById('demo10'))
         if (check_three == false || check_four == false){
             result = false;
         } 
@@ -158,8 +158,8 @@ function validateAllOptions(){
     if (x.checked == true && y.checked == true ) {
         var check_one = validateEmpty(document.getElementById('date_from_til'),document.getElementById('demo7'))
         var check_two = validateEmpty(document.getElementById('date_to_til'),document.getElementById('demo8'))
-        var check_three = validateEmpty(document.getElementById('date_from_til'),document.getElementById('demo9'))
-        var check_four = validateEmpty(document.getElementById('date_from_til'),document.getElementById('demo10'))
+        var check_three = validateEmpty(document.getElementById('date_from_anastoli'),document.getElementById('demo9'))
+        var check_four = validateEmpty(document.getElementById('date_to_anastoli'),document.getElementById('demo10'))
         if (check_one == false || check_two == false && check_three == false || check_four == false){
             result = false;
         } 

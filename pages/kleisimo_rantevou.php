@@ -160,23 +160,23 @@ Licence URI: https://www.os-templates.com/template-terms
     <form name="rantevou_form" action="actions/rantevou_action.php" onsubmit="return validateRantevouForm()" method="post">
 	
       <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br>
-      <label for="name1">Όνομα: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το όνομα σας.</span> </div></label>
+      <label for="name1">Όνομα: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Ελληνικοί χαρακτήρες.</span> </div></label>
       <input type="text" name="name1" id="name1"  size="22" onchange="return validateName(document.getElementById('name1'),document.getElementById('demo'))" >
       <p style="color: darkred" id='demo'></p>
 			
-			<label for="surname">Επώνυμο: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το επώνυμο σας.</span> </div></label>
+			<label for="surname">Επώνυμο: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Ελληνικοί χαρακτήρες.</span> </div></label>
 			<input type="text" name="surname" id="surname" value="" size="22" onchange="return validateName(document.getElementById('surname'),document.getElementById('demo1'))">
       <p style="color: darkred" id='demo1'></p>
           
-      <label for="email">Mail: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το email σας.</span> </div></label>
+      <label for="email">Mail: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Έγκυρη διεύθυνση mail.</span> </div></label>
       <input type="text" name="email" id="email" value="" size="22" onchange="return validateMail(document.getElementById('email'),document.getElementById('demo2'))">
 			<p style="color: darkred" id='demo2'></p>
 			
-      <label for="afm">ΑΦΜ: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το ΑΦΜ σας.</span> </div></label>
+      <label for="afm">ΑΦΜ: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Αριθμός (ακριβώς 9 χαρακτήρες).</span> </div></label>
       <input type="text" name="afm" id="afm" pattern="\d*" size="9" maxlength="9" onchange="return validateNum(document.getElementById('afm'),document.getElementById('demo3'))" >
       <p style="color: darkred" id='demo3'></p>
 
-			<label for="date_from">Ποιά ημερομηνία επιθυμείτε να κλείσετε το ραντεβού: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Επιλέξτε την ημερομηνία που θέλετε. (Προσοχή: Πρώτα είναι ο μήνας και μετά η μέρα!)</span> </div></label>
+			<label for="date_from">Ποιά ημερομηνία επιθυμείτε να κλείσετε το ραντεβού: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Μήνας/Ημέρα/Έτος</span> </div></label>
 			<input type="date" id="date_from" name="date_from" onchange="return validateEmpty(document.getElementById('date_from'),document.getElementById('demo4'))" >
       <p style="color: darkred" id='demo4'></p>
 
@@ -185,10 +185,10 @@ Licence URI: https://www.os-templates.com/template-terms
       <p style="color: darkred" id='demo5'></p>
 			<br>
 			
-      <label>Πείτε μας τον λόγο που κλείνετε αυτό το ραντεβού: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Επιλέξτε έναν λόγο από τους παρακάτω.</span></div></label>
+      <label>Πείτε μας τον λόγο που κλείνετε αυτό το ραντεβού: <span>*</span></label>
       <p style="color: darkred" id='demo6'></p>
       <fieldset>
-        <legend> Επιλέξτε έναν από τους παρακάτω λόγους </legend> <!--????-->
+        <legend> Επιλέξτε έναν από τους παρακάτω λόγους </legend> 
         <label for="enimerwsi">Ενημέρωση</label>
         <input type="radio" id="enimerwsi" name="rdb" value="enimerwsi" onchange="show_textarea()">
         <label for="katathesi">Κατάθεση αίτησης</label>
@@ -201,7 +201,7 @@ Licence URI: https://www.os-templates.com/template-terms
       <br>
       
       <div id="hidden_text" style="display: none"> 
-        <label for="comment_text">Πείτε μας τον λόγο που επιθυμείτε δια ζώσης εξυπηρέτηση: <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Γράψτε τον λόγο σε περίπτωση που δεν αντιστοιχεί με τις προηγούμενες επιλογές.</span> </div></label>
+        <label for="comment_text">Πείτε μας τον λόγο που επιθυμείτε δια ζώσης εξυπηρέτηση: </label>
         <textarea name="comment_text" id="comment_text" cols="100" rows="10" onchange="return validateTextArea()"></textarea>
         <p style="color: darkred" id='demo7'></p>
       </div>

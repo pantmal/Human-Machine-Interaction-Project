@@ -218,29 +218,29 @@ Licence URI: https://www.os-templates.com/template-terms
     
     <ul class="nospace group">
       <li class="one_third">
-      <div style="border: 1px solid darkblue; padding: 10px; padding-bottom: 30px">
-        <figure ><a class="imgover" href="pages/dead_page.php?anak=1"><img style="position: relative; left: 20px; width: 100%; " src="images/anakoinosi.jpg" alt="Anakoinwsi"></a>
+      <div style="border: 1px solid darkblue; padding: 10px; padding-bottom:10px">
+        <figure ><a class="imgover" href="pages/dead_page.php?anak=1"><img style=" width: 100%; " src="images/anakoinosi.jpg" alt="Anakoinwsi"></a>
           <figcaption><a style="color:blue" href="pages/dead_page.php?anak=2">Παράταση της προθεσμίας καταβολής φορολογικών οφειλών.</a></figcaption>
-            <figcaption style="color:black">Η Κυβέρνηση προχωράει σε ένα ουσιαστικό μέτρο ελάφρυνσης, αλλά και διευκόλυνσης, πολιτών και επιχειρήσεων που έχουν υποστεί τις αρνητικές συνέπειες της πανδημίας στην επαγγελματική και επιχειρηματική δραστηριότητά τους. Συγκεκριμένα, αναστέλλεται μέχρι και τις 30/04/2021</figcaption>
-            <a style="color:blue; position: relative; left: 80px;" href="pages/dead_page.php?anak=3">Συνεχίστε την ανάγνωση</a>
+            <figcaption style="color:black">Η Κυβέρνηση προχωράει σε ένα ουσιαστικό μέτρο ελάφρυνσης, αλλά και διευκόλυνσης, πολιτών και επιχειρήσεων που έχουν υποστεί τις αρνητικές συνέπειες της πανδημίας στην επαγγελματική και επιχειρηματική δραστηριότητά τους. Συγκεκριμένα, αναστέλλεται μέχρι και τις 30/04/2021.</figcaption>
+        
        </figure>
        </div>
       </li>
       <li class="one_third">
-      <div style="border: 1px solid darkblue; padding: 10px; padding-bottom: 70px">
-        <figure><a class="imgover" href="pages/dead_page.php?anak=4"><img style="position: relative; left: 40px; width: 100%;" src="images/anakoinosi.jpg" alt="Anakoinwsi"></a>
+      <div style="border: 1px solid darkblue; padding: 10px; padding-bottom:70px">
+        <figure><a class="imgover" href="pages/dead_page.php?anak=4"><img style=" width: 100%;" src="images/anakoinosi.jpg" alt="Anakoinwsi"></a>
           <figcaption ><a style="color:blue" href="pages/dead_page.php?anak=5">Μέριμνα για τις ευπαθείς ομάδες στον ιδιωτικό τομέα.</a></figcaption>
-        <figcaption style="color:black">Με την ΠΝΠ η οποία δημοσιεύτηκε στις 22/8/2020, καθορίζονται οι όροι για την τηλεργασία στον ιδιωτικό Τομέα και ιδίως τι ισχύει για τους εργαζόμενους που ανήκουν σε ευπαθείς ομάδες. Συγκεκριμένα προβλέπεται ότι: </figcaption>
-        <a style=" color:blue; position: relative; left: 80px;" href="pages/dead_page.php?anak=6">Συνεχίστε την ανάγνωση</a>
+        <figcaption style="color:black">Με την ΠΝΠ η οποία δημοσιεύτηκε στις 22/8/2020, καθορίζονται οι όροι για την τηλεργασία στον ιδιωτικό Τομέα και ιδίως τι ισχύει για τους εργαζόμενους που ανήκουν σε ευπαθείς ομάδες.</figcaption>
+        
         </figure>
         </div>
       </li>
       <li class="one_third">
-      <div style="border: 1px solid darkblue; padding: 10px;">
-         <figure><a class="imgover" href="pages/dead_page.php?anak=7"><img style="position: relative; left: 40px; width: 100%;" src="images/anakoinosi.jpg" alt="Anakoinwsi"></a>
+      <div style="border: 1px solid darkblue;padding: 10px;">
+         <figure><a class="imgover" href="pages/dead_page.php?anak=7"><img style=" width: 100%;" src="images/anakoinosi.jpg" alt="Anakoinwsi"></a>
           <figcaption ><a style="color:blue" href="pages/dead_page.php?anak=8">Ρύθμιση ειδικών θεμάτων με ειδικότερους όρους και προϋποθέσεις.</a></figcaption>
-          <figcaption style="color:black">Δικαιούχοι μερικής απαλλαγής από την καταβολή επαγγελματικών μισθώσεων : Οι μισθωτές επαγγελματικής μίσθωσης προς εγκατάσταση επιχειρήσεων, για τις οποίες έχουν ληφθεί ειδικά και έκτακτα μέτρα περί αναστολής ή προσωρινής απαγόρευσης λειτουργίας για προληπτικούς ή κατασταλτικούς λόγους</figcaption>
-          <a style=" color:blue; position: relative; left: 80px;" href="pages/dead_page.php?anak=9">Συνεχίστε την ανάγνωση</a>
+          <figcaption style="color:black">Δικαιούχοι μερικής απαλλαγής από την καταβολή επαγγελματικών μισθώσεων: Οι μισθωτές επαγγελματικής μίσθωσης προς εγκατάσταση επιχειρήσεων, για τις οποίες έχουν ληφθεί ειδικά και έκτακτα μέτρα περί αναστολής ή προσωρινής απαγόρευσης λειτουργίας για προληπτικούς ή κατασταλτικούς λόγους.</figcaption>
+        
         </figure>
         </div>
       </li>

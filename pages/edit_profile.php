@@ -43,7 +43,7 @@ Licence URI: https://www.os-templates.com/template-terms
               echo '<li><a style="color: #0026ff" href="register.html?header=edit_profile.php" title="Εγγραφή">Εγγραφή <i class="fas fa-edit"></i></a></li>';
           } else {
               echo '<li><a style="color: #0026ff" href="edit_profile.php" title="Προφίλ Χρήστη">Προφίλ Χρήστη <i class="fas fa-user"></i></a></li>';
-              echo '<li><a style="color: #0026ff" href="actions/logout.php" title="Αποσύνδεση">Αποσύνδεση <i class="fas fa-sign-out-alt"></i></a></li>';
+              echo '<li><a style="color: #0026ff" href="actions/edit_logout.php" title="Αποσύνδεση">Αποσύνδεση <i class="fas fa-sign-out-alt"></i></a></li>';
           }
         ?>
         
@@ -143,6 +143,7 @@ Licence URI: https://www.os-templates.com/template-terms
     </div> 
 
     <?php
+      error_reporting(E_ALL ^ E_WARNING);
       require_once "../settings.php";
       $cookie_name = 'user';
       if (isset($_COOKIE[$cookie_name])):
@@ -207,15 +208,15 @@ Licence URI: https://www.os-templates.com/template-terms
     <form name="edit_form" action="actions/edit_action.php" onsubmit="return validateEditForm()" method="post">
 
     <br>
-      <label for="uname">Εισάγετε νέο όνομα χρήστη αν το επιθυμείτε: <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Ανανεώστε αν θέλετε το όνομα χρήστη σας.</span> </div></label> 
+      <label for="uname">Εισάγετε νέο όνομα χρήστη αν το επιθυμείτε: <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Το παλιό όνομα θα διαγραφεί.</span> </div></label> 
       <input type="text" id="uname" name="uname" value="<?php echo $username ?>" onchange="return validateEmpty(document.getElementById('uname'),document.getElementById('demo'))" > <br>
       <p style="color: darkred" id='demo'></p>
       
-      <label for="email">Εισάγετε νέο e-mail αν το επιθυμείτε:  <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Ανανεώστε αν θέλετε το email σας.</span> </div></label> 
+      <label for="email">Εισάγετε νέο e-mail αν το επιθυμείτε:  <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Εισάγετε έγκυρο mail. Το παλιό mail θα διαγραφεί</span> </div></label> 
       <input type="text" name="email" id="email" value="<?php echo $email ?>" size="22" onchange="return validateMail(document.getElementById('email'),document.getElementById('demo2'))" > <br>
       <p style="color: darkred" id='demo2'></p>
       
-      <label for="pwd">Ανανεώστε τον κωδικό πρόσβασης σας αν το επιθυμείτε: <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Ανανεώστε αν θέλετε τον κωδικό πρόσβασης σας.</span> </div></label> 
+      <label for="pwd">Ανανεώστε τον κωδικό πρόσβασης σας αν το επιθυμείτε: <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Κατά προτίμηση χρησιμοποιήστε και Ειδικούς Χαρακτήρες (!@#$%^&*), Αριθμούς, Κεφαλαία γράμματα</span> </div></label> 
       <input type="password" id="pwd" name="pwd" > <br>
 
       <br>

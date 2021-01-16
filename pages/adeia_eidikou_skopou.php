@@ -187,37 +187,33 @@ Licence URI: https://www.os-templates.com/template-terms
     
       <label> Τα πεδία με <span>*</span> είναι υποχρεωτικά </label> <br>
               
-      <label for="name1">Όνομα: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το όνομα σας.</span> </div></label> 
+      <label for="name1">Όνομα: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Ελληνικοί χαρακτήρες.</span> </div></label> 
       <input type="text" name="name1" id="name1"  size="22" onchange="return validateName(document.getElementById('name1'),document.getElementById('demo'))" >
       <p style="color: darkred" id='demo'></p>
               
-      <label for="surname">Επώνυμο: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το επώνυμο σας.</span> </div></label>
+      <label for="surname">Επώνυμο: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Ελληνικοί χαρακτήρες.</span> </div></label>
       <input type="text" name="surname" id="surname" value="" size="22" onchange="return validateName(document.getElementById('surname'),document.getElementById('demo1'))">
       <p style="color: darkred" id='demo1'></p>
             
-      <label for="email">Mail: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το email σας.</span> </div></label>
+      <label for="email">Mail: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Έγκυρη διεύθυνση mail.</span> </div></label>
       <input type="text" name="email" id="email" value="" size="22" onchange="return validateMail(document.getElementById('email'),document.getElementById('demo2'))">
       <p style="color: darkred" id='demo2'></p>  
         
-      <label for="afm">ΑΦΜ: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε το ΑΦΜ σας.</span> </div></label>
+      <label for="afm">ΑΦΜ: <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Αριθμός (ακριβώς 9 χαρακτήρες).</span> </div></label>
       <input type="text" name="afm" id="afm" pattern="\d*" size="9" maxlength="9" onchange="return validateNum(document.getElementById('afm'),document.getElementById('demo3'))" >	<!-- id="afm" size="9" maxlength="9" -->
       <p style="color: darkred" id='demo3'></p>
-        
-      <!--   <input type="datetime-local" id="meeting-time"
-        name="meeting-time" value="2018-06-12T19:30"
-        min="2018-06-07T00:00" max="2018-06-14T00:00">   -->
-              
-      <label for="date_from">Από:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Από ποια μέρα θέλετε να ξεκινάει η άδεια σας; (Προσοχή: Πρώτα είναι ο μήνας και μετά η μέρα!)</span> </div></label>
+                  
+      <label for="date_from">Από:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext"> Μήνας/Ημέρα/Έτος </span> </div></label>
       <input type="date" id="date_from" name="date_from" onchange="return validateEmpty(document.getElementById('date_from'),document.getElementById('demo4'))" >
       <p style="color: darkred" id='demo4' ></p>
       <br>  
-      <label for="date_to">Εώς:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Μέχρι ποια μέρα θέλετε να ισχύει η άδεια σας; (Προσοχή: Πρώτα είναι ο μήνας και μετά η μέρα!)</span> </div></label>
+      <label for="date_to">Εώς:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext"> Μήνας/Ημέρα/Έτος</span> </div></label>
       <input type="date" id="date_to" name="date_to" onchange="return validateEmpty(document.getElementById('date_to'),document.getElementById('demo5'))" >
       <p style="color: darkred" id='demo5'></p>
         
         
       <label for="number_of_kids">Αριθμός Παιδιών:<span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Επιλέξτε αριθμό παιδιών.</span> </div></label>
-      <select name="number_of_kids" id="number_of_kids" >
+      <select name="number_of_kids" id="number_of_kids" size="4">
         <option value="" selected disabled hidden onclick="show_func()">Επιλέξτε</option>
         <option value="one" onclick="show_func()">Ένα(1)</option>
         <option value="two" onclick="show_func()">Δύο(2)</option>
@@ -228,14 +224,14 @@ Licence URI: https://www.os-templates.com/template-terms
       
       <br>
       <div id='hidden' style="display: none;">
-        <label for="kids_4">Αριθμός Παιδιών(4+): <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Γράψτε τον αριθμό παιδιών από 4 και πάνω σε μορφή αριθμού.</span> </div></label>
+        <label for="kids_4">Αριθμός Παιδιών(4+): <span>*</span> <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Αριθμός (4 και πάνω).</span> </div></label>
         <input type="text" name="kids_4" id="kids_4" pattern="\d*" maxlength="2" onchange="return validateHiddenInput()" >
         <p style="color: darkred" id='demo7'></p>
       </div>
       
       <br><br>
       <div id='hidden_paidi_1' style="display: none;">
-        <h>Εισάγετε την βαθμίδα των παιδιών σας <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Τοποθετήστε την βαθμίδα για το κάθε παιδί σας. Αν έχετε πάνω από 4 παιδιά, επιλέξτε για τα πρώτα τέσσερα.</span> </div></h>
+        <h>Εισάγετε την βαθμίδα των παιδιών σας <div class="tooltip"><i class="fas fa-info-circle"></i> <span class="tooltiptext">Αν έχετε πάνω από 4 παιδιά, επιλέξτε για τα πρώτα τέσσερα.</span> </div></h>
         
         <label for="paidi_1">1o παιδί </label>
         <select name="paidi_1" id="paidi_1">

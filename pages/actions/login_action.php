@@ -47,16 +47,16 @@ if(empty($username_err) && empty($password_err)){
                     }else{
                         // Display an error message if password is not valid
                         $password_err = '';
-                        echo "Η σύνδεση απέτυχε! Παρακαλούμε ξαναδοκιμάστε.";
+                        echo "<p>Η σύνδεση απέτυχε! <a href=".$_SERVER['HTTP_REFERER'].">Παρακαλούμε ξαναδοκιμάστε.<a></p>";
                     }
                 }
             }else{
                 // Display an error message if username doesn't exist
                 $username_err = "";
-                echo "Η σύνδεση απέτυχε! Παρακαλούμε ξαναδοκιμάστε.";
+                echo "<p>Η σύνδεση απέτυχε! <a href=".$_SERVER['HTTP_REFERER'].">Παρακαλούμε ξαναδοκιμάστε.<a></p>";
             }
         }else{
-            echo "Η σύνδεση απέτυχε! Παρακαλούμε ξαναδοκιμάστε.";
+            echo "<p>Η σύνδεση απέτυχε! <a href=".$_SERVER['HTTP_REFERER'].">Παρακαλούμε ξαναδοκιμάστε.<a></p>";
         }
 
         // Close statement

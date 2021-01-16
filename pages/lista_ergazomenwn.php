@@ -167,6 +167,7 @@ endif;
     <!-- ################################################################################################ -->
         
     <?php
+        error_reporting(E_ALL ^ E_WARNING);
         require_once "../settings.php";
 
         $cookie_name = 'user';

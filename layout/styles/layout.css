@@ -151,7 +151,7 @@ File: Layout CSS
 #latest ul li:nth-last-child(-n+3){margin-bottom:0;}/* Removes bottom margin from the last three items - margin is restored in the media queries when items stack */
 #latest ul li:nth-child(3n+1){margin-left:0; clear:left;}/* Removes the need to add class="first" */
 #latest ul li figure{position:relative; max-width:348px;}/* Uses the one_third width in pixels */
-#latest ul li figure figcaption{display:block; text-align:center; padding:15px 0 0 0; font-weight:700; text-transform:uppercase;}
+#latest ul li figure figcaption{display:block; padding:15px 0 0 0; font-weight:700;}
 #latest ul li figure figcaption *{margin:0;}
 
 
